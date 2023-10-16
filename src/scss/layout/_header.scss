@@ -1,0 +1,39 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 16px 0;
+    min-height: 76px;
+    background: rgba(245, 221, 183, 0.2);
+    backdrop-filter: blur(25px);
+    z-index: 11;
+    @include desktop {
+        padding: 13px 0;
+    }
+
+    .blue-page & {
+        background-color: transparent
+    }
+    
+    &_holder {
+        @include layout;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 74px;
+        @include tablet {
+            padding-right: 74px;
+        }
+        @include desktop {
+            padding-left: 22px;
+            padding-right: 22px;
+        }
+    }
+
+    .button {
+        position: relative;
+        z-index:12;
+    }
+}

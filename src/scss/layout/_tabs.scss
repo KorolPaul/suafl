@@ -1,0 +1,66 @@
+.tabs {
+    &_header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        border-bottom: 1px solid currentColor;
+    }
+    &_header-label {
+        display: none;
+        @include desktop {
+            font-size: 18px;
+            line-height: 140%;
+            display: block;
+            margin: 0 0 11px;
+        }
+    }
+    &_button {
+        @include button-reset;
+        font-size: 18px;
+        padding: 7px;
+        font-weight: 600;
+        position: relative;
+        transition: .2s $easing color;
+        @include desktop {
+            font-size: 24px;
+            padding: 11px;
+        }
+
+        &:first-child {
+            padding-left: 0;
+            @include desktop {
+                padding-left: 11px;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 3px;
+            border-radius: 2px;
+            transition: .2s $easing background;
+        }
+
+        &:hover,
+        &.active {
+            color: $cBlue;
+
+            &::after {
+                background-color:$cBlue;
+
+            }
+        }
+    }
+    &_content {
+        display: none;
+        @include desktop {
+            flex-grow: 1;
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}

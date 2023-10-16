@@ -1,0 +1,50 @@
+.menu-toggle {
+    @include button-reset;
+    position: fixed;
+    top: 18px;
+    right: $indent + 8;
+    width: 30px;
+    height: 40px;
+    z-index: 12;
+    @include desktop {
+        display: none;
+    }
+
+    
+    &_line {
+        height: 4px;
+        border-radius: 10px;
+        background-color: $cBlueMedium;
+        transition: .4s $easing opacity,
+                    .4s $easing transform;
+
+        &:nth-child(1) {
+            background-color: $cBlueLight;
+
+            .menu-opened & {
+                transform: rotate(45deg) translate(5px, 4px);
+            }
+        }
+        &:nth-child(2) {
+            margin: 4px 0;
+
+            .menu-opened & {
+                opacity: 0;
+            }
+        }
+        &:nth-child(3) {
+            background-color: $cBlue;
+
+            .menu-opened & {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+
+        .blue-page & {
+            background-color: $bg_color;
+        }
+        .blue-page.menu-opened & {
+            background-color: $cBlueMedium;
+        }
+    }
+}

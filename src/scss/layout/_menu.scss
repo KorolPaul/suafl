@@ -1,0 +1,155 @@
+
+.menu {
+    background-color: $bg_color;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+    max-width: 1148px;
+    width: 100%;
+    padding: 76px 0 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: .7s $easing opacity;
+    @include desktop {
+        background-color: transparent;
+        padding: 0;
+        position: static;
+        text-align: center;
+        height: auto;
+        overflow-y: initial;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .menu-opened & {
+        opacity: 1;
+        pointer-events: all;
+        transition: .3s $easing opacity;
+        @include desktop {
+            pointer-events:all;
+            opacity: 1;
+        }
+    }
+
+    &_links {
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        @include desktop-large {
+            gap: 40px;
+        }
+    }
+    &_link {
+        font-family: $font-family__heading;
+        font-weight: 700;
+        font-size: 4vh;
+        min-height: 50px;
+        line-height: 12vh;
+        height: 12vh;
+        color: $bg_color;
+        background-color: $cRed;
+        padding: 0 7.5vh;
+        text-transform: uppercase;
+        border-radius: 100px 0 0 100px;
+        display: block;
+        transform: translateX(100%);
+        transition: .2s $easing color,
+                    .3s $easing transform;
+        @include desktop {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1;
+            white-space: nowrap;
+            background-color: transparent;
+            padding: 0;
+            text-transform: none;
+            display: inline;
+            color: $cBlue;
+            height: auto;
+            min-height: 0;
+            transform: none;
+            transition: .3s $easing color,
+                        .6s $easing transform;
+        }
+
+        &:nth-child(2n) {
+            background-color: $cOrange;
+            transition-delay: 0s, .05s;
+            @include desktop {
+                background-color: transparent;
+                transition-delay: 0s, .1s;
+            }
+        }
+        &:nth-child(3n) {
+            background-color: $cYellow;
+            transition-delay: 0s, .1s;
+            @include desktop {
+                background-color: transparent;
+                transition-delay: 0s, .2s;
+            }
+        }
+        &:nth-child(4n) {
+            background-color: $cBlueLight;
+            transition-delay: 0s, .15s;
+            @include desktop {
+                background-color: transparent;
+                transition-delay: 0s, .3s;
+            }
+        }
+        &:nth-child(5n) {
+            background-color: $cBlueMedium;
+            transition-delay: 0s, .2s;
+            @include desktop {
+                background-color: transparent;
+                transition-delay: 0s, .4s;
+            }
+        }
+        &:nth-child(6n) {
+            background-color: $cBlue;
+            transition-delay: 0s, .25s;
+            @include desktop {
+                background-color: transparent;
+                transition-delay: 0s, .4s;
+            }
+        }
+        &:nth-child(7n) {
+            background-color: $cPurple;
+            transition-delay: 0s, .3s;
+            @include desktop {
+                background-color: transparent;
+                transition-delay: 0s, .4s;
+            }
+        }
+
+        &:hover {
+            @include desktop {
+                color: $cRed;
+            }
+        }
+
+        .blue-page & {
+            @include desktop {
+                color: $bg_color;
+            }
+        }
+
+        .blue-page &:hover {
+            @include desktop {
+                color: $cBlueLight;
+            }
+        }
+
+        .menu-opened & {
+            transform: translateX(0);
+        }
+    }
+}

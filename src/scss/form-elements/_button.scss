@@ -1,0 +1,112 @@
+@mixin button {
+    display: inline-block;
+    background: $cRed url(#{$img}/pattern.png) no-repeat center;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: $bg_color;
+    font-size: 14px;
+    font-weight: 500;
+    height: 44px;
+    line-height: 46px;
+    padding: 0 30px;
+    white-space: nowrap;
+    text-align: center;
+    transform: scale(1);
+    transition: .2s $easing color,
+                .2s $easing background-color,
+                .2s $easing filter,
+                .2s $easing box-shadow,
+                .2s $easing border,
+                .2s $easing transform;
+    @include desktop {
+        font-size: 18px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    
+    &:disabled {
+        opacity: .6;
+    }
+}
+
+@mixin button-reset {
+    border: none;
+    padding: 0;
+    background: transparent;
+    height: auto;
+    line-height: 1.2;
+    min-width: 0;
+    width: auto;
+    border-radius: 0;
+
+    &:hover {
+        transform: none;
+        background-color: transparent;
+    }
+    &:active {
+        transform: none;
+        background-color: transparent;
+    }
+}
+
+.button,
+button,
+input[type="button"],
+input[type="submit"] {
+    @include button;
+}
+
+.button {
+    &:hover {
+        @include tablet {
+            transform: translateY(-4px);
+            box-shadow: 0px 6px 0px $cOrange, 0px 12px 0px $cYellow, 0px 18px 0px #FFEBCB;
+        }
+    }
+
+    &:active {
+        @include tablet {
+            transform: translateY(0);
+            box-shadow: 0px -6px 0px #b4413b;
+        }
+    }
+
+    &__blue {
+        background-color: $cBlue;
+
+        &:hover {
+            @include tablet {
+                box-shadow: 0px 6px 0px #4BAFB1, 0px 12px 0px #68C1BF, 0px 18px 0px #A4DAD9;
+            }
+        }
+
+        &:active {
+            @include tablet {
+                box-shadow: 0px -6px 0px #405d65;
+            }
+        }
+    }
+
+    &__secondary {
+        color: $bg_color;
+        background: transparent;
+        border: 2px solid currentColor;
+        color: $cRed;
+
+        &:hover {
+            color: $bg_color;
+            background-color: $cRed;
+            filter: none;
+            transform: none;
+            box-shadow: none;
+        }
+        &:active {
+            filter: none;
+            box-shadow: none;
+            transform: none;
+        }
+    }
+}
