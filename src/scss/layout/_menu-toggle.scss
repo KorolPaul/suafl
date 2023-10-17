@@ -14,7 +14,7 @@
     &_line {
         height: 4px;
         border-radius: 10px;
-        background-color: $cBlueMedium;
+        background-color: $cBright;
         transition: .4s $easing opacity,
                     .4s $easing transform;
 
@@ -44,7 +44,7 @@
             background-color: $bg_color;
         }
         .blue-page.menu-opened & {
-            background-color: $cBlueMedium;
+            background-color: $cBright;
         }
     }
 }

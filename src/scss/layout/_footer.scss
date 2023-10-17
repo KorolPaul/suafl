@@ -21,7 +21,7 @@
         }
     }
     .blue-page &::before {
-        background-color: $cPurpleDark;
+        background-color: $cBright;
     }
 
     &_holder {
@@ -135,7 +135,7 @@
         }
 
         &:hover {
-            color: $cRed;
+            color: $cBright;
         }
     }
     &_text {
@@ -256,7 +256,7 @@
         color: $cBlueLight;
 
         &:hover {
-            color: $cRed;
+            color: $cBright;
         }
     }
 }

@@ -1,33 +1,36 @@
 %heading-1 {
-    font-size: 48px;
-    font-family: $font-family__heading;
-    line-height: .95;
-    font-weight: 400;
-    margin: 0 0 70px;
+    font-size: 32px;
+    font-family: $font-family;
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 0 0 $indent;
     @include desktop {
-        font-size: vw(140);
-        margin-bottom: vw(120);
+        font-size: 48px;
+        margin-bottom: 30px;
     }
 }
 
 %heading-2 {
-    font-size: 32px;
-    font-family: $font-family__heading;
+    font-size: 24px;
+    font-family: $font-family;
     line-height: 1.2;
     font-weight: 600;
-    margin: 0 0 20px;
+    margin: 32px 0 0;
     @include desktop {
-        font-size: 72px;
+        margin-top: 40px;
+        font-size: 32px;
     }
 }
 
 %heading-3 {
-    font-size: 20px;
-    font-family: $font-family__heading;
-    line-height: 1.4;
-    font-weight: 400;
+    font-size: 16px;
+    font-family: $font-family;
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 16px 0 0;
     @include desktop {
-        font-size: 60px;
+        font-size: 22px;
+        margin-top: 24px;
     }
 }
 
@@ -44,7 +47,7 @@
 %heading-5 {
     font-size: 16px;
     line-height: 1.2;
-    font-family: $font-family__heading;
+    font-family: $font-family;
     font-weight: 400;
     @include desktop {
         font-size: vw(32);
@@ -53,7 +56,7 @@
 
 %heading-6 {
     font-size: 12px;
-    font-family: $font-family__heading;
+    font-family: $font-family;
     line-height: 1.4;
     font-weight: 400;
     @include desktop {

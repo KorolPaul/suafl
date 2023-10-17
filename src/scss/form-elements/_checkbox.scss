@@ -86,8 +86,8 @@ input[type="checkbox"] {
     }
 
     .error & + label:not([class])::before {
-        border-color: $cRed;
-        box-shadow: 0 0 2px $cRed;
+        border-color: $cBright;
+        box-shadow: 0 0 2px $cBright;
     }
 
     .form_accept & + label:not([class]) {

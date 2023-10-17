@@ -48,14 +48,14 @@
         }
     }
     &_link {
-        font-family: $font-family__heading;
+        font-family: $font-family;
         font-weight: 700;
         font-size: 4vh;
         min-height: 50px;
         line-height: 12vh;
         height: 12vh;
         color: $bg_color;
-        background-color: $cRed;
+        background-color: $cBright;
         padding: 0 7.5vh;
         text-transform: uppercase;
         border-radius: 100px 0 0 100px;
@@ -106,7 +106,7 @@
             }
         }
         &:nth-child(5n) {
-            background-color: $cBlueMedium;
+            background-color: $cBright;
             transition-delay: 0s, .2s;
             @include desktop {
                 background-color: transparent;
@@ -132,7 +132,7 @@
 
         &:hover {
             @include desktop {
-                color: $cRed;
+                color: $cBright;
             }
         }
 

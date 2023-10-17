@@ -176,11 +176,11 @@
     }
 
     .tns-nav-active {
-        background-color: $cPurpleDark;
+        background-color: $cBright;
     }
     button:hover {
         @include tablet {
-            background-color: $cPurpleDark;
+            background-color: $cBright;
         }
     }
 }

@@ -1,30 +1,41 @@
 $img: "src/img";
 
-$bg_color: #F5DDB7;
+$bg_color: #fff;
 
-$color: #382D4D;
-$cGreen: #60E771;
-$cRed: #E1564F;
-$cBlue: #357C8E;
-$cBlueLight: #6AC2C0;
-$cBlueMedium: #4DB0B2;
-$cOrange: #E68549;
-$cYellow: #EEBA44;
-$cPurple: #5B4B7C;
-$cPurpleDark:  #382D4D;
+$color: #0E0B3A;
+$cBright: #1F35F0;
+$cPurple: #7314F2;
+$cPurpleLght: #D3C8F6;
+$cLight: #F5F0FE;
+$cWhite: #F7F9FC;
 
-$cPink: #F4A3DD;
-$cGrey: #E9E9E9;
-$cGreyLight: rgba(56, 45, 77, .3);
-$cPurpleLight: #9778DD;
+$cOrange: #FF8830;
+$cOrangeLight: #FADBC4;
+$cBlue: #1ACBF5;
+$cBlueLight: #D5F6FE;
+$cGreen: #65C47B;
+$cGreenLight: #D7E4D4;
+$cNavy: #4B7EFF;
+$cNavyLight: #DFE8FF;
+$cYellow: #FFBF52;
+$cYellowLight: #FCEFD9;
+$cGrey: #707989;
+$cGreyLight: #C1C7D2;
+
+$cPageOrange: #EE8F00;
+$cPageOrangeLight: #FDF5E8;
+$cPageBlue: #157DAA;
+$cPageBlueLight: #EAFAFE;
+$cPageGreen: #166C39;
+$cPageGreenLight: #EFF4EE;
+
+$gradient: linear-gradient(114deg, #7314F2 0%, #1F35F0 100%);
 
 $font-family: 'VisbyCF', Helvetica, sans-serif;
-$font-family__heading: $font-family;
 
-$font-size: 18px;
-$font-size__small: 16px;
+$font-size: 16px;
 
-$max-width: 1296px;
+$max-width: 1200px;
 $indent: 16px;
 
 // easings
@@ -33,7 +44,3 @@ $easeOutCirc: cubic-bezier(.07, .82, .17, 1);
 $easeInOutCirc: cubic-bezier(.78, .13, .15, .86);
 $easeInCirc: cubic-bezier(.6, .04, .98, .34);
 $easing: $easingSmooth;
-
-$image-shadow: 0px 9px 0px 0px #E68549,
-    0px 18px 0px 0px #EEBA44,
-    0px 27px 0px 0px #FFEBCB;

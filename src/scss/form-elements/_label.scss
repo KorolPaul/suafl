@@ -13,12 +13,12 @@ label {
     &.required {
         &::after {
             content: ' *';
-            color: $cRed;
+            color: $cBright;
         }
     }
 
     a {
-        color: $cRed;
+        color: $cBright;
 
         &:hover {
             text-decoration: underline;
