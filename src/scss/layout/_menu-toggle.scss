@@ -39,12 +39,5 @@
                 transform: rotate(-45deg) translate(7px, -6px);
             }
         }
-
-        .blue-page & {
-            background-color: $bg_color;
-        }
-        .blue-page.menu-opened & {
-            background-color: $cBright;
-        }
     }
 }

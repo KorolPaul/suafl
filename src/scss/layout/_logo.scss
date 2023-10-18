@@ -12,13 +12,9 @@
 
     &_image {
         display: block;
-        width: 74px;
+        width: 40px;
         @include desktop {
-            width: 98px;
-        }
-
-        .blue-page & {
-            filter: hue-rotate(180deg) brightness(2.5);
+            width: 174px;
         }
     }
 }

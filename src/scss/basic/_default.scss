@@ -16,11 +16,6 @@ body {
     }
 }
 
-.blue-page {
-    background-color: $cBlue;
-    color: $bg_color;
-}
-
 a {
     color: $cBright;
     text-decoration: none;
@@ -79,19 +74,14 @@ a[name] {
     top: -100px;
 }
 
-#agendalist {
-    flex-grow: 1;
-}
 
 .bright {
     color: $cBright;
 }
 
-.cold {
-    color: $cBlue;
-}
-
-mark {
-    padding: 6px;
-    border-radius: 6px;
+main {
+    padding-top: 82px;
+    @include tablet {
+        padding-top: 146px;
+    }
 }
