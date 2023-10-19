@@ -1,0 +1,43 @@
+.social {
+    display: flex;
+    gap: 10px;
+
+    &_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        height: 50px;
+        width: 50px;
+        background-color: #F9F9FB;
+        transition: .2s $easing background;
+
+        &__fb:hover {
+            background-color: $cNavy;
+        }
+        &__tw:hover {
+            background-color: #1D9BF0;
+        }
+        &__ln:hover {
+            background-color: #0A66C2;
+        }
+        &__insta:hover {
+            background: radial-gradient(77% 77% at 35% 100%, rgba(247, 226, 145, 0.70) 0%, rgba(247, 226, 145, 0.00) 100%),
+                linear-gradient(48deg, #FA7E26 0%, rgba(250, 126, 38, 0.00) 53.17%),
+                linear-gradient(152deg, #1C6BCB 0%, rgba(28, 107, 203, 0.00) 49.36%),
+                #FF019B;;
+        }
+        &__youtube:hover {
+            background-color: #FF0000;
+        }
+    }
+
+    &_icon {
+        width: 20px;
+        transition: .1s $easingSmooth filter;
+
+        .social_link:hover & {
+            filter: brightness(100);
+        }
+    }
+}
