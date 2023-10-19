@@ -1,13 +1,11 @@
-
 .menu {
-
 
     .menu-opened & {
         opacity: 1;
         pointer-events: all;
         transition: .3s $easing opacity;
         @include desktop {
-            pointer-events:all;
+            pointer-events: all;
             opacity: 1;
         }
     }
@@ -20,22 +18,45 @@
         flex-direction: column;
         gap: $indent;
         @include desktop {
-            background-color: $cWhite;
-            border-radius: 10px;
             flex-direction: row;
-            gap: 50px;
-            padding: 0 40px;
+            gap: 0;
         }
     }
 
     &_item {
-        height: 48px;
+        position: relative;
         @include desktop {
             height: 56px;
         }
+    }
 
-        &__parent {
-            position: relative;
+    &_link {
+        height: 100%;
+        align-items: center;
+        color: $color;
+        font-weight: 600;
+        background-color: $cWhite;
+        padding: 0 50px;
+        position: relative;
+        z-index: 11;
+        display: none;
+        @include tablet {
+            display: flex;
+        }
+
+        .menu_item:first-child & {
+            @include desktop {
+                border-radius: 10px 0 0 10px;
+            }
+        }
+
+        .menu_item:last-child & {
+            @include desktop {
+                border-radius: 0 10px 10px 0;
+            }
+        }
+
+        .menu_item__parent & {
             padding-right: 22px;
 
             &::after {
@@ -57,28 +78,27 @@
         }
     }
 
-    &_link {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        color: $color;
-        font-weight: 600;
-        @include desktop {
-
-        }
-    }
-
     &_dropdown {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        background: rgba($bg_color, 0.97);
+        height: 100vh;
+        box-sizing: border-box;
         padding-top: 82px;
-        // opacity: 0;
-        // pointer-events: none;
+        background: $bg_color;
+        opacity: 0;
+        pointer-events: none;
+        transition: .3s $easing opacity;
         @include tablet {
+            background: rgba($bg_color, 0.97);
             padding-top: 116px;
+        }
+
+        .menu-opened &,
+        .menu_item__parent:hover & {
+            opacity: 1;
+            pointer-events: all;
         }
     }
 
@@ -86,14 +106,139 @@
         @include layout;
     }
 
+    &_dropdown-title,
+    &_dropdown-description {
+        display: none;
+        @include desktop {
+            display: block;
+        }
+    }
+
+    &_dropdown-title {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%;
+        margin: 0 0 $indent;
+    }
+
+    &_dropdown-description {
+        margin: 0 0 54px;
+    }
+
+    &_dropdown-footer {
+        @include tablet {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &_dropdown-email {
+        font-weight: 600;
+        line-height: 150%;
+        display: block;
+        margin: 0 0 $indent;
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &_dropdown-copyrights {
+        font-weight: 400;
+        line-height: 150%;
+        color: rgba($color, .3);
+    }
+
     &_sublist {
         display: flex;
         flex-direction: column;
         gap: $indent;
+        padding: 0;
+        margin: 0 0 6px;
+        list-style: none;
         @include tablet {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto;
+            padding: 40px 0 60px;
+            border-top: 1px solid #E4E8F0;
+            gap: 26px;
+            margin: 0;
+        }
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &_sublist-item-title {
+        color: $color;
+        line-height: 1;
+        font-weight: 600;
+        padding: $indent 32px $indent $indent;
+        margin: 0;
+        background: $cWhite;
+        border-radius: 10px;
+        display: block;
+        position: relative;
+        @include tablet {
+            padding: 0;
+            margin: 0 0 10px;
+            background-color: transparent;
+            border-radius: 0;
+            font-size: 22px;
+            line-height: 1.5;
+        }
+
+        &::after {
+            content: '';
+            background: url(#{$img}/menu-arrow.svg) no-repeat center / 100%;
+            height: $indent;
+            width: $indent;
+            position: absolute;
+            right: $indent;
+            top: 50%;
+            margin-top: calc(-1 * $indent / 2);
+            transform-origin: center;
+            transition: .2s $easing transform;
+            @include desktop {
+                content: none;
+            }
+        }
+
+        &.opened:after {
+            transform: rotate(180deg);
+        }
+    }
+
+    &_sublist-menu {
+        list-style: none;
+        margin: 0 0 0 $indent;
+        padding: $indent 0 0;
+        display: none;
+        @include tablet {
+            padding: 0;
+            display: block;
+        }
+
+        .active + & {
+            display: block;
+        }
+    }
+
+
+    &_sublist-link {
+        font-weight: 600;
+        line-height: 1.5;
+        color: $color;
+        @include tablet {
+            color: #535479;
+            font-weight: 400;
+        }
+
+        &::before {
+            content: '- ';
         }
     }
 }

@@ -30,4 +30,9 @@
         align-items: center;
         gap: 10px;
     }
+
+    &_button {
+        position: relative;
+        z-index: 11;
+    }
  }

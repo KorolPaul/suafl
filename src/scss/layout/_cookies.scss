@@ -1,0 +1,57 @@
+.cookies {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    left: $indent;
+    right: $indent;
+    bottom: $indent;
+    box-sizing: border-box;
+    padding: $indent;
+    background-color: rgba($bg_color, .35);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    @include tablet {
+        flex-direction: row;
+        gap: 75px;
+        padding: 25px 40px;
+        bottom: 30px;
+        left: 50%;
+        width: 80%;
+        max-width: 996px;
+        transform: translateX(-50%);
+    }
+
+    &_content {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        @include tablet {
+            gap: 30px;
+        }
+    }
+
+    &_text {
+        margin: 0
+    }
+
+    &_button {
+        width: 100%;
+        @include tablet {
+            width: auto;
+        }
+    }
+
+    &_buttons {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        @include tablet {
+            flex-direction: row;
+            gap: 25px;
+        }
+    }
+
+    &_icon {
+        flex-shrink: 0;
+    }
+}

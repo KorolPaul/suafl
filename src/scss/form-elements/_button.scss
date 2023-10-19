@@ -25,7 +25,7 @@
     }
 
     &:hover {
-        background-color: $bg_color;
+        background-color: transparent;
         color: $cBright;
     }
 
@@ -65,9 +65,19 @@ input[type="submit"] {
 }
 
 .button {
-    &:hover {
-    }
+    &__light {
+        background: transparent;
+        border-radius: 10px;
+        color: $cBright;
 
-    &:active {
+        &:hover {
+            background-color: $cBright;
+            color: $bg_color;
+        }
+
+        &:active {
+            background-color: $cNavy;
+            border-color: $cNavy;
+        }
     }
 }
