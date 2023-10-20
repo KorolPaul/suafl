@@ -5,6 +5,10 @@
         gap: 116px;
     }
 
+    &_image {
+        margin-bottom: 32px;
+    }
+
     &_title {
         margin: 0 0 $indent;
         @include tablet {

@@ -4,12 +4,11 @@ const isMobile = window.innerWidth <= 768
 const isDesktop = window.innerWidth >= 1070
 
 // sliders
-const ticketsSlider = document.querySelectorAll('.js-tickets-slider');
-ticketsSlider.forEach(el => {
+const showcaseSlider = document.querySelectorAll('.showcase_slider');
+showcaseSlider.forEach(el => {
     tns({
         container: el,
-        autoWidth: true,
-        items: 1.1,
+        items: 1,
         gutter: 16,
         mouseDrag: true,
         autoplay: false,
@@ -18,8 +17,9 @@ ticketsSlider.forEach(el => {
         controls: false,
         loop: false,
         responsive: {
-            1070: {
-                disable: true
+            768: {
+                mode: 'gallery',
+                navContainer: '.showcase_buttons'
             }
         }
     });
