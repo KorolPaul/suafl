@@ -1,0 +1,19 @@
+.article {
+    max-width: 800px;
+    margin: auto;
+    @include desktop {
+        position: relative;
+    }
+
+    &_emoji {
+        @include desktop {
+            position: absolute;
+            left: -102px;
+            top: 90px;
+        }
+    }
+
+    h1 {
+        text-align: center;
+    }
+}

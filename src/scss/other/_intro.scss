@@ -1,0 +1,26 @@
+.intro {
+    @include tablet {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 116px;
+    }
+
+    &_title {
+        margin: 0 0 $indent;
+        @include tablet {
+            margin-bottom: 30px;
+        }
+    }
+
+    &_text {
+        font-size: 18px;
+        @include tablet {
+            margin-bottom: 22px;
+        }
+
+        a {
+            display: block;
+            font-weight: 600;
+        }
+    }
+}
