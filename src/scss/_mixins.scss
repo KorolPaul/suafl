@@ -42,6 +42,7 @@
     max-width: $max-width;
     box-sizing: border-box;
     @include tablet {
+        box-sizing: content-box;
         padding-left: 22px;
         padding-right: 22px;
         margin-left: auto;

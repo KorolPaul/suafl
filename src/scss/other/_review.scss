@@ -1,0 +1,80 @@
+.review {
+    display: block;
+    color: $color;
+    background-color:  $bg_color;
+    padding: $indent;
+    position: relative;
+    @include tablet {
+        display: flex;
+        gap: 20px;
+        padding: 15px 54px 0 0;
+    }
+
+    &:hover {
+        color: $color;
+    }
+
+    &:nth-child(even) {
+        @include tablet {
+            flex-direction: row-reverse;
+            padding: 15px 0 0 54px;
+        }
+    }
+
+    &_header {
+        margin: 0 0 26px 66px;
+        @include tablet {
+            margin: 0 0 6px;
+        }
+
+        .review:nth-child(even) & {
+            margin-left: 0;
+        }
+    }
+
+    &_image {
+        width: 74px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include tablet {
+            position: static;
+            width: 190px;
+            margin-top: -15px;
+        }
+
+        .review:nth-child(even) & {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &_title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        display: block;
+        @include tablet {
+            font-size: 22px;
+        }
+
+        .review:hover & {
+            color: $cBright;
+        }
+    }
+
+    &_author {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 150%;
+    }
+
+    &_position {
+        color: #535479;
+        font-weight: 400;
+    }
+
+    p {
+        margin: 0;
+    }
+}
