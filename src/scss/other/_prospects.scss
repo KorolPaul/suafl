@@ -1,0 +1,25 @@
+.prospects {
+    &_header {
+        margin: 0 auto 42px;
+        text-align: center;
+        max-width: 792px;
+        @include tablet {
+            margin-bottom: 50px;
+        }
+    }
+
+    &_subtitle {
+        font-size: 18px;
+        @include tablet {
+            font-size: 22px;
+        }
+
+        span {
+            color: $cBright;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+    }
+}

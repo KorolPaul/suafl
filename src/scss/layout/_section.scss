@@ -1,0 +1,10 @@
+.section {
+    margin: 0 0 64px;
+    @include tablet {
+        margin-bottom: 100px;
+    }
+
+    &_content {
+        @include layout;
+    }
+}

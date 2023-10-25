@@ -23,7 +23,27 @@ showcaseSlider.forEach(el => {
             }
         }
     });
-})
+});
+
+const solutionsSlider = document.querySelectorAll('.solutions-map_slider');
+solutionsSlider.forEach(el => {
+    tns({
+        container: el,
+        items: 1,
+        gutter: 16,
+        mouseDrag: true,
+        autoplay: false,
+        nav: true,
+        navPosition: 'bottom',
+        controls: false,
+        loop: false,
+        responsive: {
+            768: {
+                navContainer: '.solutions-map_slider-buttons'
+            }
+        }
+    });
+});
 
 
 // menu
@@ -163,7 +183,6 @@ if (Cookies) {
             Cookies.set('CookieNotificationCookie', 'false', { expires: 365 });
         });
     }
-    console.log(cookiesBanner, !hasCookies);
 
     if (cookiesBanner && !hasCookies) {
         cookiesBanner.style.display = 'flex';

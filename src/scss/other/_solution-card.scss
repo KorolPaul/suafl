@@ -1,0 +1,57 @@
+.solution-card {
+    border-radius: 15px;
+    background-color: $cLight;
+    padding: $indent;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 30px;
+    }
+    @include desktop {
+        padding: 30px 100px;
+    }
+
+    .tns-item:nth-child(2n) & {
+        background-color: $cYellowLight;
+    }
+
+    .tns-item:nth-child(3n) & {
+        background-color: $cGreenLight;
+    }
+
+    .tns-item:nth-child(4n) & {
+        background-color: $cNavyLight;
+    }
+
+    &_number {
+        display: block;
+        color: #535479;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 130%;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+
+    &_title {
+        font-size: 32px;
+        margin-bottom: $indent;
+        @include tablet {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &_text {
+        font-size: 18px;
+        margin-bottom: $indent;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+}

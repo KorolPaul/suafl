@@ -1,0 +1,72 @@
+.solutions-map {
+    border-radius: 30px;
+    background: url(#{$img}/solutions-map-bg.svg) no-repeat, linear-gradient(234deg, #1F35F0 -167.08%, rgba(31, 53, 240, 0.00) 100%), #0A1339;
+    padding: 32px 0;
+    @include tablet {
+        padding: 60px 0;
+    }
+
+    &_header {
+        color: $bg_color;
+        margin: 0 auto 32px;
+        max-width: 792px;
+        text-align: center;
+        @include tablet {
+            margin-bottom: 60px;
+        }
+    }
+
+    &_label {
+        border-radius: 100px;
+        background: $bg_color;
+        color: $cBright;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 11px $indent;
+        @include tablet {
+            padding: 11px 24px;
+        }
+    }
+
+    &_title {
+        display: block;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 130%;
+        margin: $indent 0;
+        @include tablet {
+            font-size: 48px;
+            margin: 30px 0;
+        }
+    }
+
+    &_description {
+        font-size: 18px;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+
+    &_slider-buttons {
+        display: none;
+        @include tablet {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 0 0 40px;
+        }
+    }
+
+    &_slider-button {
+        background-color: rgba($bg_color, .1);
+        border-color: rgba($bg_color, .1);
+
+        &:hover,
+        &.active {
+            background: linear-gradient(77deg, #1F35F0 0%, #7314F2 100%);
+            color: $bg_color;
+        }
+    }
+}
