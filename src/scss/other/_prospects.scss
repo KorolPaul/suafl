@@ -22,4 +22,13 @@
             vertical-align: bottom;
         }
     }
+
+    &_items {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 150px;
+            padding: 180px 50% 0 0;
+        }
+    }
 }

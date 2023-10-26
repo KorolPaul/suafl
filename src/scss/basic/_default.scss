@@ -76,6 +76,11 @@ a[name] {
     color: $cBright;
 }
 
+.gradiented-text {
+    @include gradiented-text($cBright, $cPurple);
+    font-weight: 600;
+}
+
 main {
     padding-top: 82px;
     @include tablet {
