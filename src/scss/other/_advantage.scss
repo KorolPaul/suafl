@@ -1,0 +1,59 @@
+.advantage {
+    border-radius: 15px;
+    padding: $indent;
+    background-color: $cPurpleLght;
+    position: relative;
+    overflow: hidden;
+    @include tablet {
+        padding: 60px;
+
+    }
+
+    &:nth-child(2n) {
+        background-color: $cBlueLight;
+    }
+    &:nth-child(3n) {
+        background-color: $cYellowLight;
+    }
+    &:nth-child(4n) {
+        background-color: $cNavyLight;
+    }
+    &:nth-child(5n) {
+        background-color: $cGreyLight;
+    }
+    &:nth-child(6n) {
+        background-color: $cGreenLight;
+    }
+    &:nth-child(7n) {
+        background-color: $cOrangeLight;
+    }
+
+    &_image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &_title {
+        display: block;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 110%;
+        margin: 0 0 $indent;
+        width: 55%;
+        @include tablet {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+    }
+
+    p {
+        width: 55%;
+        margin: 0;
+
+        .bright {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+}

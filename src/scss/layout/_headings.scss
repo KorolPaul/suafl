@@ -67,11 +67,19 @@
 h1,
 .heading-1 {
     @extend %heading-1;
+
+    img {
+        vertical-align: sub;
+    }
 }
 
 h2,
 .heading-2 {
     @extend %heading-2;
+
+    img {
+        vertical-align: sub;
+    }
 }
 
 h3,

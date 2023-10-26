@@ -1,0 +1,43 @@
+.masonry {
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 24px;
+    }
+
+    & > div:nth-child(1) {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+    
+    & > div:nth-child(2) {
+        grid-column: 4 / 6;
+        grid-row: 1 / 2;
+    }
+
+    & > div:nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+    }
+
+    & > div:nth-child(4) {
+        grid-column: 2 / 6;
+        grid-row: 2 / 3;
+    }
+
+    & > div:nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+
+    & > div:nth-child(6) {
+        grid-column: 2 / 4;
+        grid-row: 3 / 5;
+    }
+
+    & > div:nth-child(7) {
+        grid-column: 4 / 6;
+        grid-row: 3 / 5;
+    }
+}
