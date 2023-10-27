@@ -45,6 +45,29 @@ solutionsSlider.forEach(el => {
     });
 });
 
+const teamSlider = document.querySelectorAll('.team-slider');
+teamSlider.forEach(el => {
+    tns({
+        container: el,
+        items: 1,
+        gutter: 14,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        controls: true,
+        loop: false,
+        responsive: {
+            768: {
+                items: 3.5,
+                gutter: 24,
+            },
+            1200: {
+                items: 4.5,
+            }
+        }
+    });
+});
+
 
 // menu
 const menuToggleElement = document.querySelector('.menu-toggle');

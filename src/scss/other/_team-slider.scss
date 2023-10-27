@@ -1,0 +1,55 @@
+.team-slider {
+    &_item {
+        position: relative;
+    }
+
+    &_image {
+        margin-bottom: $indent;
+        border-radius: 15px;
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &_content {
+        @include tablet {
+            background-color: rgba($cBright, .7);
+            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: $bg_color;
+            padding: $indent;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: .2s $easingSmooth opacity;
+        }
+
+        .team-slider_item:hover & {
+            @include tablet {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_title {
+        font-size: 20px;
+        font-weight: 600;
+        display: block;
+    }
+    &_position {
+        font-size: 14px;
+    }
+    
+    &_text {
+        display: block;
+        margin: 8px 0 0;
+        @include tablet {
+            margin-top: 20px;
+        }
+    }
+}

@@ -10,13 +10,12 @@ textarea {
     height: 56px;
     line-height: 56px;
     padding: 0 15px;
+    resize: none;
+    min-height: 130px;
     width: 100%;
     transition: .2s ease-in background-color,
             .2s ease-in box-shadow,
             .2s ease-in color;
-    @include desktop {
-        height: 230px;
-    }
 
     &:focus,
     &.focus {

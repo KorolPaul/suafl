@@ -1,0 +1,55 @@
+.team-form {
+    @include tablet {
+        display: flex;
+        gap: 100px;
+    }
+
+    &_content {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: $indent;
+            justify-content: space-between;
+        }
+    }
+
+    &_content-top {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        justify-content: space-between;
+        align-items: flex-start;
+        @include tablet {
+            gap: 30px;
+        }
+    }
+
+    &_title {
+        display: block;
+        font-size: 64px;
+        font-weight: 600;
+        margin: 0;
+        line-height: .9;
+        @include tablet {
+            font-size: 100px;
+        }
+    }
+
+    &_subtitle {
+        display: block;
+        font-size: 18px;
+        margin: 0;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+
+    &_form {
+        border-radius: 15px;
+        background: $cWhite;
+        padding: $indent;
+        @include tablet {
+            padding: 30px;
+        }
+    }
+}
