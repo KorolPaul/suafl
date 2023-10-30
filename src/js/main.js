@@ -264,12 +264,7 @@ const animatedElements = document.querySelectorAll('.js-animation');
 
 if (animatedElements.length) {
     animatedElements.forEach(el => {
-        const isExpericenceBlock = el.classList.contains('experience');
-
-        let ratio = (isMobile || isExpericenceBlock) ? 0.0005 : 0.3;
-        if (el.classList.contains('section_image-wrapper') && !isMobile) {
-            ratio = 0.6;
-        }
+        let ratio = (isMobile) ? 0.0005 : 0.3;
 
         const observerCallback = function (e) {
             const { target, intersectionRatio } = e[0];
@@ -284,5 +279,28 @@ if (animatedElements.length) {
             //root: document.body
         });
         observer.observe(el);
+    })
+}
+
+/* prospects animation */
+
+/* appaerance animation */
+const prospectsElement = document.querySelector('.prospects');
+const prospectsNumbersElement = document.querySelector('.prospects_circle-numbers');
+const prospectsNumberElements = document.querySelectorAll('.prospects_circle-number');
+
+if (!isMobile && prospectsElement) {
+    window.addEventListener('scroll', () => {
+        const {height, top, bottom} = prospectsElement.getBoundingClientRect();
+        const screenHeight = screen.availHeight;
+
+        console.log(height, top, (((height - top) / (height)) * 100) - 100);
+        prospectsNumbersElement.style.transform = `rotate(${Math.round((((((height - top) / height) * 100) - 100)) * -3.6)}deg)`
+
+        // const elementBottom = offsetTop + clientHeight - screen.availHeight + 200;
+// 
+        // if (offsetTop - scrollTop < 0 && elementBottom - scrollTop > 0) {
+        //     console.log(`${(clientHeight / (offsetTop - scrollTop)) * 3.6 }`);
+        // }
     })
 }
