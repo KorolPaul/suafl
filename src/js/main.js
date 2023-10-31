@@ -6,7 +6,7 @@ const isDesktop = window.innerWidth >= 1070
 // sliders
 const showcaseSlider = document.querySelectorAll('.showcase_slider');
 showcaseSlider.forEach(el => {
-    tns({
+    const slider = tns({
         container: el,
         items: 1,
         gutter: 16,
@@ -18,9 +18,15 @@ showcaseSlider.forEach(el => {
         loop: false,
         responsive: {
             768: {
+                nav: false,
                 mode: 'gallery',
-                navContainer: '.showcase_buttons'
             }
+        },
+        onInit: () => {
+            document.querySelectorAll('.showcase_button').forEach((element) => element.addEventListener('mouseenter', (e) => {
+                console.log(Number(e.target.dataset.slide))
+                slider.goTo(Number(e.target.dataset.slide))
+            }))
         }
     });
 });

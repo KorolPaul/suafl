@@ -1,0 +1,83 @@
+.showcase {
+    position: relative;
+
+    &_buttons {
+        display: none;
+        @include tablet {
+            display: flex;
+            align-items: flex-end;
+            gap: 24px;
+        }
+    }
+
+    &_button {
+        color: $color;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 40px;
+        background-color: rgba($cWhite, .3);
+        flex: 1 1 0px;
+        box-sizing: border-box;
+        border-radius: 15px;
+        position: relative;
+        z-index: 1;
+        backdrop-filter: blur(10px);
+        transition: .2s $easing background-color;
+
+        &:nth-child(2) {
+            min-height: 230px;
+        }
+
+        &:nth-child(4) {
+            min-height: 190px;
+        }
+
+        &::after {
+            content: '';
+            background: url(#{$img}/showcase-button-arrow.svg) no-repeat center;
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            opacity: 0;
+            transition: .2s $easing opacity;
+        }
+
+        &:hover {
+            background-color: rgba($cPurpleLght, .3);
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_button-title {
+        font-size: 22px;
+        font-weight: 600;
+        padding: 0 50px 0 0;
+    }
+
+    &_button-link {
+        font-weight: 600;
+        color: $cBright;
+    }
+
+    &_bg-title {
+        @include tablet {
+            font-size: 200px;
+            font-weight: 600;
+            line-height: .9;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 110px;
+            text-align: center;
+            color: rgba($color, .15);
+            z-index: 0;
+        }
+    }
+}
