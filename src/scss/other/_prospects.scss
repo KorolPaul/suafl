@@ -76,6 +76,7 @@
         top: -90px;
         left: 50%;
         margin-left: -90px;
+        transform: scale(.3);
         transition: .1s ease transform;
 
         &::after {

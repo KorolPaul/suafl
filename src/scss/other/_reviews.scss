@@ -1,6 +1,8 @@
 .reviews {
     &_title {
+        margin: 0 0 32px;
         @include tablet {
+            margin: 0 0 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -25,7 +27,7 @@
         display: flex;
         flex-direction: column;
         gap: $indent;
-        @include tablet {
+        @include desktop {
             flex-direction: row;
             gap: 24px;
         }

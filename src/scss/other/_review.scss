@@ -4,10 +4,13 @@
     background-color:  $bg_color;
     padding: $indent;
     position: relative;
+    border-radius: 40px 0 0;
     @include tablet {
         display: flex;
+        align-items: stretch;
         gap: 20px;
         padding: 15px 54px 0 0;
+        border-radius: 140px 0 0;
     }
 
     &:hover {
@@ -15,9 +18,11 @@
     }
 
     &:nth-child(even) {
+        border-radius: 0 40px 0 0;
         @include tablet {
             flex-direction: row-reverse;
             padding: 15px 0 0 54px;
+            border-radius: 0 140px 0 0;
         }
     }
 
@@ -37,9 +42,11 @@
         position: absolute;
         left: 0;
         top: 0;
+        flex-shrink: 0;
         @include tablet {
             position: static;
-            width: 190px;
+            min-width: 190px;
+            width: auto;
             margin-top: -15px;
         }
 
@@ -61,6 +68,10 @@
         .review:hover & {
             color: $cBright;
         }
+    }
+
+    &_content {
+        margin-bottom: 20px;
     }
 
     &_author {

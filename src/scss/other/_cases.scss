@@ -42,4 +42,18 @@
     &_items {
 
     }
+
+    .tns-outer {
+        position: relative;
+    }
+
+    .tns-controls {
+        @include tablet {
+            position: absolute;
+            right: 102px;
+            bottom: 60px;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
 }

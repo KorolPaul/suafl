@@ -92,3 +92,17 @@ main {
         padding-top: 146px;
     }
 }
+
+blockquote {
+    padding: $indent;
+    font-size: 18px;
+    font-weight: 600;
+    background: url(#{$img}/quotes.svg) no-repeat right top -5px;
+    border-radius: 15px;
+    box-shadow: 0 0 1px 1px #E4E8F0 inset;
+    margin: 0 0 $indent;
+    @include tablet {
+        padding: 30px;
+        margin: 0 0 30px;
+    }
+}

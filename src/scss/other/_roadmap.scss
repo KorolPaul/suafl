@@ -1,0 +1,61 @@
+.roadmap {
+    @include tablet {
+        position: relative;
+        background: url(#{$img}/roadmap-ball.png) no-repeat right bottom;
+        padding: 0 0 93px;
+    }
+
+    &_title {
+        font-size: 32px;
+        margin-bottom: 32px;
+        @include tablet {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &_content {
+        @include layout;
+        position: relative;
+        @include tablet {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &_timeline {
+        @include desktop {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &_card {
+        border-radius: 15px;
+        padding: $indent;
+        background: linear-gradient(0deg, rgba(78, 70, 220, .1) 0%, rgba(78, 70, 220, .1) 100%), $cWhite;
+        @include tablet {
+            max-width: 384px;
+            box-sizing: border-box;
+            padding: 50px;
+        }
+    }
+
+    &_card-title {
+        display: block;
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 8px;
+        @include tablet {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &_card-text {
+        display: block;
+    }
+}

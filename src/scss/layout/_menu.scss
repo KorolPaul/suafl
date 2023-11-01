@@ -32,7 +32,6 @@
 
     &_link {
         height: 100%;
-        align-items: center;
         color: $color;
         font-weight: 600;
         background-color: $cWhite;
@@ -42,6 +41,7 @@
         display: none;
         @include desktop {
             display: flex;
+            line-height: 58px;
         }
 
         .menu_item:first-child & {

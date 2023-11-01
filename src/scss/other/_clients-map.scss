@@ -1,0 +1,199 @@
+.clients-map {
+    border-radius: 30px;
+    background: #EDF9FD;
+    padding: 32px 0;
+    overflow: hidden;
+    margin: 0 $indent;
+    position: relative;
+    @include desktop {
+        margin: 0;
+    }
+
+    &::after {
+        @include desktop {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 590px;
+            border-bottom: 2px solid $bg_color;
+            z-index: 0;
+        }
+    }
+
+    &_title {
+        margin: 0 0 $indent;
+        padding: 0 0 32px;
+        border-bottom: 2px solid $cBright;
+        font-size: 32px;
+        @include desktop {
+            margin-bottom: 60px;
+            padding-bottom: 0;
+            border: none;
+            font-size: 48px;
+        }
+    }
+
+    &_slider {
+        position: relative;
+        @include desktop {
+            padding: 440px 150px 0 0;
+            display: flex;
+            gap: 24px;
+        }
+    }
+
+    &_item {
+        position: relative;
+        @include desktop {
+            position: static;
+        }
+    }
+
+
+
+    &_item-button {
+        text-align: center;
+        position: absolute;
+        left: 60px;
+        right: 60px;
+        top: -86px;
+        z-index: -1;
+        pointer-events: none;
+        @include desktop {
+            position: relative;
+            top: auto;
+            right: auto;
+            left: auto;
+            text-align: left;
+            padding-top: 30px;
+            border-top: 2px solid rgba($cBright, .3);
+            pointer-events: all;
+            cursor: pointer;
+            z-index: 1;
+            transition: .2s $easingSmooth border;
+        }
+
+        &:hover,
+        &.active {
+            border-top-color: rgba($cBright, 1);
+        }
+    }
+    
+    &_item-place {
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        pointer-events: none;
+        @include desktop {
+            font-size: 22px;
+        }
+    }
+
+    &_name {
+        pointer-events: none;
+    }
+
+    &_map {
+        display: none;
+        @include desktop {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: .3s $easingSmooth transform;
+            transform: translate(50%, 6%);
+        }
+
+        [data-place="2"] &,
+        [data-place="3"] & {
+            transform: translate(0%, 6%);
+        }
+
+        [data-place="4"] &,
+        [data-place="5"] & {
+            transform: translate(-5%, 6%);
+        }
+    }
+
+    &_image {
+        max-width: none;
+    }
+
+    &_marker {
+        position: absolute;
+        opacity: 0;
+        transition: .2s $easingSmooth opacity;
+        
+        &[data-place="1"] {
+            left: 330px;
+            top: 308px;
+
+            .clients-map[data-place="1"] & {
+                opacity: 1;
+            }
+        }
+
+        &[data-place="2"] {
+            left: 940px;
+            top: 185px;
+
+            .clients-map[data-place="2"] & {
+                opacity: 1;
+            }
+        }
+
+        &[data-place="3"] {
+            left: 953px;
+            top: 219px;
+
+            .clients-map[data-place="3"] & {
+                opacity: 1;
+            }
+        }
+
+        &[data-place="4"] {
+            left: 1004px;
+            top: 235px;
+
+            .clients-map[data-place="4"] & {
+                opacity: 1;
+            }
+        }
+        &[data-place="5"] {
+            left: 1052px;
+            top: 118px;
+
+            .clients-map[data-place="5"] & {
+                opacity: 1;
+            }
+        }
+    }
+
+    .tns-controls {
+        margin: 0 0 32px;
+        @include desktop {
+            margin: 0;
+            gap: 10px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+
+    .tns-outer {
+        @include desktop {
+            position: relative;
+        }
+    }
+
+    .tns-item {
+        @include desktop {
+            flex: 0 0 180px;
+            transition: .2s $easingSmooth opacity;
+        }
+    }
+}

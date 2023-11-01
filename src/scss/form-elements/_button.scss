@@ -19,7 +19,7 @@
     @include desktop {
         font-size: 18px;
         height: 56px;
-        line-height: 56px;
+        line-height: 58px;
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -33,7 +33,6 @@
         background-color: $cNavyLight;
     }
 
-    
     &:disabled {
         opacity: .6;
     }
@@ -70,7 +69,25 @@ input[type="submit"] {
         border-radius: 10px;
         color: $cBright;
 
-        &:hover {
+        &:hover,
+        &.active {
+            background-color: $cBright;
+            color: $bg_color;
+        }
+
+        &:active {
+            background-color: $cNavy;
+            border-color: $cNavy;
+        }
+    }
+
+    &__secondary {
+        background-color: rgba(31, 53, 240, .1);
+        border-color: rgba(31, 53, 240, .1);
+        color: $cBright;
+
+        &:hover,
+        &.active {
             background-color: $cBright;
             color: $bg_color;
         }

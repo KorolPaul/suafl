@@ -1,14 +1,17 @@
 .team-form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
     @include tablet {
-        display: flex;
+        flex-direction: row;
         gap: 100px;
     }
 
     &_content {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
         @include tablet {
-            display: flex;
-            flex-direction: column;
-            gap: $indent;
             justify-content: space-between;
         }
     }
@@ -48,8 +51,39 @@
         border-radius: 15px;
         background: $cWhite;
         padding: $indent;
+        position: relative;
         @include tablet {
             padding: 30px;
+        }
+
+        &::before {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            width: 90px;
+            height: 89px;
+            right: 0;
+            top: -26px;
+            background: url(#{$img}/request-form.png) no-repeat center / 100%;
+            @include tablet {
+                width: 118px;
+                height: 117px;
+                right: 70px;
+                top: -15px;
+            }
+        }
+
+        &__alternate {
+            &::before {
+                width: 83px;
+                height: 121px;
+                background-image: url(#{$img}/request-form-2.png);
+                @include tablet {
+                    width: 110px;
+                    height: 161px;
+                    top: -56px;
+                }
+            }
         }
     }
 }

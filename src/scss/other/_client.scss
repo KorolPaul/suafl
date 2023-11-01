@@ -1,0 +1,73 @@
+.client {
+    border-radius: 15px;
+    background: radial-gradient(1700% 141% at 100% 0%, #0F279B 0%, transparent 100%),
+                linear-gradient(131deg, #020A44 -24%, transparent 45%),
+                radial-gradient(3800% 141% at 0% 100%, #AF56B2 0%, transparent 100%), #020A44;
+    padding: $indent;
+    color: $bg_color;
+    box-sizing: border-box;
+    @include desktop {
+        max-width: 588px;
+        padding: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .active & {
+        @include desktop {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    &_header {
+        text-align: center;
+        border-bottom: 1px solid rgba(#D9D9D9, .2);
+        padding: 0 0 $indent;
+        margin: 0 0 $indent;
+        @include desktop {
+            text-align: left;
+            display: flex;
+            gap: 10px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &_avatar {
+        margin: 0 0 6px;
+    }
+
+    &_name {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 4px;
+        @include desktop {
+            font-size: 22px;
+        }
+    }
+
+    &_position,
+    &_place {
+        display: block;
+        font-size: 14px;
+        margin: 0 0 4px;
+        @include desktop {
+            margin-bottom: 10px;
+        }
+    }
+
+    &_place {
+        margin: 0;
+    }
+
+    &_content {
+        p:last-child {
+            margin: 0;
+        }
+    }
+}
