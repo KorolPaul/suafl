@@ -1,14 +1,18 @@
 $img: "src/img";
 
+:root {
+    --cBright: #1F35F0;
+}
+
 $bg_color: #fff;
 
 $color: #0E0B3A;
-$cBright: #1F35F0;
+$cBright: var(--cBright);
 $cPurple: #7314F2;
 $cPurpleLght: #D3C8F6;
 $cLight: #F5F0FE;
 $cWhite: #F7F9FC;
-
+    
 $cOrange: #FF8830;
 $cOrangeLight: #FADBC4;
 $cBlue: #1ACBF5;

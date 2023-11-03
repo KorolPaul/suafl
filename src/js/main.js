@@ -209,6 +209,30 @@ teamGridSlider.forEach(el => {
     });
 });
 
+const partnersSlider = document.querySelectorAll('.partners_slider');
+partnersSlider.forEach(el => {
+    tns({
+        container: el,
+        items: 1.6,
+        gutter: 24,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        controls: true,
+        controlsPosition: 'bottom',
+        loop: true,
+        fixedWidth: 180,
+        responsive: {
+            768: {
+                items: 3.5,
+            },
+            1024: {
+                items: 5.5,
+            }
+        }
+    });
+});
+
 
 // menu
 const menuToggleElement = document.querySelector('.menu-toggle');

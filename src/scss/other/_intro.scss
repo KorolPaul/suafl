@@ -1,8 +1,11 @@
 .intro {
-    @include tablet {
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 116px;
+        
+    &_top {
+        @include tablet {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 116px;
+        }
     }
 
     &_image {
@@ -35,6 +38,79 @@
         margin: 0 10px 0 0;
         @include tablet {
             margin-right: 15px;
+        }
+    }
+
+    &_bottom {
+        padding: 64px 0 0;
+    }
+
+    &_bottom-content {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 25px;
+        }
+    }
+
+    &_bottom-text {
+        max-width: 690px;
+        font-size: 18px;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+
+    &_bottom-title {
+        display: none;
+        @include tablet {
+            background: linear-gradient(180deg, $color 0%, transparent 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            font-size: 200px;
+            font-weight: 600;
+            line-height: .9;
+            text-align: center;
+            margin: -100px 0 -44px;
+            opacity: .45;
+        }
+    }
+
+    &_bottom-subtitle {
+        margin: 0 0 $indent;
+        font-size: 24px;
+        @include tablet {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &_bottom-image-wrapper {
+        position: relative;
+        margin-bottom: 32px;
+        flex-shrink: 0;
+        @include tablet {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            right: 50%;
+            width: 5000px;
+            background-color: #EFF4EE;
+            z-index: -1;
+        }
+    }
+
+    &_bottom-image {
+        width: 100%;
+        @include tablet {
+            width: auto;
         }
     }
 }

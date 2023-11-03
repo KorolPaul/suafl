@@ -1,0 +1,48 @@
+.partners {
+
+    &_title {
+        margin: 0 0 32px;
+        @include tablet {
+            margin-bottom: 60px;
+        }
+    }
+
+    &_slider {
+        position: relative;
+    }
+
+    &_slider-item {
+        width: 180px;
+        height: 100px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: $bg_color;
+        border: 1px solid #E4E8F0;
+    }
+
+    .tns-outer {
+        position: relative;
+    }
+
+    .tns-ovh {
+        @include tablet {
+            @include tablet {
+                margin-right: 180px;
+            }
+        }
+    }
+
+    .tns-controls {
+        justify-content: flex-end;
+        gap: 10px;
+        @include tablet {
+            position: absolute;
+            right: 0;
+            top: 5px;
+        }
+    }
+}

@@ -16,6 +16,10 @@ body {
     }
 }
 
+.page-green {
+    --cBright: #166C39;
+}
+
 a {
     color: $cBright;
     text-decoration: none;
