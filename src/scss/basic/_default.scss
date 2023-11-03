@@ -73,6 +73,7 @@ a[name] {
 
 a[href^='mailto:'] {
     background: url(#{$img}/email.svg) no-repeat left center;
+    font-weight: 600;
     padding: 0 0 0 34px;
 }
 

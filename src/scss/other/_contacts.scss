@@ -1,0 +1,89 @@
+.contacts {
+    &_title {
+        display: none;
+        @include tablet {
+            background: linear-gradient(180deg, $color 0%, transparent 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            font-size: 200px;
+            font-weight: 600;
+            line-height: .9;
+            text-align: center;
+            margin: -100px 0 -44px;
+            opacity: .45;
+        }
+    }
+    &_subtitle {
+        font-size: 32px;
+        text-align: center;
+        margin: 0 0 32px;
+        @include tablet {
+            font-size: 48px;
+            margin-bottom: 60px;
+        }
+    }
+
+    &_map {
+        max-width: 996px;
+        margin: 0 auto 30px;
+
+    }
+
+    &_offices {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        @include tablet {
+            flex-direction: row;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &_office {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: $indent;
+        padding: $indent 32px;
+        border-radius: 56px;
+        background-color: $cWhite;
+        border: 2px solid rgba(31, 53, 240, 0.05);
+        filter: drop-shadow(7px 7px 0px rgba(31, 53, 240, 0.70));
+        font-size: 14px;
+        box-sizing: border-box;
+        @include tablet {
+            flex-direction: row;
+            padding-left: 100px;
+            padding-right: 25px;
+            width: calc(50% - 15px);
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    &_office-flag {
+        position: absolute;
+        width: 20px;
+        left: 85px;
+        top: 64px;
+        border-radius: 50%;
+        @include tablet {
+            width: 27px;
+            top: 24px;
+            left: 50px;
+            border-radius: 0;
+        }
+    }
+
+    &_office-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 4px;
+    }
+}

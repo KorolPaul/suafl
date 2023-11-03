@@ -1,0 +1,55 @@
+.onboarding-banner {
+    color: $bg_color;
+    padding: 32px $indent 310px;
+    border-radius: 15px;
+    background: url(#{$img}/onboarding-banner.png) no-repeat right bottom, radial-gradient(430% 100% at 100% 100%, #0F279B 0%, transparent 100%), linear-gradient(180deg, #020A44 0%, transparent 45%), radial-gradient(430% 100% at 0% 100%, #AF56B2 0%, transparent 100%), #020A44;
+    @include tablet {
+        padding: 60px 100px;
+        gap: 75px 24px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &_title {
+        font-size: 32px;
+        margin: 0 0 $indent;
+        @include tablet {
+            font-size: 48px;
+            width: 50%;
+            margin: 0;
+        }
+    }
+
+    &_text {
+        font-size: 18px;
+        @include tablet {
+            font-size: 22px;
+            width: calc(50% - 75px);
+        }
+    }
+
+    &_contacts {
+        margin-top: 32px;
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+
+    &_contacts-item {
+        display: block;
+        font-size: 18px;
+        margin: 0 0 10px;
+        @include tablet {
+            font-size: 22px;
+            margin-bottom: $indent;
+        }
+
+        a {
+            color: #EB583C;
+        }
+        a[href^='mailto:'] {
+            background: none;
+            padding: 0;
+        }
+    }
+}

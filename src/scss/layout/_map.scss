@@ -1,0 +1,60 @@
+.map {
+    width: 100%;
+    position: relative;
+    overflow: auto;
+
+    &_bg {
+        min-width: 800px;
+    }
+
+    &_place {
+        position: absolute;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+
+        &::after {
+            content: '';
+            background-color: $cBright;
+            box-shadow: 0 0 0 5px rgba($cBright, .25);
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &_tooltip {
+        position: absolute;
+        left: 6px;
+        bottom: 6px;
+        opacity: 0;
+        pointer-events: none;
+        border-radius: 15px;
+        padding: 15px 20px;
+        background-color: #eff3fe;
+        font-size: 11px;
+        color: #535479;
+        min-width: 170px;
+        box-sizing: border-box;
+        transition: .2s $easingSmooth opacity;
+
+        .map_place:hover & {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    &_tooltip-title {
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+        color: $color;
+    }
+}
