@@ -17,7 +17,15 @@ body {
 }
 
 .page-green {
-    --cBright: #166C39;
+    --cBright: #{$cPageGreen};
+}
+
+.page-blue {
+    --cBright: #{$cPageBlue};
+}
+
+.page-orange {
+    --cBright: #{$cPageOrange};
 }
 
 a {
@@ -109,5 +117,12 @@ blockquote {
     @include tablet {
         padding: 30px;
         margin: 0 0 30px;
+    }
+}
+
+picture {
+    source,
+    img {
+        width: 100%;
     }
 }

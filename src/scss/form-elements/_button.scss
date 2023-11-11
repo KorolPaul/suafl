@@ -97,4 +97,22 @@ input[type="submit"] {
             border-color: $cNavy;
         }
     }
+
+    &__white {
+        background-color: $bg_color;
+        border-color: $bg_color;
+        color: $cBright;
+
+        &:hover,
+        &.active {
+            background-color: $cBright;
+            border-color: $cBright;
+            color: $bg_color;
+        }
+
+        &:active {
+            background-color: $cNavy;
+            border-color: $cNavy;
+        }
+    }
 }

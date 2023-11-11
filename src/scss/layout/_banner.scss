@@ -11,6 +11,36 @@
         flex-wrap: wrap;
     }
 
+    &__left {
+        padding-top: 300px;
+        padding-bottom: 32px;
+        @include tablet {
+            display: block;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+
+    &__wide {
+        @include tablet {
+            display: block;
+        }
+    }
+
+    .page-green & {
+        background: linear-gradient(180deg, #21684F 0%, #0E4E43 34%, #043E3C 49%, #043E3C 100%);
+        @include tablet {
+            background: linear-gradient(150deg, #21684F 0%, #0E4E43 34%, #043E3C 49%, #043E3C 100%);
+        }
+    }
+
+    .page-blue & {
+        background: radial-gradient(430% 100% at 100% 100%, #0F279B 0%, transparent 100%),
+                    linear-gradient(180deg, #020A44 0%, transparent 45%),
+                    radial-gradient(430% 100% at 0% 100%, #AF56B2 0%, transparent 100%),
+                  #020A44;
+    }
+
     &_title {
         font-size: 32px;
         margin: 0 0 $indent;
@@ -21,6 +51,22 @@
             width: 50%;
             margin: 0;
         }
+
+        .banner__left & {
+            @include tablet {
+                margin-bottom: 30px;
+                width: auto;
+                max-width: 588px;
+            }
+        }
+
+        .banner__wide & {
+            @include tablet {
+                margin-bottom: 30px;
+                width: auto;
+                max-width: 744px;
+            }
+        }
     }
 
     &_text {
@@ -30,6 +76,22 @@
         @include tablet {
             font-size: 22px;
             width: calc(50% - 75px);
+        }
+
+        .banner__left & {
+            width: auto;
+            max-width: 588px;
+        }
+
+        .banner__wide & {
+            width: auto;
+            max-width: 744px;
+        }
+
+        .banner__left & p {
+            @include tablet {
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -63,5 +125,25 @@
         bottom: 0;
         right: 0;
         z-index: 0;
+
+        .banner__left & {
+            left: 0;
+            top: 0;
+            bottom: auto;
+            mask: linear-gradient(0deg, transparent 0%, black 50%, black 100%);
+            opacity: .5;
+            @include tablet {
+                height: 100%;
+            }
+        }
+
+        img,
+        source {
+            @include tablet {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }

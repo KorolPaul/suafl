@@ -1,0 +1,28 @@
+.checklist {
+    &_title {
+        margin-bottom: 32px;
+        @include tablet {
+            margin-bottom: 60px;
+        }
+    }
+
+    &_items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &_item {
+        padding: $indent $indent $indent 90px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 130%;
+        border-radius: 15px;
+        background: $cPageBlueLight url(#{$img}/checklist-bg.png) no-repeat left bottom /  auto 100%;
+        margin: 0 0 $indent;
+        @include tablet {
+            padding: 40px 40px 40px 200px;
+            font-size: 22px;
+        }
+    }
+}

@@ -1,10 +1,16 @@
 .cases {
     border-radius: 30px;
-    background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, rgba(31, 53, 240, 0.00) 100%), #F7F9FC;
+    background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%), #F7F9FC;
     text-align: center;
     padding: 32px $indent;
     @include tablet {
         padding: 60px;
+    }
+
+    .page-blue & {
+        background: linear-gradient(0deg, rgba(21, 125, 170, 0.30) 0%, rgba(21, 125, 170, 0.00) 100%),
+            linear-gradient(0deg, #EAFAFE 0%, #EAFAFE 100%),
+            linear-gradient(234deg, #157DAA -167.08%, rgba(21, 125, 170, 0.00) 100%);;
     }
 
     &_label {

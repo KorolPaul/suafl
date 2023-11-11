@@ -56,6 +56,14 @@
             padding: 30px;
         }
 
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
+
         &::before {
             content: '';
             pointer-events: none;

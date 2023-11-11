@@ -13,8 +13,10 @@
             margin: 0;
             max-width: 800px;
             font-size: 32px;
+            margin-bottom: $indent;
             @include tablet {
                 font-size: 48px;
+                margin-bottom: 0;
             }
         }
 
@@ -44,6 +46,14 @@
             gap: 20px;
             padding: 60px;
         }
+
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
     }
 
     &_sourses {
@@ -57,6 +67,14 @@
         min-width: 282px;
         @include tablet {
             padding: 75px 30px;
+        }
+
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
         }
     }
 

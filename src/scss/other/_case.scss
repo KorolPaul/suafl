@@ -42,6 +42,10 @@
             padding: 30px 24px;
             flex: 0 1 282px;
         }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
     }
 
     &_stats-number {
