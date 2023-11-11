@@ -54,6 +54,10 @@
         .page-blue & {
             background-color: $cPageBlueLight;
         }
+    
+        .page-orange & {
+            background-color: $cPageOrangeLight;
+        }
     }
 
     &_sourses {
@@ -75,6 +79,10 @@
 
         .page-blue & {
             background-color: $cPageBlueLight;
+        }
+
+        .page-orange & {
+            background-color: $cPageOrangeLight;
         }
     }
 

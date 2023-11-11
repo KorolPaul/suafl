@@ -46,6 +46,10 @@
         .page-blue & {
             background-color: $cPageBlueLight;
         }
+
+        .page-orange & {
+            background-color: $cPageOrangeLight;
+        }
     }
 
     &_stats-number {

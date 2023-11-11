@@ -1,0 +1,99 @@
+.plans {
+    &_title {
+        text-align: center;
+        margin: 0 0 32px;
+        font-size: 32px;
+        @include tablet {
+            font-size: 48px;
+            margin: 0 0 60px;
+        }
+
+
+        img {
+            vertical-align: sub;
+        }
+    }
+
+    &_items {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        text-align: center;
+        @include tablet {
+            flex-direction: row;
+            gap: 24px;
+        }
+    }
+
+    &_card {
+        border-radius: 15px;
+        border: 1px solid $cYellow;
+        background: $cPageOrangeLight;
+        padding: 32px $indent;
+        flex: 1 0 0px;
+        @include tablet {
+            padding: 50px;
+        }
+    }
+
+    &_card-label {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        display: block;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+
+    &_card-title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 150%;
+        display: block;
+        margin: 0 0 $indent;
+        @include tablet {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &_card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 $indent;
+        text-align: left;
+        @include tablet {
+            margin-bottom: 32px;
+        }
+    }
+
+    &_card-list-item {
+        padding: 0 0 0 24px;
+        margin: 0;
+        line-height: 2.1;
+        position: relative;
+        @include tablet {
+            padding-left: 52px;
+        }
+
+        &::before {
+            content: '';
+            background: url(#{$img}/check.svg) no-repeat left center / 100%;
+            width: 14px;
+            height: 12px;
+            position: absolute;
+            left: 0;
+            top: 12px;
+            @include tablet {
+                left: 28px;
+            }
+        }
+    }
+
+    
+
+    button {
+        width: 100%;
+    }
+}

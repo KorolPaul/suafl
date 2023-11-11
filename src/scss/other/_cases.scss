@@ -13,6 +13,12 @@
             linear-gradient(234deg, #157DAA -167.08%, rgba(21, 125, 170, 0.00) 100%);;
     }
 
+    .page-orange & {
+        background: linear-gradient(0deg, rgba(238, 143, 0, 0.30) 0%, rgba(238, 143, 0, 0.00) 100%),
+            linear-gradient(0deg, #FDF5E8 0%, #FDF5E8 100%),
+            linear-gradient(234deg, #EE8F00 -167.08%, rgba(238, 143, 0, 0.00) 100%);
+    }
+
     &_label {
         border-radius: 100px;
         background: $bg_color;
