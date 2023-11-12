@@ -1,0 +1,9 @@
+.services-list {
+    h2 {
+        text-align: center;
+        margin: 0 0 32px;
+        @include tablet {
+            margin-bottom: 60px;
+        }
+    }
+}

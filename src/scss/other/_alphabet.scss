@@ -1,0 +1,179 @@
+.alphabet {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+    }
+    @include desktop {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &_item {
+        position: relative;
+        padding: 0 0 0 34px;
+        margin: 0;
+        user-select: none;
+        @include tablet {
+            padding: 15px 13px;
+            min-height: 156px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, #24288A 55%, #6D3F99);
+            z-index: 0;
+            opacity: 0;
+            transition: .2s $easing opacity;
+        }
+        
+        &:hover::before {
+            opacity: 1;
+        }
+
+        &:hover::after {
+            opacity: 0;
+        }
+
+        &::after {
+            @include tablet {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 12px;
+                bottom: 12px;
+                border-left: 1px solid #E4E8F0;
+                transition: .2s $easing opacity;
+            }
+        }
+
+        &:nth-child(3n) {
+            &::after {
+                @include tablet {
+                    content: none;
+                }
+                @include desktop {
+                    content: '';
+                }
+            }
+        }
+        
+        &:nth-child(4n) {
+            &::after {
+                @include desktop {
+                    content: none;
+                }
+            }
+        }
+    }
+    
+    &_item-border {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: .2s $easing opacity;
+
+        .alphabet_item:hover & {
+            opacity: 0;
+        }
+
+        &::before {
+            @include tablet {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 12px;
+                right: 12px;
+                border-top: 1px solid #E4E8F0;
+            }
+        }
+
+        &::after {
+            @include tablet {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 12px;
+                right: 12px;
+                border-top: 1px solid #E4E8F0;
+            }
+        }
+    }
+
+    &_item-title {
+        font-size: 18px;
+        line-height: 1.8;
+        display: block;
+        transition: .2s $easing color;
+        @include tablet {
+            font-size: 22px;
+            font-weight: 600;
+            max-width: 60%;
+            position: relative;
+            z-index: 1;
+        }
+
+        &::first-letter {
+            color: $cBright;
+            transition: .2s $easing color;
+        }
+
+        .alphabet_item:hover & {
+            color: $bg_color;
+        }
+
+        .alphabet_item:hover &::first-letter {
+            color: #EB583C;
+        }
+    }
+
+    &_item-letter {
+        position: absolute;
+        font-size: 18px;
+        font-weight: 600;
+        color: $cBright;
+        left: 0;
+        top: 0;
+        text-align: right;
+        @include tablet {
+            font-size: 136px;
+            left: auto;
+            top: auto;
+            right: 0;
+            bottom: -31px;
+            line-height: 1;
+            color: rgba($bg_color, 1);
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgba($color, $alpha: .7);
+            transition: .2s $easing filter,
+                        .2s $easing opacity,
+                        .4s $easing transform;
+        }
+
+        &__shadow {
+            opacity: 0;
+        }
+
+        .alphabet_item:hover & {
+            filter: brightness(20);
+        }
+
+        .alphabet_item:hover &__shadow {
+            opacity: 1;
+            transform: translate(10px, 5px);
+        }
+    }
+}

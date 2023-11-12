@@ -1,0 +1,103 @@
+.service-card {
+    color: $color;
+    background-color: $cYellowLight;
+    padding: 32px $indent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include tablet {
+        position: relative;
+        border-radius: 15px;
+        padding: 60px;
+    }
+
+    &::after {
+        @include tablet {
+            content: '';
+            width: 36px;
+            height: 36px;
+            right: 30px;
+            bottom: 54px;
+            position: absolute;
+            background: url(#{$img}/card-arrow-orange.svg) no-repeat;
+            opacity: 0;
+            transition: .2s $easingSmooth opacity;
+        }
+    }
+
+    &:nth-child(2) {
+        background-color: $cBlueLight;
+
+        &::after {
+            background-image: url(#{$img}/card-arrow-blue.svg);
+        }
+    }
+
+    &:nth-child(3) {
+        background-color: $cGreenLight;
+
+        &::after {
+            background-image: url(#{$img}/card-arrow-green.svg);
+        }
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+
+    &_label {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 12px $indent 11px;
+        border-radius: 100px;
+        background: rgba(238, 143, 0, .2);
+        margin: 0 0 $indent;
+        @include tablet {
+            margin-bottom: 30px;
+            padding: 12px 24px 11px;
+        }
+
+        .service-card:nth-child(2) & {
+            background-color: rgba(21, 125, 170, .1);
+        }
+        .service-card:nth-child(3) & {
+            background-color: rgba(22, 108, 57, .1);
+        }
+
+        span {
+            font-size: 18px;
+        }
+    }
+
+    &_title {
+        display: block;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.1;
+        margin: 0 0 $indent;
+        @include tablet {
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+    }
+
+    &_text  {
+        font-size: 15px;
+    }
+
+    &_link {
+        color: $cPageOrange;
+        font-weight: 600;
+
+        .service-card:nth-child(2) & {
+            color: $cPageBlue;
+        }
+    
+        .service-card:nth-child(3) & {
+            color: $cPageGreen;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: $indent;
+    @include tablet {
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    & > * {
+        flex: 1 0 0px;
+    }
+}
