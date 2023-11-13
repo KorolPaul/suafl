@@ -1,23 +1,56 @@
 .alphabet {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    @include tablet {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
+    
+    &_letters {
+        display: none;
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 0 0 60px;
+        }
     }
-    @include desktop {
-        grid-template-columns: repeat(4, 1fr);
+
+    &_letter {
+        @include button-reset;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.5;
+        border-radius: 10px;
+        padding: 10px $indent 7px;
+        color: rgba($color, .3);
+
+        &:hover,
+        &.active {
+            background-color: #E4E8F0;
+            color: $color;
+        }
+    }
+
+    &_grid {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+    
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+        }
+    
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 
     &_item {
         position: relative;
-        padding: 0 0 0 34px;
-        margin: 0;
+        padding: 0 0 4px 34px;
+        margin: 0 0 8px;
         user-select: none;
+        border-bottom: 1px solid #E4E8F0;
         @include tablet {
+            margin: 0;
             padding: 15px 13px;
             min-height: 156px;
             box-sizing: border-box;
@@ -26,23 +59,27 @@
         }
 
         &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, #24288A 55%, #6D3F99);
-            z-index: 0;
-            opacity: 0;
-            transition: .2s $easing opacity;
+            @include tablet {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(180deg, #24288A 55%, #6D3F99);
+                z-index: 0;
+                opacity: 0;
+                transition: .2s $easing opacity;
+            }
         }
         
-        &:hover::before {
+        &:hover::before,
+        &.active::before {
             opacity: 1;
         }
 
-        &:hover::after {
+        &:hover::after,
+        &.active::after {
             opacity: 0;
         }
 
@@ -85,7 +122,8 @@
         right: 0;
         transition: .2s $easing opacity;
 
-        .alphabet_item:hover & {
+        .alphabet_item:hover &,
+        .alphabet_item.active & {
             opacity: 0;
         }
 
@@ -123,19 +161,28 @@
             max-width: 60%;
             position: relative;
             z-index: 1;
+            pointer-events: none;
         }
 
         &::first-letter {
-            color: $cBright;
-            transition: .2s $easing color;
+            @include tablet {
+                color: $cBright;
+                transition: .2s $easing color;
+            }
         }
 
-        .alphabet_item:hover & {
-            color: $bg_color;
+        .alphabet_item:hover &,
+        .alphabet_item.active &  {
+            @include tablet {
+                color: $bg_color;
+            }
         }
 
-        .alphabet_item:hover &::first-letter {
-            color: #EB583C;
+        .alphabet_item:hover &::first-letter,
+        .alphabet_item.active &::first-letter {
+            @include tablet {
+                color: #EB583C;
+            }
         }
     }
 
@@ -145,9 +192,10 @@
         font-weight: 600;
         color: $cBright;
         left: 0;
-        top: 0;
+        top: 3px;
         text-align: right;
         @include tablet {
+            pointer-events: none;
             font-size: 136px;
             left: auto;
             top: auto;
@@ -167,13 +215,19 @@
             opacity: 0;
         }
 
-        .alphabet_item:hover & {
-            filter: brightness(20);
+        .alphabet_item:hover &,
+        .alphabet_item.active &  {
+            @include tablet {
+                filter: brightness(20);
+            }
         }
 
-        .alphabet_item:hover &__shadow {
-            opacity: 1;
-            transform: translate(10px, 5px);
+        .alphabet_item:hover &__shadow,
+        .alphabet_item.active &__shadow {
+            @include tablet {
+                opacity: 1;
+                transform: translate(10px, 5px);
+            }
         }
     }
 }

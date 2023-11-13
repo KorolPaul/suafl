@@ -509,3 +509,41 @@ if (clientsMapButtons.length) {
         document.querySelector('.clients-map').dataset.place = activePlace;
     }));
 }
+
+// alphabet cards
+if (document.querySelector('.alphabet')) {
+    const letters = document.querySelectorAll('.alphabet_letter');
+    const cardsLetters = document.querySelectorAll('.alphabet_item-letter');
+
+    letters.forEach(letter => letter.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const content = e.target.innerText;
+        letters.forEach(el => el.classList.remove('active'));
+        cardsLetters.forEach(el => {
+            if (el.innerText === content) {
+                el.parentElement.classList.add('active');
+            } else {
+                el.parentElement.classList.remove('active');
+            }
+        });
+
+        e.target.classList.add('active');
+    }));
+
+    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const content = e.target.querySelector('.alphabet_item-letter').innerText;
+        cardsLetters.forEach(el => el.parentElement.classList.remove('active'));
+        letters.forEach(el => {
+            if (el.innerText === content) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+
+        e.target.classList.add('active');
+    }));
+};
