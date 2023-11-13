@@ -181,9 +181,10 @@ teamSlider.forEach(el => {
             768: {
                 items: 3.5,
                 gutter: 24,
+                fixedWidth: 282,
             },
             1200: {
-                items: 4.5,
+                items: 4,
             }
         }
     });
