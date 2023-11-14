@@ -52,6 +52,12 @@
             align-items: flex-start;
             gap: 25px;
         }
+
+        &__reversed {
+            @include tablet {
+                flex-direction: row-reverse;
+            }
+        }
     }
 
     &_bottom-text {

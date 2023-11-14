@@ -1,0 +1,66 @@
+.positions {
+    border-radius: 30px;
+    background: url(#{$img}/positions-bg.png) no-repeat right bottom,
+                radial-gradient(78% 70% at 100% 100%, rgba(175, 86, 178, .2) 0%, transparent 100%),
+                linear-gradient(0deg, rgba(31, 53, 240, .3) 0%, transparent 100%),
+                $cWhite;
+    ;
+
+    &_header {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        margin: 0 0 32px;
+        @include tablet {
+            margin-bottom: 60px;
+            flex-direction: row;
+            gap: 50px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin: 0;
+            @include tablet {
+                font-size: 48px;
+            }
+        }
+    }
+
+    &_list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &_item {
+        border-radius: 15px;
+        background: rgba($cWhite, .7);
+        backdrop-filter: blur(10px);
+        padding: $indent ;
+    }
+
+    &_item-title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.3;
+        display: block;
+        margin: 0 0 $indent;
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &_item-icon {
+        display: none;
+    }
+
+    &_item-bg {
+
+    }
+
+    &_item-vacancies {
+
+    }
+}
