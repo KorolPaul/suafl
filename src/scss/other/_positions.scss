@@ -4,7 +4,6 @@
                 radial-gradient(78% 70% at 100% 100%, rgba(175, 86, 178, .2) 0%, transparent 100%),
                 linear-gradient(0deg, rgba(31, 53, 240, .3) 0%, transparent 100%),
                 $cWhite;
-    ;
 
     &_header {
         display: flex;
@@ -32,13 +31,27 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 
     &_item {
         border-radius: 15px;
         background: rgba($cWhite, .7);
         backdrop-filter: blur(10px);
-        padding: $indent ;
+        padding: $indent $indent 126px;
+        overflow: hidden;
+        box-sizing: border-box;
+        @include tablet {
+            padding: 30px 30px 30px 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 160px;
+        }
     }
 
     &_item-title {
@@ -53,14 +66,65 @@
     }
 
     &_item-icon {
-        display: none;
+        position: absolute;
+        left: 20px;
+        bottom: 16px;
+        @include tablet {
+            left: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 
     &_item-bg {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        position: absolute;
+        left: -155px;
+        bottom: -155px;
+        z-index: -1;
+        @include tablet {
+            bottom: auto;
+            top: 20px;
+            transform-origin: center;
+            transition: .4s $easing transform;
+        }
 
+        .positions_item:hover & {
+            @include tablet {
+                transform: scale(10);
+            }
+        }
     }
 
     &_item-vacancies {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 60%;
+        }
+    }
 
+    &_item-vacancy {
+        @include button-reset;
+        font-weight: 600;
+        padding: 12px 30px 10px;
+        border-radius: 22px;
+        background: $bg_color;
+        color: $color;
+
+        &:hover {
+            color: $color;
+            background-color: rgba($bg_color, .5);
+        }
+
+        &:active {
+            background-color: rgba($bg_color, .75);
+        }
     }
 }

@@ -1,0 +1,61 @@
+.infographics {
+    display: flex;
+    flex-direction: column;
+    gap: $indent;
+    @include tablet {
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+    }
+
+    &_item {
+        border-radius: 15px;
+        background-color: $cWhite;
+        padding: $indent $indent 40px;
+        position: relative;
+        @include tablet {
+            position: absolute;
+            width: 282px;
+            background-color: transparent;
+        }
+    }
+
+    &_item-title {
+        background: linear-gradient(90deg, #1F35F0 0%, $cPurple 33%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: $indent;
+    }
+    
+    &_item-text {
+        display: block;
+        font-size: 15px;
+    }
+
+    &_item-number {
+        font-size: 80px;
+        font-weight: 600;
+        opacity: 0.3;
+        background: linear-gradient(180deg, #0E0B3A 0%, transparent 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: absolute;
+        left: 0;
+        bottom: -38px;
+    }
+
+    &_item-line {
+        display: none;
+        @include tablet {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -30px;
+            z-index: 0;
+        }
+    }
+}

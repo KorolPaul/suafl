@@ -1,0 +1,13 @@
+.talent {
+    h2 {
+        font-size: 32px;
+        @include desktop {
+            font-size: 48px;
+            width: 80%;
+        }
+
+        span {
+            color: $cBright;
+        }
+    }
+}
