@@ -57,6 +57,11 @@
         }
     }
 
+    &_or {
+        display: block;
+        text-align: center;
+    }
+
     button,
     [type="submit"] {
         width: 100%;

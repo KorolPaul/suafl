@@ -2,10 +2,23 @@
     display: flex;
     flex-direction: column;
     gap: $indent;
-    @include tablet {
+    @include desktop {
         flex-direction: row;
         justify-content: center;
         position: relative;
+    }
+
+    &_circle {
+        display: none;
+        @include desktop {
+            display: block;
+        }
+    }
+
+    &_item-wrapper {
+        @include desktop {
+            position: absolute;
+        }
     }
 
     &_item {
@@ -13,10 +26,10 @@
         background-color: $cWhite;
         padding: $indent $indent 40px;
         position: relative;
-        @include tablet {
-            position: absolute;
+        @include desktop {
             width: 282px;
             background-color: transparent;
+            padding: 0;
         }
     }
 
@@ -46,16 +59,27 @@
         position: absolute;
         left: 0;
         bottom: -38px;
+        @include desktop {
+            display: none;
+        }
     }
 
     &_item-line {
         display: none;
-        @include tablet {
+        @include desktop {
             display: block;
             position: absolute;
+            max-width: none;
             left: 0;
             bottom: -30px;
             z-index: 0;
+        }
+
+        &__right {
+            @include desktop {
+                left: auto;
+                right: 0;
+            }
         }
     }
 }

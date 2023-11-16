@@ -94,6 +94,10 @@ a[href^='mailto:'] {
     color: $cBright;
 }
 
+.bright-orange {
+    color: #EB583C;
+}
+
 .gradiented-text {
     @include gradiented-text($cBright, $cPurple);
     font-weight: 600;

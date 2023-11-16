@@ -37,6 +37,7 @@
 @import "layout/map";
 @import "layout/promo";
 @import "layout/banner";
+@import "layout/accordion";
 
 /* other */
 @import "other/intro";
@@ -75,6 +76,9 @@
 @import "other/positions";
 @import "other/talent";
 @import "other/infographics";
+@import "other/comparison";
 
 /* plugins */
 @import "plugins/tiny-slider";
+@import "plugins/comparison";
+@import "plugins/nice-select";

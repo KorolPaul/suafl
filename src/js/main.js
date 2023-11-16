@@ -349,7 +349,7 @@ function initTabs() {
     });
 }
 
-initTabs()
+initTabs();
 
 /* cookies */
 if (Cookies) {
@@ -548,3 +548,38 @@ if (document.querySelector('.alphabet')) {
         e.target.classList.add('active');
     }));
 };
+
+const comparisonElement = document.querySelector('#image-compare');
+if (comparisonElement) {
+    const compareViewer = new ImageCompare(comparisonElement, {
+        hoverStart: true
+    }).mount();
+
+    const comparisonTabsContainer = document.querySelectorAll('.comparison_tabs');
+    
+    comparisonTabsContainer.forEach(tabContainer => {
+        const tabsButtons = tabContainer.querySelectorAll('.comparison_tabs-button');
+        const tabsBlocks = tabContainer.querySelectorAll('.comparison_tabs-item');
+    
+        if (tabsButtons.length) {
+            function switchTab(e) {
+                e.preventDefault();
+    
+                const index = e.target.dataset.tab;
+                tabsButtons.forEach(el => el.classList.remove('active'));
+                tabsBlocks.forEach(el => el.classList.remove('active'));
+    
+                tabsButtons[index - 1].classList.add('active');
+                tabsBlocks[index - 1].classList.add('active');
+            }
+    
+            tabsButtons.forEach(el => el.addEventListener('click', switchTab));
+        }
+    });
+}
+
+
+/* custom select input */
+if ('NiceSelect' in window && document.querySelector('select')) {
+    NiceSelect.bind(document.querySelector('select'));
+}

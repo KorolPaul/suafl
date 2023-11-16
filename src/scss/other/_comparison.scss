@@ -1,0 +1,93 @@
+.comparison {
+    border-radius: 30px;
+    background: $cWhite;
+    padding: 32px $indent;
+    @include desktop {
+        padding: 100px 120px 0;
+    }
+
+    &_header {
+        margin: 0 0 32px;
+        @include desktop {
+            display: flex;
+            margin-bottom: 60px;
+            justify-content: space-between;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin: 0 0 $indent;
+            @include tablet {
+                font-size: 48px;
+                width: 45%;
+                max-width: 510px;
+            }
+        }
+        a {
+            display: block;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 18px;
+            @include tablet {
+                font-size: 22px;
+                width: 55%;
+                max-width: 580px;
+            };
+        }
+    }
+
+    &_images {
+        display: none;
+        @include desktop {
+            display: block;
+            border-radius: 30px;
+        }
+    }
+
+    &_tabs {
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &_tabs-buttons {
+        display: flex;
+        gap: 5px;
+        overflow-x: auto;
+        line-height: 0;
+        font-size: 0;
+        margin-bottom: 32px;
+    }
+
+    &_tabs-button {
+        @include button-reset;
+        height: 48px;
+        width: 48px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 48px;
+        text-align: center;
+        border-radius: 50px;
+        border: 1px solid #E4E8F0;
+        color: $cBright;
+        flex-shrink: 0;
+    
+        &.active {
+            border-color: $cBright;
+            background-color: $cBright;
+            color: $bg_color;
+        }
+    }
+
+    &_tabs-item {
+        display: none;
+        width: 100%;
+
+        &.active {
+            display: block;
+        }
+    }
+}
