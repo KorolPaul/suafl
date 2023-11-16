@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    @include tablet {
+    @include desktop {
         flex-direction: row;
         gap: 100px;
     }
@@ -11,7 +11,7 @@
         display: flex;
         flex-direction: column;
         gap: $indent;
-        @include tablet {
+        @include desktop {
             justify-content: space-between;
         }
     }
@@ -22,7 +22,7 @@
         gap: $indent;
         justify-content: space-between;
         align-items: flex-start;
-        @include tablet {
+        @include desktop {
             gap: 30px;
         }
     }
@@ -33,7 +33,7 @@
         font-weight: 600;
         margin: 0;
         line-height: .9;
-        @include tablet {
+        @include desktop {
             font-size: 100px;
         }
     }
@@ -42,7 +42,7 @@
         display: block;
         font-size: 18px;
         margin: 0;
-        @include tablet {
+        @include desktop {
             font-size: 22px;
         }
     }
@@ -52,7 +52,7 @@
         background: $cWhite;
         padding: $indent;
         position: relative;
-        @include tablet {
+        @include desktop {
             padding: 30px;
         }
 

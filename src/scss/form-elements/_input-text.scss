@@ -13,12 +13,17 @@ input[type="tel"] {
     box-sizing: border-box;
     font: 16px $font-family;
     height: 56px;
-    line-height: 56px;
+    line-height: 60px;
     padding: 0 15px;
     width: 100%;
     transition: .2s ease-in background-color,
                 .2s ease-in box-shadow,
                 .2s ease-in color;
+    @include tablet {
+        height: 68px;
+        line-height: 78px;
+        padding-top: 4px;
+    }
 
     &:focus {
         color: $color;

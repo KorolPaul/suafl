@@ -1,17 +1,14 @@
 .nice-select {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    border-radius: 8px;
-    border: 1px solid #9CA3AF;
+    background: $bg_color;
+    border: none;
+    box-shadow: 0px 2px 2px 0px #EEF0F5;
+    border-radius: 15px;
     box-sizing: border-box;
-    background-color: #fff;
-    clear: both;
-    cursor: pointer;
-    display: block;
-    font: 400 16px $font-family;
+    font: 16px $font-family;
     height: 56px;
-    line-height: 34px;
+    line-height: 60px;
     outline: none;
-    padding-left: 18px;
+    padding-left: 15px;
     padding-right: 30px;
     position: relative;
     text-align: left !important;
@@ -19,6 +16,11 @@
     user-select: none;
     white-space: nowrap;
     width: 100%;
+    @include tablet {
+        height: 68px;
+        padding-top: 4px;
+        line-height: 64px;
+    }
 }
 
 .nice-select:hover {
@@ -32,15 +34,15 @@
 }
 
 .nice-select:after {
-    border-bottom: 2px solid #999;
-    border-right: 2px solid #999;
+    border-bottom: 2px solid $color;
+    border-right: 2px solid $color;
     content: "";
     display: block;
     height: 5px;
     margin-top: -4px;
     pointer-events: none;
     position: absolute;
-    right: 12px;
+    right: 20px;
     top: 50%;
     transform-origin: 66% 66%;
     transform: rotate(45deg);
@@ -234,5 +236,5 @@
 .current {
     display: block;
     height: 100%;
-    line-height: 52px;
+    color: #535479;
 }
