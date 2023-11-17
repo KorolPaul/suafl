@@ -68,5 +68,25 @@
 
     &_footer {
         text-align: center;
+        margin-top: $indent;
+    }
+
+    &_footer-title {
+        font-size: 32px;
+        line-height: 130%;
+        display: block;
+        margin: 0 0 $indent;
+        @include desktop {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &_footer-icon {
+        display: block;
+        margin: 0 auto $indent;
+        @include tablet {
+            display: none;
+        }
     }
 }

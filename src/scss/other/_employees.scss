@@ -1,0 +1,103 @@
+.employees {
+    display: flex;
+    flex-direction: column;
+    gap: $indent;
+    @include tablet {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 24px;
+        background: url(#{$img}/employees-bg.png) no-repeat center;
+    }
+
+    &_item {
+        display: flex;
+        gap: $indent;
+        padding: 8px;
+        border-radius: 10px;
+        background-color: #E6DBFD;
+        position: relative;
+        @include tablet {
+            padding: 0;
+            border-radius: 0;
+            background-color: transparent;
+            display: block;
+        }
+
+        &:nth-child(2) {
+            background-color: #D5F6FE;
+            @include tablet {
+                background-color: transparent;
+                margin-top: 100px;
+            }
+        }
+
+        &:nth-child(3) {
+            background-color: #FCEFD9;
+            @include tablet {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &_item-content {
+        @include tablet {
+            border-radius: 10px;
+            padding: 10px $indent;
+            background-color: #E6DBFD;
+            position: relative;
+        }
+        
+        .employees_item:nth-child(2) & {
+            @include tablet {
+                background-color: #D5F6FE;
+            }
+        }
+
+        .employees_item:nth-child(3) & {
+            @include tablet {
+                background-color: #FCEFD9;
+            }
+        }
+    }
+
+    &_item-image {
+        border-radius: 50%;
+        @include tablet {
+            margin-bottom: 5px;
+        }
+    }
+
+    &_item-title {
+        font-size: 16px;
+        font-weight: 600;
+        display: block;
+    }
+
+    &_item-position {
+        color: #535479;
+        font-size: 14px;
+        font-weight: 400;
+        display: block;
+    }
+
+    &_item-flag-wrapper {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        border-radius: 50%;
+        border: 2px solid $bg_color;
+        margin: -13px -15px 0 0 ;
+        @include tablet {
+            border-width: 4px;
+            margin: -20px -20px 0 0;
+            top: 0
+        }
+    }
+
+    &_item-flag {
+        width: 26px;
+        @include tablet {
+            width: 40px;
+        }
+    }
+}
