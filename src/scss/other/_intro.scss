@@ -58,6 +58,30 @@
                 flex-direction: row-reverse;
             }
         }
+
+        &__centered {
+            display: block;
+            text-align: center;
+
+            h2 {
+                font-size: 32px;
+                margin: 0 0 $indent;
+                @include tablet {
+                    margin-bottom: 30px;
+                    font-size: 48px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                margin: 0 auto 32px;
+                max-width: 792px;
+                @include tablet {
+                    margin-bottom: 60px;
+                    font-size: 22px;
+                }
+            }
+        }
     }
 
     &_bottom-text {
@@ -81,6 +105,11 @@
             text-align: center;
             margin: -100px 0 -44px;
             opacity: .45;
+        }
+
+        &__small {
+            font-size: 125px;
+            margin-bottom: 25px;
         }
     }
 
