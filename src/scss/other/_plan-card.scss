@@ -1,0 +1,44 @@
+.plan-card {
+    border-radius: 15px;
+    padding: 32px $indent;
+    background-color: $cWhite;
+    backdrop-filter: blur(12px);
+    @include tablet {
+        padding: 60px 30px;
+    }
+
+    
+    &_image {
+        display: block;
+        margin: 0 0 $indent;
+        @include tablet {
+            margin-bottom: 15px;
+        }
+    }
+
+    &_title {
+        display: block;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        margin: 0 0 8px;
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &_price {
+        font-size: 32px;
+        font-weight: 600;
+        display: block;
+        margin: 0 0 $indent;
+        @include tablet {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &_subtitle {
+        display: block;
+    }
+}
