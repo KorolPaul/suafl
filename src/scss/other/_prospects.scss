@@ -94,18 +94,20 @@
         background-color: $cBright;
         font-size: 64px;
         line-height: 191px;
-        color: $bg_color;
+        color: transparent;
         display: block;
         text-align: center;
         position: absolute;
         top: -90px;
         left: 50%;
         margin-left: -90px;
-        transform: scale(.3);
+        scale: .3;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: .1s ease transform;
+        transition: .1s ease transform,
+                    .2s ease color,
+                    .4s ease scale;
 
         &::after {
             content: '';
@@ -136,6 +138,13 @@
             left: auto;
             right: -90px;
             margin: -90px 0 0;
+        }
+
+        &.active {
+            scale: (1);
+            z-index: 1;
+            color: $bg_color;
+            //transform: scale(1);
         }
     }
 

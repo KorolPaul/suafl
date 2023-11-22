@@ -436,6 +436,7 @@ if (animatedElements.length) {
 
 /* appaerance animation */
 const prospectsElement = document.querySelector('.prospects');
+const prospectsElements = document.querySelectorAll('.prospect');
 const prospectsNumbersElement = document.querySelector('.prospects_circle-numbers');
 const prospectsNumberElements = document.querySelectorAll('.prospects_circle-number');
 
@@ -445,33 +446,64 @@ if (!isMobile && prospectsElement) {
         const screenHeight = screen.availHeight;
 
         const angle = Math.round((((((height - top) / height) * 100) - 100)) * -3.6);
-        const onePercent = 100 / 300;
+        const onePercent = 100 / 360;
 
-        if (angle < 0) {
+        if (angle < 100) {
             prospectsNumbersElement.style.transform = `rotate(${angle}deg)`;
+        
             prospectsNumberElements.forEach((el, i) => {
                 const scale = ((onePercent * Math.abs(angle)) / 100) - angle * i;
-                const finalScale = (() => {
-                    if (scale < .2) {
-                        return .2;
-                    }
-                    if (scale > 1) {
-                        return 1;
-                    }
 
-                    return scale;
-                })();
 
-                el.style.transform = `rotate(${-angle}deg) scale(${finalScale})`;
+                el.style.transform = `rotate(${-angle}deg)`;
             });
+
+            console.log(angle);
+            prospectsNumberElements.forEach(el => el.classList.remove('active'));
+            switch(true) {
+                case angle > -60:
+                    prospectsNumberElements[0].classList.add('active');
+                    return;
+                case angle > -120:
+                    prospectsNumberElements[1].classList.add('active');
+                    return;
+                case angle > -180:
+                    prospectsNumberElements[2].classList.add('active');
+                    return;
+                case angle > -240:
+                    prospectsNumberElements[3].classList.add('active');
+                    return;
+                case angle > -300:
+                    prospectsNumberElements[4].classList.add('active');
+                    return;
+                case angle > -360:
+                    prospectsNumberElements[5].classList.add('active');
+                    return;
+            }
         }
 
-        // const elementBottom = offsetTop + clientHeight - screen.availHeight + 200;
+    });
+
+    // prospectsElements.forEach(el => {
+    //     let ratio = .8;
 // 
-        // if (offsetTop - scrollTop < 0 && elementBottom - scrollTop > 0) {
-        //     console.log(`${(clientHeight / (offsetTop - scrollTop)) * 3.6 }`);
-        // }
-    })
+    //     const observerCallback = function (e) {
+    //         const { target, intersectionRatio } = e[0];
+    //         console.log(target, intersectionRatio);
+    //         
+    //         if (intersectionRatio > ratio) {
+    //             const number = Number(target.dataset.number);
+    //             
+    //         }
+    //     };
+// 
+    //     const observer = new IntersectionObserver(observerCallback, {
+    //         rootMargin: '0px 0px 25% 0px',
+    //         threshold: thresholdSteps,
+    //         //root: document.body
+    //     });
+    //     observer.observe(el);
+    // })
 }
 
 /* blinks animation */
