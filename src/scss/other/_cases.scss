@@ -3,7 +3,7 @@
     background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%), #F7F9FC;
     text-align: center;
     padding: 32px $indent;
-    @include tablet {
+    @include desktop {
         padding: 60px;
     }
 
@@ -29,7 +29,7 @@
         text-transform: uppercase;
         padding: 11px $indent;
 
-        @include tablet {
+        @include desktop {
             padding: 11px 24px;
         }
     }
@@ -41,7 +41,7 @@
         line-height: 130%;
         margin: $indent 0;
 
-        @include tablet {
+        @include desktop {
             font-size: 48px;
             margin: 30px 0;
         }
@@ -60,7 +60,7 @@
     }
 
     .tns-controls {
-        @include tablet {
+        @include desktop {
             position: absolute;
             right: 102px;
             bottom: 60px;

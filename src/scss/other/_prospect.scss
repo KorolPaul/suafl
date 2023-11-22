@@ -1,4 +1,10 @@
 .prospect {
+    max-width: 588px;
+    
+    .prospects__small & {
+        max-width: 486px;
+    }
+
     &_header {
         display: flex;
         gap: $indent;

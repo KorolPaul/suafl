@@ -1,0 +1,88 @@
+.strategy {
+    &_bg {
+        transition: .3s $easingSmooth;
+    }
+
+    &_title {
+        font-size: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+        @include tablet {
+            font-size: 48px;
+            margin-bottom: 60px;
+        }
+    }
+
+    &_item {
+        padding: 64px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include tablet {
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 100px 0;
+            justify-content: space-between;
+            background-color: transparent !important;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        li {
+            position: relative;
+            padding: 0 0 0 35px;
+            margin: 0 0 10px;
+            font-size: 18px;
+
+            &::before {
+                content: '';
+                background: url(#{$img}/check-blue.svg) no-repeat left center / 100%;
+                width: 21px;
+                height: 18px;
+                position: absolute;
+                left: 0;
+                top: 2px;
+            }
+        }
+    }
+
+    &_item-image {
+        flex-shrink: 0;
+    }
+
+    &_item-content {
+        font-size: 18px;
+        max-width: 690px;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+
+    &_item-title {
+        color: $cBright;
+        font-size: 24px;
+        font-weight: 600;
+        display: block;
+        margin: 0 0 $indent;
+        @include tablet {
+            font-size: 32px;
+        }
+    }
+
+    .button {
+        margin-top: 16px;
+        @include tablet {
+            margin-top: 30px;
+        }
+    }
+}

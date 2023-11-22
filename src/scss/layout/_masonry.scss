@@ -1,5 +1,8 @@
 .masonry {
-    @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: $indent;
+    @include desktop {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(10, 1fr);

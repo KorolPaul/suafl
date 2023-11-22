@@ -451,7 +451,6 @@ if (!isMobile && prospectsElement) {
             prospectsNumbersElement.style.transform = `rotate(${angle}deg)`;
             prospectsNumberElements.forEach((el, i) => {
                 const scale = ((onePercent * Math.abs(angle)) / 100) - angle * i;
-                console.log(scale);
                 const finalScale = (() => {
                     if (scale < .2) {
                         return .2;
@@ -582,4 +581,31 @@ if (comparisonElement) {
 /* custom select input */
 if ('NiceSelect' in window && document.querySelector('select')) {
     NiceSelect.bind(document.querySelector('select'));
+}
+
+/* changable background */
+const strategyElement = document.querySelector('.strategy');
+if (strategyElement) {
+    const bgElement = strategyElement.querySelector('.strategy_bg');
+    const items = strategyElement.querySelectorAll('.strategy_item');
+
+    items.forEach(el => {
+        let ratio = .7;
+
+        const observerCallback = function (e) {
+            const {target, intersectionRatio} = e[0];
+            const color = target.style.backgroundColor;
+
+            if (intersectionRatio > ratio) {
+                bgElement.style.backgroundColor = color;
+            }
+        };
+
+        const observer = new IntersectionObserver(observerCallback, {
+            rootMargin: '0px 0px 0px 0px',
+            threshold: thresholdSteps,
+            //root: document.body
+        });
+        observer.observe(el);
+    })
 }

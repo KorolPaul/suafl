@@ -2,13 +2,33 @@
     display: flex;
     flex-direction: column;
     gap: $indent;
-    @include tablet {
+    @include desktop {
+        position: relative;
         flex-direction: row;
         gap: 24px;
     }
 
+    &_bg-title {
+        display: none;
+        @include desktop {
+            display: block;
+            letter-spacing: 87.4px;
+            opacity: .15;
+            filter: blur(15px);
+            font-size: 230px;
+            font-style: normal;
+            font-weight: 600;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+    }
+
     & > * {
-        @include tablet {
+        @include desktop {
             flex: 1 0 0px;
         }
     }

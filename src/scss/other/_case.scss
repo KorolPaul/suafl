@@ -2,7 +2,7 @@
     background-color: $bg_color;
     border-radius: 15px;
     padding: 32px $indent;
-    @include tablet {
+    @include desktop {
         padding: 60px;
         display: flex;
         flex-wrap: wrap;
@@ -10,13 +10,13 @@
 
     &_info {
         margin-bottom: 26px;
-        @include tablet {
+        @include desktop {
             width: 306px;
         }
     }
 
     &_content {
-        @include tablet {
+        @include desktop {
             width: calc(100% - 306px);
         }
     }
@@ -26,7 +26,7 @@
         display: flex;
         flex-direction: column;
         gap: $indent;
-        @include tablet {
+        @include desktop {
             flex-direction: row;
             gap: 24px;
             padding: 0 100px 0 0;
@@ -38,7 +38,7 @@
         background-color: $cWhite;
         padding: $indent 32px;
         box-sizing: border-box;
-        @include tablet {
+        @include desktop {
             padding: 30px 24px;
             flex: 0 1 282px;
         }
@@ -58,7 +58,7 @@
         margin-bottom: 8px;
         display: block;
         font-weight: 600;
-        @include tablet {
+        @include desktop {
             font-size: 64px;
         }
     }
@@ -69,7 +69,7 @@
 
     &_logo {
         margin: 0 0 4px;
-        @include tablet {
+        @include desktop {
             margin-bottom: 10px;
         }
     }
@@ -78,7 +78,7 @@
         display: block;
         font-size: 18px;
         font-weight: 600;
-        @include tablet {
+        @include desktop {
             font-size: 22px;
         }
     }
