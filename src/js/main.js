@@ -1,7 +1,7 @@
 const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
 const isMobile = window.innerWidth <= 768
-const isDesktop = window.innerWidth >= 1070
+const isDesktop = window.innerWidth >= 1200
 
 // sliders
 const showcaseSlider = document.querySelectorAll('.showcase_slider');
@@ -18,7 +18,7 @@ showcaseSlider.forEach(el => {
         loop: false,
         mode: 'gallery',
         responsive: {
-            768: {
+            1200: {
                 nav: false,
             }
         },
@@ -36,7 +36,7 @@ solutionsSlider.forEach(sliderElement => {
     const slider = tns({
         container: sliderElement,
         items: 1,
-        gutter: 16,
+        gutter: 0,
         mouseDrag: true,
         autoplay: false,
         nav: true,
@@ -53,11 +53,13 @@ solutionsSlider.forEach(sliderElement => {
             }
         },
         onInit: () => {
-            solutionsSliderButtons.forEach((element) => element.addEventListener('click', (e) => {
-                slider.goTo(Number(e.target.dataset.slide) - 1);
-                solutionsSliderButtons.forEach(el => el.classList.remove('active'));
-                e.target.classList.add('active');
-            }));
+            if (isDesktop){
+                solutionsSliderButtons.forEach((element) => element.addEventListener('click', (e) => {
+                    slider.goTo(Number(e.target.dataset.slide) - 1);
+                    solutionsSliderButtons.forEach(el => el.classList.remove('active'));
+                    e.target.classList.add('active');
+                }));
+            }
         }
     });
 
@@ -122,6 +124,28 @@ solutionsSlider.forEach(sliderElement => {
             root: null
         });
         observer.observe(wrapper);
+    }
+});
+
+const prospectsContainer = document.querySelectorAll('.prospects');
+
+prospectsContainer.forEach(tabContainer => {
+    const tabsButtons = tabContainer.querySelectorAll('.prospects_slider-button');
+    const tabsBlocks = tabContainer.querySelectorAll('.prospect');
+
+    if (tabsButtons.length) {
+        function switchTab(e) {
+            e.preventDefault();
+
+            const index = e.target.dataset.tab;
+            tabsButtons.forEach(el => el.classList.remove('active'));
+            tabsBlocks.forEach(el => el.classList.remove('active'));
+
+            tabsButtons[index - 1].classList.add('active');
+            tabsBlocks[index - 1].classList.add('active');
+        }
+
+        tabsButtons.forEach(el => el.addEventListener('click', switchTab));
     }
 });
 
@@ -246,6 +270,12 @@ if (menuToggleElement) {
         }
     });
 }
+
+const submenuArrows = document.querySelectorAll('.menu_sublist-item-arrow');
+submenuArrows.forEach(el => el.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.target.parentElement.classList.toggle('opened');
+}));
 
 
 function closeAllOpened() {

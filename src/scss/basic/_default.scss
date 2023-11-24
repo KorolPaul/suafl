@@ -87,6 +87,18 @@ a[href^='mailto:'] {
     background: url(#{$img}/email.svg) no-repeat left center;
     font-weight: 600;
     padding: 0 0 0 34px;
+
+    .page-green & {
+        background-image: url(#{$img}/email-green.svg);
+    }
+
+    .page-blue & {
+        background-image: url(#{$img}/email-blue.svg);
+    }
+
+    .page-orange & {
+        background-image: url(#{$img}/email-orange.svg);
+    }
 }
 
 

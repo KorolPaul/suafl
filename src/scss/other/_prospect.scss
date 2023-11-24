@@ -1,5 +1,13 @@
 .prospect {
     max-width: 588px;
+    display: none;
+    @include desktop {
+        display: block;
+    }
+
+    &.active {
+        display: block;
+    }
     
     .prospects__small & {
         max-width: 486px;

@@ -81,6 +81,18 @@
                 transform: rotate(180deg);
             }
         }
+
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
+
+        .page-orange & {
+            background-color: $cPageOrangeLight;
+        }
     }
 
     &_dropdown {
@@ -177,12 +189,16 @@
         }
     }
 
+    &_sublist-item {
+        position: relative;
+    }
+
     &_sublist-item-title {
         color: $color;
         line-height: 1;
         font-weight: 600;
         padding: $indent 32px $indent $indent;
-        margin: 0;
+        margin: 0 53px 0 0;
         background: $cWhite;
         border-radius: 10px;
         display: block;
@@ -196,24 +212,26 @@
             line-height: 1.5;
         }
 
-        &::after {
-            content: '';
-            background: url(#{$img}/menu-arrow.svg) no-repeat center / 100%;
-            height: $indent;
-            width: $indent;
-            position: absolute;
-            right: $indent;
-            top: 50%;
-            margin-top: calc(-1 * $indent / 2);
-            transform-origin: center;
-            transition: .2s $easing transform;
-            @include desktop {
-                content: none;
-            }
-        }
-
         &.opened:after {
             transform: rotate(180deg);
+        }
+    }
+
+    &_sublist-item-arrow {
+        background: $cWhite url(#{$img}/plus-dark.svg) center no-repeat;
+        border-radius: 10px;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -53px;
+        @include desktop {
+            display: none;
+        }
+
+        .opened & {
+            background-image: url(#{$img}/minus-dark.svg);
         }
     }
 
@@ -222,13 +240,17 @@
         margin: 0 0 0 $indent;
         padding: $indent 0 0;
         display: none;
+        flex-direction: column;
+        gap: $indent;
         @include desktop {
             padding: 0;
+            gap: 0;
             display: block;
         }
 
-        .active + & {
-            display: block;
+        .active + &,
+        .opened + & {
+            display: flex;
         }
     }
 

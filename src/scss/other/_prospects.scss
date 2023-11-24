@@ -58,7 +58,9 @@
 
 
     &_circle-wrapper {
+        display: none;
         @include desktop {
+            display: block;
             flex-shrink: 0;
             position: sticky;
             top: 100px;
@@ -173,9 +175,45 @@
     }
 
     &_circle-image {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        @include desktop {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &_slider-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        overflow-x: auto;
+        line-height: 0;
+        font-size: 0;
+        padding-top: 5px;
+        margin-bottom: 32px;
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &_slider-button {
+        @include button-reset;
+        height: 48px;
+        width: 48px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 48px;
+        text-align: center;
+        border-radius: 50px;
+        border: 1px solid #E4E8F0;
+        color: $cBright;
+        flex-shrink: 0;
+
+        &.active {
+            border-color: $cBright;
+            background-color: $cBright;
+            color: $bg_color;
+        }
     }
 }

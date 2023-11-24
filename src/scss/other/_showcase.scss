@@ -3,7 +3,7 @@
 
     &_buttons {
         display: none;
-        @include tablet {
+        @include desktop {
             display: flex;
             align-items: flex-end;
             gap: 24px;
@@ -67,7 +67,9 @@
     }
 
     &_bg-title {
-        @include tablet {
+        display: none;
+        @include desktop {
+            display: block;
             font-size: 200px;
             font-weight: 600;
             line-height: .9;
