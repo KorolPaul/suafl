@@ -1,12 +1,18 @@
 .blinks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 
-    &__up {
-        // animation: rollUp 2s $easingSmooth forwards;
-    }
-
-    &__down {
-        // animation: rollDown 5s $easingSmooth forwards;
-    }
+    //&__up {
+    //    animation: rollUp 1s $easingSmooth forwards;
+    //}
+//
+    //&__down {
+    //    animation: rollDown 1s $easingSmooth forwards;
+    //}
 
     &_orange,
     &_teal {
@@ -15,7 +21,6 @@
         width: 400px;
         height: 400px;
         filter: blur(140px);
-        z-index: -1;
     }
 
     &_orange {

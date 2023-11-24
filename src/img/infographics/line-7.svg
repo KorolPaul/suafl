@@ -5,25 +5,34 @@
 
     <linearGradient id="paint0_linear_1299_670" x1="221.5" y1="20" x2="221.5" y2="112"
         gradientUnits="userSpaceOnUse">
-        <stop stop-color="#1F35F0">
-            <animate
-                attributeName="stop-color"
-                dur="20s"
-                repeatCount="indefinite"
-                values="#D9D9D9; #D9D9D9; #1F35F0; #1F35F0; #D9D9D9; #D9D9D9;"
-                keytimes="0; 0.5; 0.51; 0.59; 0.6; 1"
-                begin="15s"
-            />
-        </stop>
-        <stop offset="1" stop-color="#7314F2">
-            <animate
-                attributeName="stop-color"
-                dur="20s"
-                repeatCount="indefinite"
-                values="#D9D9D9; #D9D9D9; #7314F2; #7314F2; #D9D9D9; #D9D9D9;"
-                keytimes="0; 0.5; 0.51; 0.59; 0.6; 1"
-                begin="15s"
-            />
-        </stop>
+        <stop class="gradient" stop-color="#D9D9D9"></stop>
+        <stop class="gradient" offset="1" stop-color="#D9D9D9"></stop>
     </linearGradient>
+
+    <style>
+        .gradient {
+            animation: 25s highlight infinite 10s linear;
+        }
+
+        @keyframes highlight {
+            0% {
+                stop-color: #D9D9D9;
+            }
+            10% {
+                stop-color: #D9D9D9;
+            }
+            15% {
+                stop-color: #7314F2;
+            }
+            25% {
+                stop-color: #7314F2;
+            }
+            30% {
+                stop-color: #D9D9D9;
+            }
+            100% {
+                stop-color: #D9D9D9;
+            }
+        }
+    </style>
 </svg>

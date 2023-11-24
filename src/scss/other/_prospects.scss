@@ -40,14 +40,18 @@
             padding: 180px 0 0 0;
             max-width: 588px;
         }
+
+        & > div:last-child {
+            @include desktop {
+                margin-bottom: 600px;
+            }
+        }
     }
 
     &_content {
         @include desktop {
             display: flex;
             justify-content: space-between;
-        }
-        @include desktop {
             margin-left: calc(50vw - $max-width / 2 - $indent);
         }
     }
@@ -101,7 +105,7 @@
         top: -90px;
         left: 50%;
         margin-left: -90px;
-        scale: .3;
+        scale: .16;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -123,7 +127,8 @@
         &:nth-child(2),
         &:nth-child(6) {
             top: 50%;
-            left: -90px;
+            left: auto;
+            right: -90px;
             margin: -90px 0 0;
         }
 
@@ -135,8 +140,7 @@
 
         &:nth-child(4) {
             top: 50%;
-            left: auto;
-            right: -90px;
+            left: -90px;
             margin: -90px 0 0;
         }
 
@@ -145,6 +149,26 @@
             z-index: 1;
             color: $bg_color;
             //transform: scale(1);
+        }
+
+        &.preactive {
+            scale: (.5);
+            z-index: 1;
+            color: $bg_color;
+            //transform: scale(1);
+        }
+
+        img {
+            transform-origin: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: .2s $easingSmooth transform,
+                .2s $easingSmooth opacity;
+        
+        }
+        &.active img {
+            opacity: 1;
+            transform: scale(1);
         }
     }
 

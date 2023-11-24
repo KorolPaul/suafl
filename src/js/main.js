@@ -443,40 +443,50 @@ const prospectsNumberElements = document.querySelectorAll('.prospects_circle-num
 if (!isMobile && prospectsElement) {
     window.addEventListener('scroll', () => {
         const {height, top, bottom} = prospectsElement.getBoundingClientRect();
+        const heightWithOffset = height;
         const screenHeight = screen.availHeight;
 
-        const angle = Math.round((((((height - top) / height) * 100) - 100)) * -3.6);
-        const onePercent = 100 / 360;
+        const scrollPercent = ((((heightWithOffset - top) / heightWithOffset ) * 100) - 100) + 15;
+
+        const onePercent = 90 * prospectsElements.length / 100;
+        const angle = Math.round(scrollPercent * -onePercent) * 1.1;
+
+        console.info('scrollPercent', scrollPercent, angle);
+
 
         if (angle < 100) {
             prospectsNumbersElement.style.transform = `rotate(${angle}deg)`;
         
             prospectsNumberElements.forEach((el, i) => {
-                const scale = ((onePercent * Math.abs(angle)) / 100) - angle * i;
-
-
                 el.style.transform = `rotate(${-angle}deg)`;
             });
 
-            console.log(angle);
+            // console.log(angle);
             prospectsNumberElements.forEach(el => el.classList.remove('active'));
+            prospectsNumberElements.forEach(el => el.classList.remove('preactive'));
+
             switch(true) {
-                case angle > -60:
+                case angle > -90:
+                    prospectsNumberElements[1].classList.add('preactive');
                     prospectsNumberElements[0].classList.add('active');
                     return;
-                case angle > -120:
+                case angle > -180:
+                    prospectsNumberElements[2].classList.add('preactive');
                     prospectsNumberElements[1].classList.add('active');
                     return;
-                case angle > -180:
+                case angle > -270:
+                    prospectsNumberElements[3].classList.add('preactive');
                     prospectsNumberElements[2].classList.add('active');
                     return;
-                case angle > -240:
+                case angle > -360:
+                    prospectsNumberElements[4].classList.add('preactive');
                     prospectsNumberElements[3].classList.add('active');
                     return;
-                case angle > -300:
+                case angle > -450:
+                    prospectsNumberElements[5].classList.add('preactive');
                     prospectsNumberElements[4].classList.add('active');
                     return;
-                case angle > -360:
+                case angle > -540:
                     prospectsNumberElements[5].classList.add('active');
                     return;
             }
@@ -510,13 +520,18 @@ if (!isMobile && prospectsElement) {
 const blinksElement = document.querySelector('.blinks');
 if (blinksElement) {
     document.addEventListener(wheelEvent, (e) => {
+        blinksElement.classList.remove('blinks__down');
+        blinksElement.classList.remove('blinks__up');
         if (e.deltaY > 0) {
-            blinksElement.classList.remove('blinks__down');
             blinksElement.classList.add('blinks__up');
         } else {
             blinksElement.classList.add('blinks__down');
-            blinksElement.classList.remove('blinks__up');
         }
+
+        setTimeout(() => {
+            blinksElement.classList.remove('blinks__down');
+            blinksElement.classList.remove('blinks__up');
+        }, 1000);
     });
 }
 

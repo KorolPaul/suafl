@@ -42,6 +42,8 @@
         @include desktop {
             display: flex;
             line-height: 58px;
+            padding-left: 25px;
+            padding-right: 25px;
         }
 
         .menu_item:first-child & {
@@ -58,6 +60,9 @@
 
         .menu_item__parent & {
             padding-right: 22px;
+            @include desktop {
+                padding-right: 46px;
+            }
 
             &::after {
                 content: '';
@@ -65,7 +70,7 @@
                 height: $indent;
                 width: $indent;
                 position: absolute;
-                right: 0;
+                right: 25px;
                 top: 50%;
                 margin-top: calc(-1 * $indent / 2);
                 transform-origin: center;
