@@ -14,6 +14,13 @@
         @include desktop {
             margin-bottom: 50px;
         }
+
+        h2 {
+            font-size: 32px;
+            @include desktop {
+                font-size: 48px;
+            }
+        }
     }
 
     &_subtitle {
@@ -28,7 +35,10 @@
 
         img {
             vertical-align: bottom;
-        }
+            width: 40px;
+            @include desktop {
+                width: 50px;
+            }
     }
 
     &_items {
@@ -216,4 +226,5 @@
             color: $bg_color;
         }
     }
+}
 }

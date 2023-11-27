@@ -1,9 +1,13 @@
 .positions {
     border-radius: 30px;
+    padding-bottom: 32px;
     background: url(#{$img}/positions-bg.png) no-repeat right bottom,
                 radial-gradient(78% 70% at 100% 100%, rgba(175, 86, 178, .2) 0%, transparent 100%),
                 linear-gradient(0deg, rgba(31, 53, 240, .3) 0%, transparent 100%),
                 $cWhite;
+    @include tablet {
+        padding-bottom: 0;
+    }
 
     &_header {
         display: flex;
@@ -47,11 +51,14 @@
         overflow: hidden;
         box-sizing: border-box;
         @include tablet {
-            padding: 30px 30px 30px 200px;
+            padding: 30px 30px 30px 170px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             min-height: 160px;
+        }
+        @include desktop {
+            padding: 30px 30px 30px 200px;
         }
     }
 

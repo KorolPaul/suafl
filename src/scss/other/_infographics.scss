@@ -1,3 +1,26 @@
+.infographics-wrapper {
+    text-align: center;
+
+    &_title {
+        font-size: 32px;
+        margin: 0 0 $indent;
+        @include desktop {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &_subtitle {
+        font-size: 18px;
+        margin: 0 auto 32px;
+        max-width: 600px;
+        @include desktop {
+            font-size: 22px;
+            margin-bottom: -100px;
+        }
+    }
+}
+
 .infographics {
     display: flex;
     flex-direction: column;
@@ -7,6 +30,7 @@
         justify-content: center;
         position: relative;
     }
+
 
     &_circle {
         display: none;

@@ -41,7 +41,8 @@
         box-sizing: border-box;
         transition: .2s $easingSmooth opacity;
 
-        .map_place:hover & {
+        .map_place:hover &,
+        .map_place.active & {
             opacity: 1;
             pointer-events: all;
         }

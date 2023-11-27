@@ -4,9 +4,13 @@
     background-color: $cPurpleLght;
     position: relative;
     overflow: hidden;
-    @include tablet {
+    height: 420px;
+    box-sizing: border-box;
+    @include desktop {
         padding: 60px;
-
+    }
+    @include desktop {
+        height: auto;
     }
 
     &:nth-child(2n) {
@@ -30,8 +34,8 @@
 
     &_image {
         position: absolute;
-        right: 0;
         bottom: 0;
+        right: 0;
     }
 
     &_title {

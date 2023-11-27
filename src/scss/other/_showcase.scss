@@ -1,5 +1,10 @@
 .showcase {
     position: relative;
+    @include desktop {
+        padding-bottom: 230px;
+        height: 704px;
+        box-sizing: border-box;
+    }
 
     &_buttons {
         display: none;
@@ -7,6 +12,10 @@
             display: flex;
             align-items: flex-end;
             gap: 24px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
         }
     }
 

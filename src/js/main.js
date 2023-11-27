@@ -258,6 +258,46 @@ partnersSlider.forEach(el => {
     });
 });
 
+const masonrySlider = document.querySelectorAll('.masonry');
+masonrySlider.forEach(el => {
+    const slider = tns({
+        container: el,
+        items: 1,
+        gutter: 0,
+        mouseDrag: true,
+        autoplay: false,
+        nav: true,
+        navPosition: 'bottom',
+        controls: false,
+        loop: false,
+        responsive: {
+            1200: {
+                disable: true,
+            }
+        },
+    });
+});
+
+const positionsSlider = document.querySelectorAll('.positions_list');
+positionsSlider.forEach(el => {
+    const slider = tns({
+        container: el,
+        items: 1,
+        gutter: 0,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        controlsPosition: 'bottom',
+        controls: true,
+        loop: false,
+        responsive: {
+            768: {
+                disable: true,
+            }
+        },
+    });
+});
+
 
 // menu
 const menuToggleElement = document.querySelector('.menu-toggle');
@@ -587,6 +627,12 @@ if (clientsMapButtons.length) {
     }));
 }
 
+const mapMarkers = document.querySelectorAll('.map_place');
+mapMarkers.forEach(el => el.addEventListener('click', function(e) {
+    mapMarkers.forEach(el => el.classList.remove('active'));
+    e.target.classList.add('active');
+}))
+
 // alphabet cards
 if (document.querySelector('.alphabet')) {
     const letters = document.querySelectorAll('.alphabet_letter');
@@ -662,7 +708,7 @@ if ('NiceSelect' in window && document.querySelector('select')) {
 
 /* changable background */
 const strategyElement = document.querySelector('.strategy');
-if (strategyElement) {
+if (strategyElement && !isMobile) {
     const bgElement = strategyElement.querySelector('.strategy_bg');
     const items = strategyElement.querySelectorAll('.strategy_item');
 

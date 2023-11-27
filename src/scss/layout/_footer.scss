@@ -1,12 +1,11 @@
 .footer {
-    padding: 64px 0 0;
+    padding: $indent 0 0;
     position: relative;
     color: $bg_color;
     color: #535479;
     @include desktop {
         padding-top: 100px;
     }
-
 
     &_holder {
         @include layout;
@@ -83,7 +82,7 @@
     &_contacts-links {
         width: 100%;
         @include tablet {
-            width: calc(100% - 26px);
+            width: calc(100% - 38px);
         }
     }
 

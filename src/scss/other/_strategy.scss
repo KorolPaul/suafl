@@ -14,20 +14,26 @@
     }
 
     &_item {
-        padding: 64px 32px;
+        padding: 64px 48px;
         display: flex;
         flex-direction: column;
         gap: 32px;
+        margin: 0 #{-$indent};
         @include tablet {
             flex-direction: row;
             align-items: flex-start;
-            padding: 100px 0;
+            padding: 64px $indent;
             justify-content: space-between;
+        }
+        @include desktop {
+            padding: 100px 0;
             background-color: transparent !important;
         }
 
         &:nth-child(even) {
-            flex-direction: row-reverse;
+            @include tablet {
+                flex-direction: row-reverse;
+            }
         }
 
         ul {
@@ -63,7 +69,7 @@
     &_item-content {
         font-size: 18px;
         max-width: 690px;
-        @include tablet {
+        @include desktop {
             font-size: 22px;
         }
     }
@@ -74,14 +80,14 @@
         font-weight: 600;
         display: block;
         margin: 0 0 $indent;
-        @include tablet {
+        @include desktop {
             font-size: 32px;
         }
     }
 
     .button {
         margin-top: 16px;
-        @include tablet {
+        @include desktop {
             margin-top: 30px;
         }
     }

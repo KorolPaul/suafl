@@ -1,10 +1,15 @@
 .intro {
-        
+    &_content {
+        max-width: 588px;
+        flex-shrink: 0;
+    }
+
     &_top {
         @include desktop {
             display: flex;
+            justify-content: space-between;
             flex-direction: row-reverse;
-            gap: 116px;
+            gap: 50px;
         }
     }
 
@@ -13,6 +18,7 @@
         margin: 0 auto 32px;
         @include desktop {
             margin: 0;
+            max-width: calc(100% - 588px);
         }
     }
 
@@ -135,21 +141,23 @@
             margin-bottom: 0;
         }
 
-        &::before {
+        &__with-bg::before {
             content: '';
             position: absolute;
             top: 20px;
             bottom: 20px;
             right: 50%;
             width: 5000px;
-            background-color: #EFF4EE;
+            background: #EFF4EE url(#{$img}/bg-grid) repeat-x top 30px right 78px;
             z-index: -1;
         }
     }
 
     &_bottom-image {
         width: 100%;
-        @include desktop {
+        margin: auto;
+        display: block;
+        @include tablet {
             width: auto;
         }
     }

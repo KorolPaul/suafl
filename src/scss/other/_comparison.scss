@@ -41,14 +41,14 @@
 
     &_images {
         display: none;
-        @include desktop {
+        @include tablet {
             display: block;
             border-radius: 30px;
         }
     }
 
     &_tabs {
-        @include desktop {
+        @include tablet {
             display: none;
         }
     }

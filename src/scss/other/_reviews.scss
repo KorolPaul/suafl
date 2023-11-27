@@ -22,6 +22,10 @@
 
         img {
             vertical-align: sub;
+            width: 40px;
+            @include desktop {
+                width: 50px;
+            }
         }
     }
 
