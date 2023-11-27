@@ -208,10 +208,12 @@
             -webkit-text-stroke-color: rgba($color, $alpha: .7);
             transition: .2s $easing filter,
                         .2s $easing opacity,
+                        .2s $easing color,
                         .4s $easing transform;
         }
 
         &__shadow {
+            display: none;
             opacity: 0;
         }
 
@@ -219,6 +221,7 @@
         .alphabet_item.active &  {
             @include tablet {
                 filter: brightness(20);
+                color: $bg_color;
             }
         }
 

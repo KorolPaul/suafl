@@ -31,12 +31,13 @@
     padding: $indent $indent $indent 90px;
     margin: 0 0 $indent;
     transition: .2s $easingSmooth opacity;
+    display: flex;
+    min-height: 94px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
     @include tablet {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         min-height: 160px;
-        box-sizing: border-box;
         padding: 30px 30px 30px 200px;
     }
 
@@ -51,6 +52,10 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        width: 58px;
+        @include tablet {
+            width: auto;
+        }            
     }
 
     &_title {

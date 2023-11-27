@@ -2,6 +2,13 @@
     &_content {
         max-width: 588px;
         flex-shrink: 0;
+        @include tablet {
+            margin: auto;
+            text-align: center;
+        }
+        @include desktop {
+            text-align: left;
+        }
     }
 
     &_top {

@@ -36,6 +36,9 @@
         padding: 32px $indent;
         flex: 1 0 0px;
         @include tablet {
+            padding: 50px 25px;
+        }
+        @include desktop {
             padding: 50px;
         }
     }

@@ -150,7 +150,7 @@
         @include tablet {
             padding: 0;
             margin: 0 0 10px;
-            background-color: transparent;
+            background-color: transparent !important;
             border-radius: 0;
             line-height: 1.5;
         }
@@ -177,6 +177,18 @@
 
         & + & {
             margin-top: $indent;
+        }
+
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
+
+        .page-orange & {
+            background-color: $cPageOrangeLight;
         }
     }
 

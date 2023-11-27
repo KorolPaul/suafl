@@ -5,5 +5,13 @@
         @include tablet {
             margin-bottom: 60px;
         }
+
+        img {
+            vertical-align: bottom;
+            width: 40px;
+            @include desktop {
+                width: 50px;
+            }
+        }
     }
 }
