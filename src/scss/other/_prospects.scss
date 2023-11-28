@@ -39,6 +39,7 @@
             @include desktop {
                 width: 50px;
             }
+        }
     }
 
     &_items {
@@ -226,5 +227,4 @@
             color: $bg_color;
         }
     }
-}
 }

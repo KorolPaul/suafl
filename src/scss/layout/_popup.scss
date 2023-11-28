@@ -1,41 +1,47 @@
 .popup {
-    background: $bg_color;
+    background: $cWhite;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 96px 24px 24px;
+    padding: 32px;
     box-sizing: border-box;
-    z-index: 20;
+    z-index: 101;
     pointer-events: none;
     opacity: 0;
-    transform: translateY(30%);
+    transform: translateX(30%);
     transition: .3s $easingSmooth transform,
                 .3s $easingSmooth opacity;
-    @include desktop {
-        padding: 64px;
+    @include tablet {
+        padding: 30px 100px;
+        left: auto;
+        border-radius: 30px 0 0 30px;
     }
 
     &.opened {
         opacity: 1;
-        transform: translateY(0%);
+        transform: translateX(0%);
         pointer-events: all;
     }
 
     &_close {
-        background: url(#{$img}/popup-close.svg) no-repeat center center / contain;
+        background: url(#{$img}/close.svg) no-repeat center center / 100%;
         border: none;
-        height: 40px;
-        width: 40px;
+        height: $indent;
+        width: $indent;
         position: absolute;
-        top: 32px;
-        right: 24px;
+        top: $indent;
+        right: $indent;
         z-index: 3;
-        min-width: 0;
         padding: 0;
         transition: .2s $easing opacity;
-
+        @include tablet {
+            height: 22px;
+            width: 22px;
+            top: 30px;
+            right: 30px;
+        }
 
         &:hover {
             opacity: .6;
@@ -44,40 +50,19 @@
             opacity: 1;
         }
     }
+
     &_content {
         overflow: auto;
         height: 100%;
-        max-width: 910px;
+        max-width: 384px;
         margin: auto;
 
-        &__center {
-            @include tablet {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-        }
-    }
-
-    h1 {
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-    h2 {
-        font-family: $font-family;
-        font-size: 24px;
-        font-weight: 700;
-        @include desktop {
-            font-size: 32px;
-        }
-    }
-    h3 {
-        font-family: $font-family;
-        font-size: 18px;
-        font-weight: 700;
-        margin: 40px 0 20px;
-        @include desktop {
+        h2 {
             font-size: 24px;
+            margin: 0 0 $indent;
+            @include tablet {
+                margin-bottom: 10px;
+            }
         }
     }
 }

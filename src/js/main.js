@@ -372,14 +372,13 @@ function openPopup(name) {
     if (popup) {
         popup.classList.add('opened');
         document.body.classList.add('popup-opened');
-        window.addEventListener(wheelEvent, disableScroll, { passive: false });
+        //mwindow.addEventListener(wheelEvent, disableScroll, { passive: false });
     }
 }
 function closePopup(name) {
     document.querySelector('.popup.opened').classList.remove('opened');
     document.body.classList.remove('popup-opened');
-    window.removeEventListener(wheelEvent, disableScroll, { passive: false });
-
+    // window.removeEventListener(wheelEvent, disableScroll, { passive: false });
 }
 
 popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
