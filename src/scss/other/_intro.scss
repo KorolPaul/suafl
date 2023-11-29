@@ -36,12 +36,30 @@
         @include desktop {
             margin-bottom: 30px;
         }
+
+        &__big {
+            font-size: 48px;
+            line-height: .9;
+            @include desktop {
+                font-size: 73px;
+            }
+
+            img {
+                width: 40px;
+                vertical-align: bottom;
+                @include desktop {
+                    width: auto;
+                    vertical-align: -7px;
+                }
+            }
+        }
     }
 
     &_text {
         font-size: 18px;
         @include desktop {
-            margin-bottom: 22px;
+            font-size: 22px;
+            margin-bottom: 30px;
         }
 
         a {
@@ -51,9 +69,15 @@
     }
 
     &_button {
-        margin: 0 10px 0 0;
+        margin: 0 10px 10px 0;
         @include desktop {
             margin-right: 15px;
+        }
+
+        &__mobile {
+            @include desktop {
+                display: none;
+            }
         }
     }
 

@@ -2,8 +2,21 @@
     border-radius: 30px;
     background: url(#{$img}/solutions-map-bg.svg) no-repeat, linear-gradient(234deg, #1F35F0 -167.08%, rgba(31, 53, 240, 0.00) 100%), #0A1339;
     padding: 32px 0;
+    position: relative;
     @include tablet {
         padding: 60px 0;
+    }
+
+    &_icon {
+        width: 64px;
+        position: absolute;
+        top: -32px;
+        right: 32px;
+        @include desktop {
+            width: 117px;
+            top: -58px;
+            right: calc(50vw - $max-width / 2);
+        }
     }
 
     &_header {
@@ -24,9 +37,10 @@
         font-weight: 600;
         line-height: 1;
         text-transform: uppercase;
-        padding: 11px $indent;
+        padding: 13px $indent 9px;
+        display: inline-block;
         @include tablet {
-            padding: 11px 24px;
+            padding: 13px 24px 9px;
         }
     }
 
@@ -61,7 +75,7 @@
 
     &_slider-button {
         background-color: rgba($bg_color, .1);
-        border-color: rgba($bg_color, .1);
+        border: none;
 
         &:hover,
         &.active {

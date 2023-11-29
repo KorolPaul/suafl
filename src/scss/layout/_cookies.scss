@@ -10,6 +10,7 @@
     background-color: rgba($bg_color, .35);
     backdrop-filter: blur(12px);
     border-radius: 10px;
+    z-index: 4;
     @include tablet {
         flex-direction: row;
         gap: 75px;

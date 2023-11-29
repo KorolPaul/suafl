@@ -19,6 +19,16 @@
         background-color: $cWhite;
     }
 
+    .menu-opened & {
+        @include desktop {
+            display: flex;
+            position: absolute;
+            right: -3px;
+            top: 87px;
+            transform: scale(1.5);
+        }
+    }
+
     &_line {
         width: 18px;
         height: 2px;

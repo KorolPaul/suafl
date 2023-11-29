@@ -1,10 +1,24 @@
+.review-wrapper {
+    position: relative;
+    height: 250px;
+    @include desktop {
+        height: 190px;
+    }
+}
+
 .review {
     display: block;
     color: $color;
     background-color:  $bg_color;
     padding: $indent;
-    position: relative;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     border-radius: 40px 0 0;
+    animation: change 10s linear infinite;
     @include desktop {
         display: flex;
         align-items: stretch;
@@ -17,7 +31,11 @@
         color: $color;
     }
 
-    &:nth-child(even) {
+    & + & {
+        animation-delay: 5s;
+    }
+
+    .review-wrapper:nth-child(even) & {
         border-radius: 0 40px 0 0;
         @include desktop {
             flex-direction: row-reverse;
@@ -87,5 +105,28 @@
 
     p {
         margin: 0;
+    }
+}
+
+@keyframes change {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    45% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    50% {
+        opacity: 0;
+        pointer-events: none;
+    }
+    95% {
+        opacity: 0;
+        pointer-events: none;
+    }
+    100% {
+        opacity: 1;
+        pointer-events: all;
     }
 }

@@ -51,6 +51,22 @@
         }
     }
 
+    &_number {
+        display: none;
+        @include desktop {
+            display: block;
+            font-size: 170px;
+            font-weight: 600;
+            position: absolute;
+            left: 0;
+            bottom: -110px;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgba($bg_color, $alpha: 1);
+        }
+    }
+
     p {
         width: 55%;
         margin: 0;

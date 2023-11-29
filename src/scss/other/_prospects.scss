@@ -31,13 +31,15 @@
 
         span {
             color: $cBright;
+            display: block;
+            font-weight: 600;
         }
 
         img {
-            vertical-align: bottom;
-            width: 40px;
+            vertical-align: -8px;
+            width: 26px;
             @include desktop {
-                width: 50px;
+                width: 32px;
             }
         }
     }

@@ -300,16 +300,14 @@ positionsSlider.forEach(el => {
 
 
 // menu
-const menuToggleElement = document.querySelector('.menu-toggle');
-if (menuToggleElement) {
-    menuToggleElement.addEventListener('click', () => {
-        if (!document.body.classList.contains('menu-opened') ) {
-            document.body.classList.toggle('menu-opened');
-        } else if (document.body.classList.contains('menu-opened')) {
-            document.body.classList.remove('menu-opened');
-        }
-    });
-}
+const menuToggleElements = document.querySelectorAll('.menu-toggle, .menu_item__parent');
+menuToggleElements.forEach(el => el.addEventListener('click', () => {
+    if (!document.body.classList.contains('menu-opened')) {
+        document.body.classList.toggle('menu-opened');
+    } else if (document.body.classList.contains('menu-opened')) {
+        document.body.classList.remove('menu-opened');
+    }
+}));
 
 const submenuArrows = document.querySelectorAll('.menu_sublist-item-arrow');
 submenuArrows.forEach(el => el.addEventListener('click', function(e) {
