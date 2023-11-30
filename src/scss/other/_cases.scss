@@ -104,6 +104,7 @@
         right: 32px;
         z-index: 3;
         @include desktop {
+            left: auto;
             right: 102px;
             bottom: 60px;
             flex-direction: column;

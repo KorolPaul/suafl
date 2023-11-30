@@ -4,13 +4,18 @@
 
     gap: 30px;
 
-    &_image {
+    &_text{
         flex-shrink: 0;
-        height: 92px;
+        font-size: 60px;
         animation: marquee 20s linear infinite;
         max-width: none;
+        background-clip: text;
+        color: transparent;
+        display: block;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgba(#1F35F0, .3);
         @include tablet {
-            height: 300px;
+            font-size: 200px;
         }
     }
 }

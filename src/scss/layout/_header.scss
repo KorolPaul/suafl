@@ -34,17 +34,6 @@
             top: 32px;
             right: calc(50vw - $max-width / 2);
         }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: -13px;
-            left: -13px;
-            right: -13px;
-            bottom: -13px;
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-        }
     }
 
     &_button {

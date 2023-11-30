@@ -190,9 +190,17 @@
     &_circle-image {
         @include desktop {
             position: absolute;
-            left: 50%;
+            left: 57%;
             top: 50%;
             transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: .3s $easingSmooth opacity;
+        }
+
+        &.active {
+            @include desktop {
+                opacity: 1;
+            }
         }
     }
 

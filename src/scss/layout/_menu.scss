@@ -20,6 +20,7 @@
         @include desktop {
             flex-direction: row;
             gap: 0;
+            backdrop-filter: blur(10px);
         }
     }
 
@@ -44,10 +45,15 @@
         z-index: 11;
         display: none;
         @include desktop {
+            background-color: rgba($cWhite, .5);
             display: flex;
             line-height: 58px;
             padding-left: 25px;
             padding-right: 25px;
+        }
+
+        &:hover {
+            color: $cBright;
         }
 
         .menu_item:first-child & {

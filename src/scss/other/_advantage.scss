@@ -79,6 +79,8 @@
 
     p {
         margin: 0;
+        position: relative;
+        z-index: 2;
         @include tablet {
             width: 55%;
         }

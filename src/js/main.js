@@ -69,6 +69,7 @@ solutionsSlider.forEach(sliderElement => {
         let isAnimated = false;
 
         function handleCarouselScroll(isForward) {
+            console.log(isAnimated);
             if (isAnimated) {
                 return;
             }
@@ -76,7 +77,7 @@ solutionsSlider.forEach(sliderElement => {
             isAnimated = true
             setTimeout(() => {
                 isAnimated = false
-            }, 400);
+            }, 700);
 
             const {slideCount, index} = slider.getInfo();
 
@@ -119,7 +120,7 @@ solutionsSlider.forEach(sliderElement => {
         };
 
         const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '0px 0px 0px 0px',
+            rootMargin: '0px 0px 10% 0px',
             threshold: thresholdSteps,
             root: null
         });
@@ -523,6 +524,7 @@ const prospectsElement = document.querySelector('.prospects');
 const prospectsElements = document.querySelectorAll('.prospect');
 const prospectsNumbersElement = document.querySelector('.prospects_circle-numbers');
 const prospectsNumberElements = document.querySelectorAll('.prospects_circle-number');
+const prospectsImageElements = document.querySelectorAll('.prospects_circle-image');
 
 if (!isMobile && prospectsElement) {
     window.addEventListener('scroll', () => {
@@ -535,8 +537,6 @@ if (!isMobile && prospectsElement) {
         const onePercent = 90 * prospectsElements.length / 100;
         const angle = Math.round(scrollPercent * -onePercent) * 1.1;
 
-        console.info('scrollPercent', scrollPercent, angle);
-
 
         if (angle < 100) {
             prospectsNumbersElement.style.transform = `rotate(${angle}deg)`;
@@ -545,33 +545,39 @@ if (!isMobile && prospectsElement) {
                 el.style.transform = `rotate(${-angle}deg)`;
             });
 
-            // console.log(angle);
             prospectsNumberElements.forEach(el => el.classList.remove('active'));
             prospectsNumberElements.forEach(el => el.classList.remove('preactive'));
+            prospectsImageElements.forEach(el => el.classList.remove('active'));
 
             switch(true) {
                 case angle > -90:
                     prospectsNumberElements[1].classList.add('preactive');
                     prospectsNumberElements[0].classList.add('active');
+                    prospectsImageElements[0].classList.add('active');
                     return;
                 case angle > -180:
                     prospectsNumberElements[2].classList.add('preactive');
                     prospectsNumberElements[1].classList.add('active');
+                    prospectsImageElements[1].classList.add('active');
                     return;
                 case angle > -270:
                     prospectsNumberElements[3].classList.add('preactive');
                     prospectsNumberElements[2].classList.add('active');
+                    prospectsImageElements[2].classList.add('active');
                     return;
                 case angle > -360:
                     prospectsNumberElements[4].classList.add('preactive');
                     prospectsNumberElements[3].classList.add('active');
+                    prospectsImageElements[3].classList.add('active');
                     return;
                 case angle > -450:
                     prospectsNumberElements[5].classList.add('preactive');
                     prospectsNumberElements[4].classList.add('active');
+                    prospectsImageElements[4].classList.add('active');
                     return;
                 case angle > -540:
                     prospectsNumberElements[5].classList.add('active');
+                    prospectsImageElements[5].classList.add('active');
                     return;
             }
         }
@@ -745,4 +751,24 @@ if (strategyElement && !isMobile) {
         });
         observer.observe(el);
     })
+}
+
+/* reviews change */
+const reviewElements = document.querySelectorAll('.review');
+if (reviewElements.length) {
+    const reviewsCount = reviewElements.length;
+    let activeIndex = 0;
+
+    setInterval(() => {
+        reviewElements[activeIndex]?.classList.toggle('active');
+        reviewElements[activeIndex]?.nextElementSibling?.classList.toggle('active');
+        reviewElements[activeIndex]?.previousElementSibling?.classList.toggle('active');
+
+        if (activeIndex < reviewsCount - reviewsCount / 3) {
+            activeIndex += reviewsCount / 3;
+        } else {
+            activeIndex = 0;
+        }
+
+    }, 3000);
 }
