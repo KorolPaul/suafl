@@ -1,6 +1,15 @@
 .team-slider {
     position: relative;
 
+    &_counter {
+        position: absolute;
+        right: $indent;
+        bottom: 0;
+        @include desktop {
+            display: none;
+        }
+    }
+
     .tns-outer {
         margin: 0 #{-$indent};
         @include desktop {
@@ -17,20 +26,34 @@
     }
 
     .tns-controls {
-        margin: 0;
+        margin: $indent $indent 0;
+        justify-content: flex-start;
+        gap: 10px;
         
         button {
-            position: absolute;
-            z-index: 2;
-            top: 50%;
-            transform: translateY(-50%);
+            @include desktop {
+                position: absolute;
+                z-index: 2;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:disabled {
+                opacity: .8;
+                pointer-events: none;
+            }
         }
 
         button[data-controls="prev"]{
-            left: -30px;
+            @include desktop {
+                left: -30px;
+            }
         }
         button[data-controls="next"]{
-            right: -30px;
+            @include desktop {
+                right: -30px;
+            }
         }
+
     }
 }

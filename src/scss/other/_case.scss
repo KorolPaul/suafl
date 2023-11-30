@@ -1,7 +1,7 @@
 .case {
     background-color: $bg_color;
     border-radius: 15px;
-    padding: 32px $indent;
+    padding: 32px $indent 108px;
     @include desktop {
         padding: 60px;
         display: flex;
@@ -39,7 +39,7 @@
         padding: $indent 32px;
         box-sizing: border-box;
         @include desktop {
-            padding: 30px 24px;
+            padding: 30px 24px 11px;
             flex: 0 1 282px;
         }
 
@@ -58,6 +58,7 @@
         margin-bottom: 8px;
         display: block;
         font-weight: 600;
+        line-height: .9;
         @include desktop {
             font-size: 64px;
         }
@@ -115,6 +116,24 @@
         font-size: 18px;
         @include tablet {
             font-size: 22px;
+        }
+    }
+
+    &_quote {
+        position: relative;
+
+        &::before {
+            content: '';
+            height: 12px;
+            width: 12px;
+            position: absolute;
+            top: 30px;
+            left: -6px;
+            border-left: 1px solid #E4E8F0;
+            border-bottom: 1px solid #E4E8F0;
+            transform: rotate(45deg);
+            border-radius: 3px;
+            background-color: $bg_color;
         }
     }
 }

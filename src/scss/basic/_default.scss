@@ -129,6 +129,7 @@ blockquote {
     background: url(#{$img}/quotes.svg) no-repeat right top -5px;
     border-radius: 15px;
     box-shadow: 0 0 1px 1px #E4E8F0 inset;
+    background-color: $bg_color;
     margin: 0 0 $indent;
     @include tablet {
         padding: 30px;
@@ -150,4 +151,8 @@ mark {
 
 .popup-opened {
     overflow: hidden;
+}
+
+form {
+    margin: 0;
 }

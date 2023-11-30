@@ -9,7 +9,7 @@ showcaseSlider.forEach(el => {
     const slider = tns({
         container: el,
         items: 1,
-        gutter: 16,
+        gutter: 0,
         mouseDrag: true,
         autoplay: false,
         nav: true,
@@ -76,7 +76,7 @@ solutionsSlider.forEach(sliderElement => {
             isAnimated = true
             setTimeout(() => {
                 isAnimated = false
-            }, 200);
+            }, 400);
 
             const {slideCount, index} = slider.getInfo();
 
@@ -166,6 +166,14 @@ casesSlider.forEach(el => {
         animateIn: 'tns-goBackIn',
         animateOut: 'tns-goBackOut',
         speed: 800,
+        onInit: function (slider) {
+            document.querySelector('.cases .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+        }
+    });
+
+    slider.events.on('transitionStart', function (info) {
+        const index = info.displayIndex;
+        document.querySelector('.cases .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
     });
 });
 
@@ -192,7 +200,7 @@ clientsMapSlider.forEach(el => {
 
 const teamSlider = document.querySelectorAll('.team-slider_items');
 teamSlider.forEach(el => {
-    tns({
+    const slider = tns({
         container: el,
         items: 1.6,
         gutter: 14,
@@ -200,6 +208,7 @@ teamSlider.forEach(el => {
         autoplay: false,
         nav: false,
         controls: true,
+        controlsPosition: 'bottom',
         loop: false,
         responsive: {
             768: {
@@ -210,7 +219,15 @@ teamSlider.forEach(el => {
             1200: {
                 items: 4,
             }
+        },
+        onInit: function(slider) {
+            document.querySelector('.team-slider .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
         }
+    });
+
+    slider.events.on('transitionStart', function(info) {
+        const index = info.displayIndex;
+        document.querySelector('.team-slider .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
     });
 });
 
@@ -300,7 +317,7 @@ positionsSlider.forEach(el => {
 
 
 // menu
-const menuToggleElements = document.querySelectorAll('.menu-toggle, .menu_item__parent');
+const menuToggleElements = document.querySelectorAll('.menu-toggle, .menu_item__parent > .menu_link');
 menuToggleElements.forEach(el => el.addEventListener('click', () => {
     if (!document.body.classList.contains('menu-opened')) {
         document.body.classList.toggle('menu-opened');
@@ -309,7 +326,7 @@ menuToggleElements.forEach(el => el.addEventListener('click', () => {
     }
 }));
 
-const submenuArrows = document.querySelectorAll('.menu_sublist-item-arrow');
+const submenuArrows = document.querySelectorAll('.menu_sublist-item-arrow, .footer_menu-item-arrow');
 submenuArrows.forEach(el => el.addEventListener('click', function(e) {
     e.preventDefault();
     e.target.parentElement.classList.toggle('opened');

@@ -2,6 +2,10 @@
     max-width: 996px;
     margin: auto;
     text-align: center;
+    padding: 60px 0 0;
+    @include tablet {
+        padding-top: 0;
+    }
 
     &_title {
         display: block;

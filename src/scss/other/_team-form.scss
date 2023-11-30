@@ -14,6 +14,12 @@
         @include desktop {
             justify-content: space-between;
         }
+
+        a[href^='mailto:'] {
+            @include desktop {
+                margin-bottom: 32px;
+            }
+        }
     }
 
     &_content-top {
@@ -53,7 +59,9 @@
         padding: $indent;
         position: relative;
         @include desktop {
-            padding: 30px;
+            padding: 30px 30px 20px;
+            width: 588px;
+            box-sizing: border-box;
         }
 
         .page-green & {

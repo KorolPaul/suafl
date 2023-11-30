@@ -3,9 +3,9 @@
     background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%), #F7F9FC;
     text-align: center;
     padding: 32px $indent;
+    position: relative;
     @include desktop {
         padding: 60px;
-        position: relative;
         overflow: hidden;
     }
 
@@ -82,18 +82,32 @@
         z-index: 2;
     }
 
+    &_counter {
+        position: absolute;
+        left: 50%;
+        bottom: 54px;
+        transform: translate(-50%);
+        z-index: 3;
+        @include desktop {
+            display: none;
+        }
+    }
+
     .tns-outer {
         position: relative;
     }
 
     .tns-controls {
+        position: absolute;
+        bottom: 32px;
+        left: 32px;
+        right: 32px;
+        z-index: 3;
         @include desktop {
-            position: absolute;
             right: 102px;
             bottom: 60px;
             flex-direction: column;
             gap: 10px;
-            z-index: 3;
         }
     }
 }

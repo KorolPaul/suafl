@@ -18,9 +18,14 @@
     &_teal {
         position: fixed;
         top: 40%;
-        width: 400px;
-        height: 400px;
-        filter: blur(140px);
+        width: 100px;
+        height: 100px;
+        filter: blur(40px);
+        @include tablet {
+            width: 400px;
+            height: 400px;
+            filter: blur(140px);
+        }
     }
 
     &_orange {
