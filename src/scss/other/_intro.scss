@@ -83,6 +83,9 @@
 
     &_bottom {
         padding: 64px 0 0;
+        @include desktop {
+            padding-top: 100px;
+        }
     }
 
     &_bottom-content {
@@ -128,7 +131,7 @@
         max-width: 690px;
         font-size: 18px;
         @include desktop {
-            font-size: 22px;
+            font-size: 32px;
         }
     }
 
@@ -143,7 +146,7 @@
             font-weight: 600;
             line-height: .9;
             text-align: center;
-            margin: -100px 0 -44px;
+            margin: -100px 0 -104px;
             opacity: .45;
         }
 
@@ -157,8 +160,9 @@
         margin: 0 0 $indent;
         font-size: 24px;
         @include desktop {
-            font-size: 32px;
+            font-size: 48px;
             margin-bottom: 30px;
+            margin-top: 30px;
         }
 
         span {

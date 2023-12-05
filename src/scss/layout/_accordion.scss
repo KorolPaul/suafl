@@ -40,11 +40,12 @@
         color: $color;
         width: 100%;
         text-align: left;
+        pointer-events: none;
         @include tablet {
             font-size: 22px;
         }
 
-        &:hover,
+        .accordion_item:hover &,
         &:active {
             color: $color;
         }
@@ -53,11 +54,12 @@
     &_content {
         display: none;
         margin-top: 8px;
+        pointer-events: none;
         @include tablet {
             margin-top: 20px;
         }
 
-        &.active {
+        .accordion_item.active & {
             display: block;
         }
 

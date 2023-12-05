@@ -3,9 +3,6 @@
     position: relative;
     color: $bg_color;
     color: #535479;
-    @include desktop {
-        padding-top: 100px;
-    }
 
     &_holder {
         @include layout;

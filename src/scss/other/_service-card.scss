@@ -1,6 +1,6 @@
 .service-card {
     color: $color;
-    background-color: $cYellowLight;
+    background-color: $cNavyLight;
     padding: 32px $indent;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
     }
 
     &:nth-child(2) {
-        background-color: $cBlueLight;
+        background-color: $cYellowLight;
 
         &::after {
             background-image: url(#{$img}/card-arrow-blue.svg);

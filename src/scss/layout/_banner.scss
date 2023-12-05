@@ -2,6 +2,7 @@
     color: $bg_color;
     padding: 32px $indent 310px;
     border-radius: 15px;
+    overflow: hidden;
     background: radial-gradient(430% 100% at 100% 100%, #0F279B 0%, transparent 100%), linear-gradient(180deg, #020A44 0%, transparent 45%), radial-gradient(430% 100% at 0% 100%, #AF56B2 0%, transparent 100%), #020A44;
     position: relative;    
     @include tablet {
@@ -49,6 +50,7 @@
         margin: 0 0 $indent;
         position: relative;
         z-index: 1;
+        display: block;
         @include tablet {
             font-size: 48px;
             width: 50%;

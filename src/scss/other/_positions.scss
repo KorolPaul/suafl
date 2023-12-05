@@ -6,7 +6,7 @@
                 linear-gradient(0deg, rgba(31, 53, 240, .3) 0%, transparent 100%),
                 $cWhite;
     @include tablet {
-        padding-bottom: 0;
+        padding-bottom: 60px;
     }
 
     &_header {
@@ -93,8 +93,7 @@
         bottom: -155px;
         z-index: -1;
         @include tablet {
-            bottom: auto;
-            top: 20px;
+            bottom: -108px;
             transform-origin: center;
             transition: .4s $easing transform;
         }
@@ -114,7 +113,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             gap: 10px;
-            width: 60%;
+            width: 61%;
         }
     }
 
