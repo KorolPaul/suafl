@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="48x48px.ico">
     <link rel="icon" type="image/png" href="16x16px.png" sizes="16x16">
     <link rel="icon" type="image/png" href="32x32px.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="48x48px.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="48x48pxmin-.png" sizes="48x48">
     <meta content="telephone=no" name="format-detection">
     <meta name="HandheldFriendly" content="true">
 </head>
@@ -40,7 +40,7 @@
                     <div class="menu-toggle_line"></div>
                     <div class="menu-toggle_line"></div>
                 </button>
-                <button class="header_button">Book a call</button>
+                <button class="header_button" data-popup="business">Book a call</button>
             </div>
             <div class="menu_dropdown">
                 <div class="menu_dropdown-content">
@@ -213,6 +213,7 @@
                                             <a href="#">Scale your team at any time.</a>
                                         </p>
                                         <button class="intro_button button">Grow Your Business</button>
+                                        <button class="intro_button intro_button__mobile button button__light">Learn more</button>
                                     </div>
                                 </div>
                             </div>
@@ -231,6 +232,7 @@
                                             <a href="#">Scale your team at any time.</a>
                                         </p>
                                         <button class="intro_button button">Grow Your Business</button>
+                                        <button class="intro_button intro_button__mobile button button__light">Learn more</button>
                                     </div>
                                 </div>
                             </div>
@@ -249,6 +251,7 @@
                                             <a href="#">Scale your team at any time.</a>
                                         </p>
                                         <button class="intro_button button">Grow Your Business</button>
+                                        <button class="intro_button intro_button__mobile button button__light">Learn more</button>
                                     </div>
                                 </div>
                             </div>
@@ -290,9 +293,9 @@
                     </p>
                     <div class="about-widget_play">
                         <span class="about-widget_play-title">You can learn more about us here</span>
-                        <a href="#" class="about-widget_play-button">
+                        <button class="about-widget_play-button" data-popup="video">
                             <img src="src/img/play.svg" alt="">
-                        </a>
+                        </button>
                     </div>
                     <picture class="about-widget_image">
                         <source srcset="src/img/about-widget-bg-big.png" media="(min-width: 768px)" />
@@ -309,7 +312,7 @@
                         <h2>
                             <span class="bright">SUAFI</span> <img src="src/img/reviews-title-icon-1.png" alt=""> is trusted by hundreds of leaders around <img src="src/img/title-icons/planet.png" alt=""> the globe
                         </h2>
-                        <button class="button">Book a call</button>
+                        <button class="button" data-popup="business">Book a call</button>
                     </div>
         
                     <div class="reviews_content">
@@ -734,6 +737,11 @@
                                         <span class="case_stats-title">average LinkedIn invitations acceptance rate</span>
                                     </div>
                                 </div>
+
+                                <div class="tns-controls" tabindex="0">
+                                    <button type="button" data-controls="prev" tabindex="-1" aria-controls="tns3">prev</button>
+                                    <button type="button" data-controls="next" tabindex="-1" aria-controls="tns3">next</button>
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -771,6 +779,11 @@
                                         </span>
                                         <span class="case_stats-title">average LinkedIn invitations acceptance rate</span>
                                     </div>
+                                </div>
+
+                                <div class="tns-controls" tabindex="0">
+                                    <button type="button" data-controls="prev" tabindex="-1" aria-controls="tns3">prev</button>
+                                    <button type="button" data-controls="next" tabindex="-1" aria-controls="tns3">next</button>
                                 </div>
                             </div>
                         </div>
@@ -999,7 +1012,7 @@
                                 <span class="team-form_subtitle">Need some extra <strong>guidance</strong>?</span>
                                 <span class="team-form_subtitle">We are here <strong>to help</strong></span>
                             </div>
-                            <button class="button">Book a call</button>
+                            <button class="button" data-popup="business">Book a call</button>
                         </div>
                         <a href="mailto:hi@startupandfly.com">hi@startupandfly.com</a>
                     </div>
@@ -1256,6 +1269,13 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="video-popup" data-popup="video">
+        <button class="video-popup_close"></button>
+        <div class="video-popup_holder">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dRNbyy-JHp0?si=Ak85UfX37Nto1f-R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 

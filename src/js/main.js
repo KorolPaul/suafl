@@ -39,7 +39,7 @@ solutionsSlider.forEach(sliderElement => {
         gutter: 0,
         mouseDrag: true,
         autoplay: false,
-        nav: true,
+        nav: false,
         navPosition: 'bottom',
         controls: false,
         loop: false,
@@ -112,7 +112,7 @@ solutionsSlider.forEach(sliderElement => {
 
         const observerCallback = function (e) {
             const { boundingClientRect, intersectionRatio } = e[0];
-            // const ratio = boundingClientRect.height / 2 - boundingClientRect.y;
+            const ratio = isMobile ? 0.5 : 0.9;
 
             if (intersectionRatio > 0.9) {
                 document.addEventListener(wheelEvent, preventScroll, { passive: false })
@@ -152,17 +152,17 @@ prospectsContainer.forEach(tabContainer => {
     }
 });
 
-const casesSlider = document.querySelectorAll('.cases_items');
-casesSlider.forEach(el => {
+const casesSliders = document.querySelectorAll('.cases_items');
+casesSliders.forEach(casesSlider => {
     const slider = tns({
-        container: el,
+        container: casesSlider,
         items: 1,
         gutter: 16,
         mouseDrag: true,
         autoplay: false,
         nav: false,
         navPosition: 'bottom',
-        controls: true,
+        controls: false,
         controlsPosition: 'bottom',
         loop: true,
         mode: 'gallery',
@@ -178,6 +178,12 @@ casesSlider.forEach(el => {
         const index = info.displayIndex;
         document.querySelector('.cases .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
     });
+
+    const prevButtons = casesSlider.querySelectorAll('.tns-controls button:first-child');
+    const nextButtons = casesSlider.querySelectorAll('.tns-controls button:last-child');
+
+    prevButtons.forEach(el => el.addEventListener('click', () => slider.goTo('prev')))
+    nextButtons.forEach(el => el.addEventListener('click', () => slider.goTo('next')))
 });
 
 const clientsMapSlider = document.querySelectorAll('.clients-map_slider');
@@ -360,7 +366,7 @@ menuLinkElements.forEach(el => el.addEventListener('touchend', () => {
 }));
 
 /* Popup */
-const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
+const popupToggleElements = document.querySelectorAll('button[data-popup]');
 
 function disableScroll(e) {
     const { target } = e
@@ -386,7 +392,7 @@ function disableScroll(e) {
 }
 
 function openPopup(name) {
-    const popup = document.querySelector(`.popup[data-popup="${name}"]`);
+    const popup = document.querySelector(`div[data-popup="${name}"]`);
     if (popup) {
         popup.classList.add('opened');
         document.body.classList.add('popup-opened');
@@ -394,7 +400,7 @@ function openPopup(name) {
     }
 }
 function closePopup(name) {
-    document.querySelector('.popup.opened').classList.remove('opened');
+    document.querySelector('.popup.opened, .video-popup.opened').classList.remove('opened');
     document.body.classList.remove('popup-opened');
     // window.removeEventListener(wheelEvent, disableScroll, { passive: false });
 }
@@ -404,7 +410,7 @@ popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
     openPopup(el.dataset.popup);
 }));
 
-const popupCloseElements = document.querySelectorAll('.popup_close');
+const popupCloseElements = document.querySelectorAll('.popup_close, .video-popup_close');
 popupCloseElements.forEach(el => el.addEventListener('click', (e) => {
     e.preventDefault();
     closePopup();

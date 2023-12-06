@@ -226,6 +226,7 @@
 
     button {
         @include button-reset;
+        box-sizing: content-box;
         width: 9px;
         height: 9px;
         border-radius: 50%;

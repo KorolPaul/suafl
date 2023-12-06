@@ -66,6 +66,7 @@
     }
 
     &_play-button {
+        @include button-reset;
         height: 71px;
         width: 71px;
         position: absolute;

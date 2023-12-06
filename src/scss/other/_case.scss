@@ -76,7 +76,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 204px;
+        @include tablet {
+            max-width: 204px;
+        }
         @include desktop {
             margin-bottom: 10px;
         }
@@ -121,7 +123,8 @@
 
     &_quote {
         position: relative;
-
+        filter: drop-shadow(0px 3px 7px #EEF0F5);
+        
         &::before {
             content: '';
             height: 12px;

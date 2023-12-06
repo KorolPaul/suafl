@@ -61,6 +61,7 @@
         @include desktop {
             padding: 30px 30px 20px;
             width: 588px;
+            flex-shrink: 0;
             box-sizing: border-box;
         }
 
@@ -76,10 +77,10 @@
             content: '';
             pointer-events: none;
             position: absolute;
-            width: 90px;
+            width: 77px;
             height: 89px;
-            right: 0;
-            top: -26px;
+            right: 31px;
+            top: -19px;
             background: url(#{$img}/request-form.png) no-repeat center / 100%;
             @include tablet {
                 width: 118px;
