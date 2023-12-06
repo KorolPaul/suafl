@@ -1,5 +1,6 @@
 .section {
     margin: 0 0 64px;
+    // opacity: 0;
     @include desktop {
         margin-bottom: 100px;
     }

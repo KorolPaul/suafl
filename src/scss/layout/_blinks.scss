@@ -5,14 +5,15 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+    transition: transform 1s $easingSmooth;
 
-    //&__up {
-    //    animation: rollUp 1s $easingSmooth forwards;
-    //}
-//
-    //&__down {
-    //    animation: rollDown 1s $easingSmooth forwards;
-    //}
+    &__up {
+        transform: translateY(-30%);
+    }
+
+    &__down {
+       transform: translateY(-30%);
+    }
 
     &_orange,
     &_teal {
@@ -30,13 +31,15 @@
 
     &_orange {
         animation: floating 10s linear infinite;
-        background-color: $cOrangeLight;
+        // background-color: $cOrangeLight;
+        background-color: #FADBC4;
         left: 25%;
-    }
+    } 
 
     &_teal {
         animation: floating 10s linear 1s infinite reverse;
         background-color: #C6EFF2;
+        // background-color: #8bd4da;
         left: 60%;
         top: 30%;
     }
@@ -47,57 +50,33 @@
         transform: translateY(0) scale(1);
     }
     10% {
-        transform: translateY(-8%) scale(1, 1.3);
+        transform: translateY(-12%) scale(1.2, 1.3);
     }
     20% {
-        transform: translateY(-16%) scale(1, .8);
+        transform: translateY(-23%) scale(1, .8);
     }
     30% {
-        transform: translateY(-7%) scale(1, 1.1);
+        transform: translateY(-7%) scale(1.1, 1.1);
     }
     40% {
-        transform: translateY(1%) scale(1, 1.2);
+        transform: translateY(1%) scale(1.3, 1.2);
     }
     50% {
-        transform: translateY(6%) scale(1, 1.3);
+        transform: translateY(6%) scale(1.5, 1.3);
     }
     60% {
         transform: translateY(13%) scale(1, 1);
     }
     70% {
-        transform: translateY(16%) scale(1, 0.8);
+        transform: translateY(16%) scale(.8, 0.8);
     }
     80% {
-        transform: translateY(9%) scale(1, 1.3);
+        transform: translateY(9%) scale(1.5, 1.3);
     }
     90% {
-        transform: translateY(4%) scale(1, 1.1);
+        transform: translateY(4%) scale(1.3, 1.1);
     }
     100% {
         transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes rollUp {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-30%);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes rollDown {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(30%);
-    }
-    100% {
-        transform: translateY(0);
     }
 }

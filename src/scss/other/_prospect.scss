@@ -1,8 +1,55 @@
 .prospect {
     max-width: 588px;
     display: none;
+    transition: .3s $easingSmooth opacity;
     @include desktop {
         display: block;
+    }
+
+    &:nth-child(1) {
+        .prospects[data-slide="2"] &,
+        .prospects[data-slide="3"] &,
+        .prospects[data-slide="4"] &,
+        .prospects[data-slide="5"] &,
+        .prospects[data-slide="6"] & {
+            @include tablet {
+                opacity: 0;
+            }
+        }
+    }
+    &:nth-child(2) {
+        .prospects[data-slide="3"] &,
+        .prospects[data-slide="4"] &,
+        .prospects[data-slide="5"] &,
+        .prospects[data-slide="6"] & {
+            @include tablet {
+                opacity: 0;
+            }
+        }
+    }
+    &:nth-child(3) {
+        .prospects[data-slide="4"] &,
+        .prospects[data-slide="5"] &,
+        .prospects[data-slide="6"] & {
+            @include tablet {
+                opacity: 0;
+            }
+        }
+    }
+    &:nth-child(4) {
+        .prospects[data-slide="5"] &,
+        .prospects[data-slide="6"] & {
+            @include tablet {
+                opacity: 0;
+            }
+        }
+    }
+    &:nth-child(5) {
+        .prospects[data-slide="6"] & {
+            @include tablet {
+                opacity: 0;
+            }
+        }
     }
 
     &.active {

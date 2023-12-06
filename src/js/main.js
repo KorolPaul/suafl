@@ -321,6 +321,14 @@ positionsSlider.forEach(el => {
                 disable: true,
             }
         },
+        onInit: function (slider) {
+            document.querySelector('.positions .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+        }
+    });
+
+    slider.events.on('transitionStart', function (info) {
+        const index = info.displayIndex;
+        document.querySelector('.positions .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
     });
 });
 
@@ -534,7 +542,7 @@ if (!isMobile && prospectsElement) {
         const heightWithOffset = height;
         const screenHeight = screen.availHeight;
 
-        const scrollPercent = ((((heightWithOffset - top) / heightWithOffset ) * 100) - 100) + 15;
+        const scrollPercent = ((((heightWithOffset - top) / heightWithOffset ) * 100) - 100) + 5;
 
         const onePercent = 90 * prospectsElements.length / 100;
         const angle = Math.round(scrollPercent * -onePercent) * 1.1;
@@ -553,31 +561,37 @@ if (!isMobile && prospectsElement) {
 
             switch(true) {
                 case angle > -90:
+                    prospectsElement.dataset.slide = 1;
                     prospectsNumberElements[1].classList.add('preactive');
                     prospectsNumberElements[0].classList.add('active');
                     prospectsImageElements[0].classList.add('active');
                     return;
                 case angle > -180:
+                    prospectsElement.dataset.slide = 2;
                     prospectsNumberElements[2].classList.add('preactive');
                     prospectsNumberElements[1].classList.add('active');
                     prospectsImageElements[1].classList.add('active');
                     return;
                 case angle > -270:
+                    prospectsElement.dataset.slide = 3;
                     prospectsNumberElements[3].classList.add('preactive');
                     prospectsNumberElements[2].classList.add('active');
                     prospectsImageElements[2].classList.add('active');
                     return;
                 case angle > -360:
+                    prospectsElement.dataset.slide = 4;
                     prospectsNumberElements[4].classList.add('preactive');
                     prospectsNumberElements[3].classList.add('active');
                     prospectsImageElements[3].classList.add('active');
                     return;
                 case angle > -450:
+                    prospectsElement.dataset.slide = 5;
                     prospectsNumberElements[5].classList.add('preactive');
                     prospectsNumberElements[4].classList.add('active');
                     prospectsImageElements[4].classList.add('active');
                     return;
                 case angle > -540:
+                    prospectsElement.dataset.slide = 6;
                     prospectsNumberElements[5].classList.add('active');
                     prospectsImageElements[5].classList.add('active');
                     return;
@@ -586,26 +600,6 @@ if (!isMobile && prospectsElement) {
 
     });
 
-    // prospectsElements.forEach(el => {
-    //     let ratio = .8;
-// 
-    //     const observerCallback = function (e) {
-    //         const { target, intersectionRatio } = e[0];
-    //         console.log(target, intersectionRatio);
-    //         
-    //         if (intersectionRatio > ratio) {
-    //             const number = Number(target.dataset.number);
-    //             
-    //         }
-    //     };
-// 
-    //     const observer = new IntersectionObserver(observerCallback, {
-    //         rootMargin: '0px 0px 25% 0px',
-    //         threshold: thresholdSteps,
-    //         //root: document.body
-    //     });
-    //     observer.observe(el);
-    // })
 }
 
 /* blinks animation */
@@ -614,6 +608,7 @@ if (blinksElement) {
     document.addEventListener(wheelEvent, (e) => {
         blinksElement.classList.remove('blinks__down');
         blinksElement.classList.remove('blinks__up');
+
         if (e.deltaY > 0) {
             blinksElement.classList.add('blinks__up');
         } else {

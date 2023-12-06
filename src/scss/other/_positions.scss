@@ -1,12 +1,17 @@
 .positions {
     border-radius: 30px;
     padding-bottom: 32px;
-    background: url(#{$img}/positions-bg.png) no-repeat right bottom,
+    background: url(#{$img}/positions-bg.png) no-repeat right -80px bottom / 288px 285px ,
                 radial-gradient(78% 70% at 100% 100%, rgba(175, 86, 178, .2) 0%, transparent 100%),
                 linear-gradient(0deg, rgba(31, 53, 240, .3) 0%, transparent 100%),
                 $cWhite;
+    position: relative;
     @include tablet {
         padding-bottom: 60px;
+        background: url(#{$img}/positions-bg.png) no-repeat right bottom,
+                    radial-gradient(78% 70% at 100% 100%, rgba(175, 86, 178, .2) 0%, transparent 100%),
+                    linear-gradient(0deg, rgba(31, 53, 240, .3) 0%, transparent 100%),
+                    $cWhite;
     }
 
     &_header {
@@ -14,12 +19,14 @@
         flex-direction: column;
         gap: $indent;
         padding: 32px 0;
+        text-align: center;
+        align-items: center;
         @include tablet {
+            text-align: inherit;
             padding-top: 60px;
             padding-bottom: 60px;
             flex-direction: row;
             gap: 50px;
-            align-items: center;
             justify-content: space-between;
         }
 
@@ -50,6 +57,7 @@
         padding: $indent $indent 126px;
         overflow: hidden;
         box-sizing: border-box;
+        height: 100%;
         @include tablet {
             padding: 30px 30px 30px 170px;
             display: flex;
@@ -68,8 +76,10 @@
         line-height: 1.3;
         display: block;
         margin: 0 0 $indent;
+        text-align: center;
         @include tablet {
             margin: 0;
+            text-align: inherit;
         }
     }
 
@@ -109,7 +119,9 @@
         display: flex;
         flex-direction: column;
         gap: $indent;
+        align-items: center;
         @include tablet {
+            align-items: initial;
             flex-direction: row;
             flex-wrap: wrap;
             gap: 10px;
@@ -133,5 +145,20 @@
         &:active {
             background-color: rgba($bg_color, .75);
         }
+    }
+
+    &_counter {
+        position: absolute;
+        left: 50%;
+        bottom: 23px;
+        transform: translate(-50%);
+        z-index: 3;
+        @include desktop {
+            display: none;
+        }
+    }
+
+    .tns-slider {
+        display: flex;
     }
 }
