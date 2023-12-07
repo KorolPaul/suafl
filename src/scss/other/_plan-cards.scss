@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: $indent;
-    @include desktop {
+    @include tablet {
         position: relative;
         flex-direction: row;
         gap: 24px;
@@ -28,7 +28,7 @@
     }
 
     & > * {
-        @include desktop {
+        @include tablet {
             flex: 1 0 0px;
         }
     }

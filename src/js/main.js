@@ -334,6 +334,48 @@ positionsSlider.forEach(el => {
     });
 });
 
+const roadmapSliders = document.querySelectorAll('.roadmap_cards');
+roadmapSliders.forEach(roadmapSlider => {
+    const slider = tns({
+        container: roadmapSlider,
+        items: 1,
+        gutter: 16,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        navPosition: 'bottom',
+        controls: false,
+        controlsPosition: 'bottom',
+        loop: false,
+        speed: 800,
+    });
+
+
+    const prevButtons = roadmapSlider.querySelectorAll('.tns-controls button:first-child');
+    const nextButtons = roadmapSlider.querySelectorAll('.tns-controls button:last-child');
+    const timelineElement = document.querySelector('.roadmap_timeline');
+    const datesElement = document.querySelector('.roadmap_timeline-dates');
+
+    prevButtons.forEach(el => el.addEventListener('click', () => {
+        const {displayIndex} = slider.getInfo();
+        const translate = `translate(${-100 * displayIndex}px, ${100 * displayIndex}px)`
+
+        timelineElement.style.transform = translate;
+        datesElement.style.transform = translate;
+
+        slider.goTo('prev');
+    }));
+
+    nextButtons.forEach(el => el.addEventListener('click', () => {
+        const {displayIndex} = slider.getInfo();
+        const translate = `translate(${-100 * displayIndex}px, ${100 * displayIndex}px)`
+
+        timelineElement.style.transform = translate;
+        datesElement.style.transform = translate;
+        slider.goTo('next')
+    }));
+});
+
 
 // menu
 const menuToggleElements = document.querySelectorAll('.menu-toggle, .menu_item__parent > .menu_link');

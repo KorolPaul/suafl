@@ -175,6 +175,7 @@
         @include button-reset;
         width: 60px;
         height: 60px;
+        flex-shrink: 0;
         font-size: 0;
         line-height: 0;
         transition: .2s $easing transform;
