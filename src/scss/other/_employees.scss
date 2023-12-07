@@ -71,6 +71,9 @@
         font-size: 16px;
         font-weight: 600;
         display: block;
+        @include tablet {
+            white-space: nowrap;
+        }
     }
 
     &_item-position {
@@ -85,19 +88,19 @@
         right: 0;
         top: 50%;
         border-radius: 50%;
-        border: 2px solid $bg_color;
+        background-color: $bg_color;
+        padding: 2px;
         margin: -13px -15px 0 0 ;
+        width: 26px;
         @include tablet {
-            border-width: 4px;
+            padding: 4px;
             margin: -20px -20px 0 0;
-            top: 0
+            top: 0;
+            width: 40px;
         }
     }
 
     &_item-flag {
-        width: 26px;
-        @include tablet {
-            width: 40px;
-        }
+        width: 100%;
     }
 }

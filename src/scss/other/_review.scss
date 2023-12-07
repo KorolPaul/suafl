@@ -19,8 +19,10 @@
     border-radius: 40px 0 0;
     opacity: 0;
     pointer-events: none;
-    background: $bg_color url(#{$img}/quotes.svg) no-repeat right top -5px / 97px 82px;
     transition: .6s $easingSmooth opacity;
+    @include tablet {
+        background: $bg_color url(#{$img}/quotes.svg) no-repeat right top -5px / 97px 82px;
+    }
     @include desktop {
         display: flex;
         align-items: stretch;

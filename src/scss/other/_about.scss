@@ -20,6 +20,10 @@
             margin-bottom: 30px;
             text-align: left;
         }
+
+        .about__wideImage & {
+            text-align: left;
+        }
     }
 
     &_text {
@@ -34,6 +38,7 @@
 
         .about__wideImage & {
             min-width: 30%;
+            text-align: left;
         }
 
         p {
@@ -50,7 +55,8 @@
         }
 
         .about__wideImage & {
-            max-width: 608px;
+            width: 608px;
+            flex-shrink: 0;
         }
     }
 }

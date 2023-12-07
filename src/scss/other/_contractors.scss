@@ -1,5 +1,5 @@
 .contractors {
-    padding: 32px $indent;
+    padding: 32px 0;
     border-radius: 30px;
     background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%),
                 #F7F9FC;
@@ -17,11 +17,19 @@
         object-fit: fill;
     }
 
+    &_map {
+        @include tablet {
+            @include layout;
+        }
+    }
+
     &_header {
+        padding: 0 $indent;
         @include desktop {
             display: flex;
             justify-content: space-between;
             gap: 50px;
+            padding: 0;
         }
     }
 
@@ -47,7 +55,7 @@
     &_office {
         position: relative;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
         gap: 10px;
@@ -63,7 +71,6 @@
         @include tablet {
             font-size: 22px;
             gap: 30px;
-            flex-direction: row;
             padding-left: 40px;
             padding-right: 20px;
         }
@@ -80,6 +87,10 @@
     &_footer {
         text-align: center;
         margin-top: $indent;
+        padding: 0 $indent;
+        @include tablet {
+            padding: 0;
+        }
     }
 
     &_footer-title {
