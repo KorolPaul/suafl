@@ -3,8 +3,18 @@
     border-radius: 30px;
     background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%),
                 #F7F9FC;
+    position: relative;
     @include tablet {
         padding: 60px 0;
+    }
+
+    &_bg-grid {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        object-fit: fill;
     }
 
     &_header {
@@ -49,6 +59,7 @@
         box-sizing: border-box;
         border-radius: 56px;
         font-size: 18px;
+        max-width: 588px;
         @include tablet {
             font-size: 22px;
             gap: 30px;
@@ -58,7 +69,7 @@
         }
 
 
-        &:nth-child(even) {
+        &:nth-child(odd) {
             filter: drop-shadow(7px 7px 0px rgba(31, 53, 240, .7));
             padding-left: 20px;
             padding-right: 40px;

@@ -3,7 +3,7 @@
     padding: 32px $indent 310px;
     border-radius: 15px;
     overflow: hidden;
-    background: radial-gradient(430% 100% at 100% 100%, #0F279B 0%, transparent 100%), linear-gradient(180deg, #020A44 0%, transparent 45%), radial-gradient(430% 100% at 0% 100%, #AF56B2 0%, transparent 100%), #020A44;
+    background: #020A44 url(#{$img}/banner-bg.svg) no-repeat center / 100% 100%;
     position: relative;    
     @include tablet {
         padding: 60px 60px;

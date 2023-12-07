@@ -644,7 +644,7 @@ if (clientsMapButtons.length) {
     }));
 }
 
-const mapMarkers = document.querySelectorAll('.map_place');
+const mapMarkers = document.querySelectorAll('.map_place, .map_pin');
 mapMarkers.forEach(el => el.addEventListener('click', function(e) {
     mapMarkers.forEach(el => el.classList.remove('active'));
     e.target.classList.add('active');
@@ -768,4 +768,23 @@ if (reviewElements.length) {
         }
 
     }, 3000);
+}
+
+/* words change */
+const wordsElements = document.querySelectorAll('.words span');
+if (wordsElements.length) {
+    wordsElements[0].classList.add('active');
+    const wordsCount = wordsElements.length;
+    let activeIndex = 0;
+
+    setInterval(() => {
+        wordsElements.forEach(el => el.classList.remove('active'));
+        wordsElements[activeIndex].classList.add('active');
+
+        if (activeIndex < wordsCount - 1) {
+            activeIndex++;
+        } else {
+            activeIndex = 0;
+        }
+    }, 2000);
 }

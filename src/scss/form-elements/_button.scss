@@ -41,6 +41,7 @@
 
 @mixin button-reset {
     border: none;
+    white-space: initial;
     padding: 0;
     background: transparent;
     height: auto;

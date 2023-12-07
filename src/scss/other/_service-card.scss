@@ -10,23 +10,25 @@
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    position: relative;
     @include tablet {
         min-height: 340px;
-        position: relative;
         padding: 60px;
     }
 
     &::after {
-        @include tablet {
-            content: '';
-            width: 36px;
-            height: 36px;
-            right: 30px;
-            bottom: 54px;
-            position: absolute;
-            background: url(#{$img}/card-arrow-orange.svg) no-repeat;
+        content: '';
+        width: 36px;
+        height: 36px;
+        right: 30px;
+        bottom: 34px;
+        position: absolute;
+        background: url(#{$img}/card-arrow-blue.svg) no-repeat;
+        opacity: 1;
+        transition: .2s $easingSmooth opacity;
+        @include desktop {
             opacity: 0;
-            transition: .2s $easingSmooth opacity;
+            bottom: 54px;
         }
     }
 
@@ -34,7 +36,7 @@
         background-color: $cYellowLight;
 
         &::after {
-            background-image: url(#{$img}/card-arrow-blue.svg);
+            background-image: url(#{$img}/card-arrow-orange.svg);
         }
     }
 

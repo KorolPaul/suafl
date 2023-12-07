@@ -8,6 +8,7 @@
     box-sizing: border-box;
     @include desktop {
         padding: 60px;
+        min-height: 293px;
     }
     @include desktop {
         height: auto;

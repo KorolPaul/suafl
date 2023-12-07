@@ -50,7 +50,10 @@
         background-color: $cWhite;
         padding: $indent $indent 40px;
         position: relative;
+        min-height: 190px;
+        box-sizing: border-box;
         @include desktop {
+            min-height: initial;
             width: 282px;
             background-color: transparent;
             padding: 0;
@@ -75,7 +78,7 @@
     &_item-number {
         font-size: 80px;
         font-weight: 600;
-        opacity: 0.3;
+        opacity: 0.25;
         background: linear-gradient(180deg, #0E0B3A 0%, transparent 100%);
         background-clip: text;
         -webkit-background-clip: text;
