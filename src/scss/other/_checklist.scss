@@ -1,6 +1,7 @@
 .checklist {
     &_title {
         margin-bottom: 32px;
+        font-size: 32px;
         @include tablet {
             margin-bottom: 60px;
         }

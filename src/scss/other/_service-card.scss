@@ -1,6 +1,5 @@
 .service-card {
     color: $color;
-    background-color: $cNavyLight;
     padding: 32px $indent;
     display: flex;
     flex-direction: column;
@@ -23,7 +22,7 @@
         right: 30px;
         bottom: 34px;
         position: absolute;
-        background: url(#{$img}/card-arrow-blue.svg) no-repeat;
+        background-repeat: no-repeat;
         opacity: 1;
         transition: .2s $easingSmooth opacity;
         @include desktop {
@@ -32,7 +31,23 @@
         }
     }
 
-    &:nth-child(2) {
+    &__blue {
+        background-color: $cNavyLight;
+
+        &::after {
+            background-image: url(#{$img}/card-arrow-blue.svg);
+        }
+    }
+
+    &__blue-light {
+        background-color: $cBlueLight;
+
+        &::after {
+            background-image: url(#{$img}/card-arrow-blue.svg);
+        }
+    }
+
+    &__orange {
         background-color: $cYellowLight;
 
         &::after {
@@ -40,7 +55,7 @@
         }
     }
 
-    &:nth-child(3) {
+    &__green {
         background-color: $cGreenLight;
 
         &::after {

@@ -208,6 +208,25 @@
         &::after {
             background-image: url(#{$img}/prev-filled.svg);
         }
+
+        .page-orange & {
+            background-image: url(#{$img}/prev-orange.svg);
+        }
+        .page-orange &::after {
+            background-image: url(#{$img}/prev-filled-orange.svg);
+        }
+        .page-blue & {
+            background-image: url(#{$img}/prev-blue.svg);
+        }
+        .page-blue &::after {
+            background-image: url(#{$img}/prev-filled-blue.svg);
+        }
+        .page-green & {
+            background-image: url(#{$img}/prev-green.svg);
+        }
+        .page-green &::after {
+            background-image: url(#{$img}/prev-filled-green.svg);
+        }
     }
     button[data-controls="next"]{
         background: url(#{$img}/next.svg) no-repeat center / 100% auto;
@@ -215,7 +234,27 @@
         &::after {
             background-image: url(#{$img}/next-filled.svg);
         }
+
+        .page-orange & {
+            background-image: url(#{$img}/next-orange.svg);
+        }
+        .page-orange &::after {
+            background-image: url(#{$img}/next-filled-orange.svg);
+        }
+        .page-blue & {
+            background-image: url(#{$img}/next-blue.svg);
+        }
+        .page-blue &::after {
+            background-image: url(#{$img}/next-filled-blue.svg);
+        }
+        .page-green & {
+            background-image: url(#{$img}/next-green.svg);
+        }
+        .page-green &::after {
+            background-image: url(#{$img}/next-filled-green.svg);
+        }
     }
+
 }
 
 .tns-nav {

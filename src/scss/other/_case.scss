@@ -86,6 +86,14 @@
         img {
             height: 28px;
         }
+
+        .page-orange & {
+            background-color: $cYellow;
+        }
+        
+        .page-blue & {
+            background-color: $cBlue;
+        }
     }
 
     &_name {

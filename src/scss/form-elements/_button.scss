@@ -37,6 +37,21 @@
     &:disabled {
         opacity: .6;
     }
+    
+    .page-green &:hover {
+        background-color: #113C22;
+        border-color: #113C22;
+    }
+
+    .page-blue &:hover {
+        background-color: #165874;
+        border-color: #165874;
+    }
+
+    .page-orange &:hover {
+        background-color: #B36F09;
+        border-color: #B36F09;
+    }
 }
 
 @mixin button-reset {

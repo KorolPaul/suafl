@@ -170,7 +170,9 @@ casesSliders.forEach(casesSlider => {
         animateOut: 'tns-goBackOut',
         speed: 800,
         onInit: function (slider) {
-            document.querySelector('.cases .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+            if (document.querySelector('.cases .tns-counter_total')) {
+                document.querySelector('.cases .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+            }
         }
     });
 
@@ -655,37 +657,55 @@ if (document.querySelector('.alphabet')) {
     const letters = document.querySelectorAll('.alphabet_letter');
     const cardsLetters = document.querySelectorAll('.alphabet_item-letter');
 
-    letters.forEach(letter => letter.addEventListener('click', (e) => {
+    function handleLetterClick(e) {
         e.preventDefault();
+        const className = e.type === 'click' ? 'active' : 'hovered';
 
         const content = e.target.innerText;
-        letters.forEach(el => el.classList.remove('active'));
+        letters.forEach(el => el.classList.remove(className));
         cardsLetters.forEach(el => {
             if (el.innerText === content) {
-                el.parentElement.classList.add('active');
+                el.parentElement.classList.add(className);
             } else {
-                el.parentElement.classList.remove('active');
+                el.parentElement.classList.remove(className);
             }
         });
 
-        e.target.classList.add('active');
-    }));
+        e.target.classList.add(className);
+    }
 
-    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('click', (e) => {
+    function handleCardClick(e) {
         e.preventDefault();
+        const className = e.type === 'click' ? 'active' : 'hovered';
 
         const content = e.target.querySelector('.alphabet_item-letter').innerText;
-        cardsLetters.forEach(el => el.parentElement.classList.remove('active'));
+        cardsLetters.forEach(el => el.parentElement.classList.remove(className));
         letters.forEach(el => {
             if (el.innerText === content) {
-                el.classList.add('active');
+                el.classList.add(className);
             } else {
-                el.classList.remove('active');
+                el.classList.remove(className);
             }
         });
 
-        e.target.classList.add('active');
-    }));
+        e.target.classList.add(className);
+    }
+
+    function handleMouseLeave(e) {
+        e.preventDefault();
+        const className = 'hovered';
+
+        cardsLetters.forEach(el => el.parentElement.classList.remove(className));
+        letters.forEach(el => el.classList.remove(className));  
+    }
+
+    letters.forEach(letter => letter.addEventListener('click', handleLetterClick));
+    letters.forEach(letter => letter.addEventListener('mouseenter', handleLetterClick));
+    letters.forEach(letter => letter.addEventListener('mouseleave', handleMouseLeave));
+
+    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('click', handleCardClick));
+    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('mouseenter', handleCardClick));
+    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('mouseleave', handleMouseLeave));
 };
 
 const comparisonElement = document.querySelector('#image-compare');

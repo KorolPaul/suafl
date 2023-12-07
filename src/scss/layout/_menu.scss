@@ -93,15 +93,15 @@
         }
 
         .page-green & {
-            background-color: $cPageGreenLight;
+            background-color: rgba($cPageGreenLight, .5);
         }
 
         .page-blue & {
-            background-color: $cPageBlueLight;
+            background-color: rgba($cPageBlueLight, .5);
         }
 
         .page-orange & {
-            background-color: $cPageOrangeLight;
+            background-color: rgba($cPageOrangeLight, .5);
         }
     }
 

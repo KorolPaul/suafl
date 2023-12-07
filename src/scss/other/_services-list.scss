@@ -2,7 +2,9 @@
     h2 {
         text-align: center;
         margin: 0 0 32px;
+        font-size: 32px;
         @include tablet {
+            font-size: 48px;
             margin-bottom: 60px;
         }
 

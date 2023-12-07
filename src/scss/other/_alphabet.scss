@@ -20,7 +20,8 @@
         color: rgba($color, .3);
 
         &:hover,
-        &.active {
+        &.active,
+        &.hovered {
             background-color: #E4E8F0;
             color: $color;
         }
@@ -74,12 +75,14 @@
         }
         
         &:hover::before,
-        &.active::before {
+        &.active::before,
+        &.hovered::before {
             opacity: 1;
         }
 
         &:hover::after,
-        &.active::after {
+        &.active::after,
+        &.hovered::after {
             opacity: 0;
         }
 
@@ -123,7 +126,8 @@
         transition: .2s $easing opacity;
 
         .alphabet_item:hover &,
-        .alphabet_item.active & {
+        .alphabet_item.active &,
+        .alphabet_item.hovered & {
             opacity: 0;
         }
 
@@ -172,14 +176,16 @@
         }
 
         .alphabet_item:hover &,
-        .alphabet_item.active &  {
+        .alphabet_item.active &,
+        .alphabet_item.hovered & {
             @include tablet {
                 color: $bg_color;
             }
         }
 
         .alphabet_item:hover &::first-letter,
-        .alphabet_item.active &::first-letter {
+        .alphabet_item.active &::first-letter,
+        .alphabet_item.hovered &::first-letter {
             @include tablet {
                 color: #EB583C;
             }
@@ -218,10 +224,10 @@
         }
 
         .alphabet_item:hover &,
-        .alphabet_item.active &  {
+        .alphabet_item.active &,
+        .alphabet_item.hovered &  {
             @include tablet {
                 filter: brightness(20);
-                color: $bg_color;
             }
         }
 

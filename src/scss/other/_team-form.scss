@@ -72,6 +72,9 @@
         .page-blue & {
             background-color: $cPageBlueLight;
         }
+        .page-orange & {
+            background-color: $cPageOrangeLight;
+        }
 
         &::before {
             content: '';

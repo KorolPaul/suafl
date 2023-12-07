@@ -110,6 +110,16 @@
             font-size: 14px;
             margin: 0;
         }
+
+        .page-orange &:hover {
+            color: $cPageOrange;
+        }
+        .page-blue &:hover {
+            color: $cPageBlue;
+        }
+        .page-green &:hover {
+            color: $cPageGreen;
+        }
     }
 
     &_source-header {
