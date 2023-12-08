@@ -67,6 +67,13 @@
             font-size: 32px;
             margin-bottom: 20px;
         }
+
+        .advantage:nth-child(6) &,
+        .advantage:nth-child(7) & {
+            @include tablet {
+                width: 100%;
+            }
+        }   
     }
 
     &_number {

@@ -32,28 +32,34 @@
             height: 600px;
             width: 100%;
             overflow: hidden;
+            
         }
+    }
+
+    &_timeline-holder {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform-origin: left bottom;
+        transform: rotate(-25deg);
+        transition: .3s linear transform;
     }
 
     &_timeline {
         @include desktop {
+            background-color: rgba(78, 70, 220, .1);
             max-width: none;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            transition: .3s linear transform;
         }
     }
 
     &_timeline-dates {
         display: flex;
         gap: 220px;
-        position: absolute;
         left: 70px;
         bottom: 42px;
-        transform-origin: left bottom;
-        transform: rotate(-25deg);
-        transition: .3s linear transform;
+        position: absolute;
+        left: 0;
+        top: 30%;
     }
 
     &_timeline-date {

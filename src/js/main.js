@@ -353,25 +353,23 @@ roadmapSliders.forEach(roadmapSlider => {
 
     const prevButtons = roadmapSlider.querySelectorAll('.tns-controls button:first-child');
     const nextButtons = roadmapSlider.querySelectorAll('.tns-controls button:last-child');
-    const timelineElement = document.querySelector('.roadmap_timeline');
-    const datesElement = document.querySelector('.roadmap_timeline-dates');
+    const timelineElement = document.querySelector('.roadmap_timeline-holder');
+
+    function move(index) {
+        const translate = `translate(${-220 * index}px, ${220 * index}px) rotate(-25deg)`
+
+        timelineElement.style.transform = translate;
+    }
 
     prevButtons.forEach(el => el.addEventListener('click', () => {
         const {displayIndex} = slider.getInfo();
-        const translate = `translate(${-100 * displayIndex}px, ${100 * displayIndex}px)`
-
-        timelineElement.style.transform = translate;
-        datesElement.style.transform = translate;
-
+        move(displayIndex);
         slider.goTo('prev');
     }));
 
     nextButtons.forEach(el => el.addEventListener('click', () => {
         const {displayIndex} = slider.getInfo();
-        const translate = `translate(${-100 * displayIndex}px, ${100 * displayIndex}px)`
-
-        timelineElement.style.transform = translate;
-        datesElement.style.transform = translate;
+        move(displayIndex);
         slider.goTo('next')
     }));
 });
