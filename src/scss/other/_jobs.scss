@@ -27,35 +27,53 @@
 .job {
     position: relative;
     border-radius: 15px;
-    background: $cWhite;
     padding: $indent $indent $indent 90px;
     margin: 0 0 $indent;
-    transition: .2s $easingSmooth opacity;
     display: flex;
     min-height: 94px;
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: rgba($cWhite, .7);
+    backdrop-filter: blur(10px);
     @include tablet {
         min-height: 160px;
         padding: 30px 30px 30px 200px;
     }
 
-    &:hover {
-        opacity: .6;
-    }
-    &:active {
-        opacity: .8;
-    }
 
     &_icon {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 58px;
+        left: 20px;
+        bottom: 16px;
         @include tablet {
-            width: auto;
-        }            
+            left: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+        }        
+    }
+
+    &_bg {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        position: absolute;
+        left: -155px;
+        bottom: -155px;
+        z-index: -1;
+        @include tablet {
+            bottom: -108px;
+            transform-origin: center;
+            transition: .4s $easing transform;
+        }
+
+        .job:hover & {
+            @include tablet {
+                transform: scale(10);
+            }
+        }
     }
 
     &_title {

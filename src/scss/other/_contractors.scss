@@ -18,6 +18,8 @@
     }
 
     &_map {
+        position: relative;
+        z-index: 2;
         @include tablet {
             @include layout;
         }
@@ -88,6 +90,8 @@
         text-align: center;
         margin-top: $indent;
         padding: 0 $indent;
+        position: relative;
+        z-index: 2;
         @include tablet {
             padding: 0;
         }

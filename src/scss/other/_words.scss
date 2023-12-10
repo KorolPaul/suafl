@@ -11,7 +11,7 @@
         top: 50%;
         opacity: 0;
         transform: translate(-50%, -50%);
-        transition: .3s $easingSmooth opacity;
+        transition: .7s linear 0s opacity;
 
         &:first-child {
             position: static;
@@ -20,6 +20,7 @@
 
         &.active {
             opacity: 1;
+            transition-delay: .4s;
         }
     }
 }

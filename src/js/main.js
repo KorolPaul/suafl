@@ -269,7 +269,9 @@ partnersSlider.forEach(el => {
         items: 1.6,
         gutter: 24,
         mouseDrag: true,
-        autoplay: false,
+        autoplay: true,
+        autoplayTimeout: 3500,
+        autoplayButtonOutput: false,
         nav: false,
         controls: true,
         controlsPosition: 'bottom',
@@ -450,7 +452,7 @@ function openPopup(name) {
     }
 }
 function closePopup(name) {
-    document.querySelector('.popup.opened, .video-popup.opened').classList.remove('opened');
+    document.querySelector('.popup.opened, .video-popup.opened')?.classList.remove('opened');
     document.body.classList.remove('popup-opened');
     // window.removeEventListener(wheelEvent, disableScroll, { passive: false });
 }
@@ -673,17 +675,35 @@ if (clientsMapButtons.length) {
     clientMapItems[activePlace - 1].classList.add('active');
     document.querySelector('.clients-map').dataset.place = activePlace;
 
-    clientsMapButtons.forEach(button => button.addEventListener('click', (e) => {
-        activePlace = Number(e.target.dataset.place);
-
+    function changeMap(number) {
         clientsMapButtons.forEach(el => el.classList.remove('active'));
         clientMapItems.forEach(el => el.classList.remove('active'));
 
-        clientMapItems[activePlace - 1].classList.add('active');
-        clientMapItems[activePlace - 1].querySelector('.clients-map_item-button').classList.add('active');
+        activePlace = number < 1 ? clientMapItems.length : number;
+        if (number > clientMapItems.length) {
+            activePlace = 1;
+        }
 
         document.querySelector('.clients-map').dataset.place = activePlace;
+        clientMapItems[activePlace - 1].classList.add('active');
+        clientMapItems[activePlace - 1].querySelector('.clients-map_item-button').classList.add('active');
+    }
+
+    clientsMapButtons.forEach(button => button.addEventListener('click', (e) => {
+        changeMap(Number(e.target.dataset.place));
     }));
+
+    const clientMapPrevButton = document.querySelector('.clients-map_controls button:first-child');
+    const clientMapNextButton = document.querySelector('.clients-map_controls button:last-child');
+
+    clientMapPrevButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        changeMap(activePlace - 1);
+    });
+    clientMapNextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        changeMap(activePlace + 1);
+    });
 }
 
 const mapMarkers = document.querySelectorAll('.map_place, .map_pin');
@@ -739,11 +759,11 @@ if (document.querySelector('.alphabet')) {
         letters.forEach(el => el.classList.remove(className));  
     }
 
-    letters.forEach(letter => letter.addEventListener('click', handleLetterClick));
+    // letters.forEach(letter => letter.addEventListener('click', handleLetterClick));
     letters.forEach(letter => letter.addEventListener('mouseenter', handleLetterClick));
     letters.forEach(letter => letter.addEventListener('mouseleave', handleMouseLeave));
 
-    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('click', handleCardClick));
+    // cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('click', handleCardClick));
     cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('mouseenter', handleCardClick));
     cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('mouseleave', handleMouseLeave));
 };
@@ -779,8 +799,10 @@ if (comparisonElement) {
 
 
 /* custom select input */
-if ('NiceSelect' in window && document.querySelector('select')) {
-    NiceSelect.bind(document.querySelector('select'));
+const selectElements = document.querySelectorAll('select');
+if ('NiceSelect' in window && selectElements.length) {
+    console.log();
+    selectElements.forEach(el => NiceSelect.bind(el));
 }
 
 /* changable background */

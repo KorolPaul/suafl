@@ -13,7 +13,8 @@
         width: 12px;
         height: 12px;
 
-        &::after {
+        &::after,
+        &::before {
             content: '';
             background-color: $cBright;
             box-shadow: 0 0 0 5px rgba($cBright, .25);
@@ -25,6 +26,15 @@
             top: 0;
         }
 
+        &::before {
+            animation: circles 2.5s linear 1s infinite;
+        }
+
+        @for $i from 2 to 20 {
+            &:nth-child(#{$i})::before {
+                animation-delay: calc(#{$i}s / 10);
+            }
+        }
 
     }
 
@@ -117,5 +127,16 @@
         font-weight: 600;
         display: block;
         color: $color;
+    }
+}
+
+@keyframes circles {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
     }
 }

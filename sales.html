@@ -235,9 +235,9 @@
                                 <img src="src/img/positions/position-1.png" alt="" class="positions_item-icon">
                                 <span class="positions_item-title">Sales Support</span>
                                 <div class="positions_item-vacancies">
-                                    <button class="positions_item-vacancy">Data Analyst</button>
-                                    <button class="positions_item-vacancy">Email Marketer</button>
-                                    <button class="positions_item-vacancy">Lead Gen Specialist</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Data Analyst</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Email Marketer</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Lead Gen Specialist</button>
                                 </div>
                             </div>
                         </li>
@@ -247,9 +247,9 @@
                                 <img src="src/img/positions/position-2.png" alt="" class="positions_item-icon">
                                 <span class="positions_item-title">Inside Sales</span>
                                 <div class="positions_item-vacancies">
-                                    <button class="positions_item-vacancy">Sales Development Rep (SDR)</button>
-                                    <button class="positions_item-vacancy">Cold Outreach Expert</button>
-                                    <button class="positions_item-vacancy">BDR</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Sales Development Rep (SDR)</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Cold Outreach Expert</button>
+                                    <button class="positions_item-vacancy" data-popup="job">BDR</button>
                                 </div>
                             </div>
                         </li>
@@ -259,11 +259,11 @@
                                 <img src="src/img/positions/position-3.png" alt="" class="positions_item-icon">
                                 <span class="positions_item-title">Sales Team</span>
                                 <div class="positions_item-vacancies">
-                                    <button class="positions_item-vacancy">Account Executive</button>
-                                    <button class="positions_item-vacancy">Account Manager</button>
-                                    <button class="positions_item-vacancy">CRM Expert</button>
-                                    <button class="positions_item-vacancy">Sales Engineer</button>
-                                    <button class="positions_item-vacancy">CustDev Researcher</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Account Executive</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Account Manager</button>
+                                    <button class="positions_item-vacancy" data-popup="job">CRM Expert</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Sales Engineer</button>
+                                    <button class="positions_item-vacancy" data-popup="job">CustDev Researcher</button>
                                 </div>
                             </div>
                         </li>
@@ -273,9 +273,9 @@
                                 <img src="src/img/positions/position-4.png" alt="" class="positions_item-icon">
                                 <span class="positions_item-title">Customer Care</span>
                                 <div class="positions_item-vacancies">
-                                    <button class="positions_item-vacancy">Customer Care</button>
-                                    <button class="positions_item-vacancy">Customer Success (CSM)</button>
-                                    <button class="positions_item-vacancy">Client Support</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Customer Care</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Customer Success (CSM)</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Client Support</button>
                                 </div>
                             </div>
                         </li>
@@ -285,10 +285,10 @@
                                 <img src="src/img/positions/position-5.png" alt="" class="positions_item-icon">
                                 <span class="positions_item-title">Sales Management</span>
                                 <div class="positions_item-vacancies">
-                                    <button class="positions_item-vacancy">Team Lead</button>
-                                    <button class="positions_item-vacancy">Director / VP of Sales</button>
-                                    <button class="positions_item-vacancy">Revenue Officer</button>
-                                    <button class="positions_item-vacancy">Sales Operations</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Team Lead</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Director / VP of Sales</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Revenue Officer</button>
+                                    <button class="positions_item-vacancy" data-popup="job">Sales Operations</button>
                                 </div>
                             </div>
                         </li>
@@ -799,7 +799,77 @@
                 The Company primarily gathers your personal data in the case of any contractual relations. You may be asked to provide your personal data upon usage of any websites of the Company. The data is gathered discretely and only the Company has access to it during this topics. By engaging in contractual relations with the Company, you give your express consent to the Company to gather and process your personal data. You are fully responsible for the accuracy of the data provided to the Company. By engaging in contractual relations with the Company, you agree that the Company may collect, store, disclose and transfer internationally (including disclosure to any related legal entities of the Company or to its subcontractors) personal data, including sensitive personal data, relating to you and/or your employees for various purposes including (i) processing, reviewing and administering your registration/purchase form to seminars/conferences/events, (ii) maintaining the administrative or client relationship management systems of the Company, (iii) quality and risk management reviews, (iv) statistical reviews, (v) providing you with information about the Company and of seminars/conferences/events offers and/or organized, (vi) meeting the requirements of applicable laws and regulations. When you provide personal data to us about your employees and other individuals, you confirm that you only do so provided that you have the authority to act as their agent and that you have obtained any required approval and/or consent from such employees and/or other individuals.
             </p>
         </div>
+    </div>    
+
+    <div class="popup" data-popup="job">
+        <button class="popup_close"></button>
+        <div class="popup_content">
+            <h2>Let’s find your <span class="bright">stellar candidate!</span>!</h2>
+            <p>
+                Please provide a few details in the form below, so that we can do our homework and better help you.
+            </p>
+            <form action="" class="form">
+                <div class="form_row">
+                    <div class="form_cell">
+                        <input type="text" placeholder="Candidate location">
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <input type="text" id="position" placeholder="Position title *">
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <select>
+                            <option value="">Seniority</option>
+                            <option value="">Junior level (1-3 Years of experience)</option>
+                            <option value="">Middle level (3-5 Years of experience)</option>
+                            <option value="">Senior level (5-15 Years of experience)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <input type="text" placeholder="Your name *">
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <input type="text" placeholder="Company *">
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <input type="email" placeholder="E-mail *">
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <input type="text" placeholder="WhatsApp / Telegram / etc">
+                    </div>
+                </div>
+                <div class="form_divider"></div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <span>By clicking on the button below, you accept our <a href="/privacy.html">Privacy policy</a></span>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_cell">
+                        <input type="submit" value="FIND YOUR TALENT">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <!-- автоподстановка позиции в попап -->
+    <script>
+        document.querySelectorAll('.positions_item-vacancy').forEach(el => el.addEventListener('mousedown', (e) => {
+            document.querySelector('#position').value = e.target.innerText;
+        }));
+    </script>
 
     <div class="fade"></div>
 

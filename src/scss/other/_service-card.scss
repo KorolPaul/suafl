@@ -15,6 +15,10 @@
         padding: 60px;
     }
 
+    &:hover {
+        color: $color;
+    }
+
     &::after {
         content: '';
         width: 36px;
@@ -82,10 +86,11 @@
             padding: 12px 24px 11px;
         }
 
-        .service-card:nth-child(2) & {
+        .service-card__blue &,
+        .service-card__blue-light & {
             background-color: rgba(21, 125, 170, .1);
         }
-        .service-card:nth-child(3) & {
+        .service-card_green & {
             background-color: rgba(22, 108, 57, .1);
         }
 
@@ -114,11 +119,12 @@
         color: $cPageOrange;
         font-weight: 600;
 
-        .service-card:nth-child(2) & {
+        .service-card__blue &,
+        .service-card__blue-light & {
             color: $cPageBlue;
         }
     
-        .service-card:nth-child(3) & {
+        .service-card__green & {
             color: $cPageGreen;
         }
     }

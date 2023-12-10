@@ -7,10 +7,10 @@
     }
 
     &_header {
-        margin: 0 0 32px;
+        padding: 0 0 32px;
         @include desktop {
             display: flex;
-            margin-bottom: 60px;
+            padding-bottom: 60px;
             justify-content: space-between;
         }
 

@@ -61,10 +61,7 @@
     }
 
     &_item-title {
-        background: linear-gradient(90deg, #1F35F0 0%, $cPurple 33%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: 1F35F0;
         font-size: 18px;
         font-weight: 600;
         margin-bottom: $indent;
@@ -78,7 +75,7 @@
     &_item-number {
         font-size: 80px;
         font-weight: 600;
-        opacity: 0.25;
+        opacity: 0.1;
         background: linear-gradient(180deg, #0E0B3A 0%, transparent 100%);
         background-clip: text;
         -webkit-background-clip: text;

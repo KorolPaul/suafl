@@ -115,8 +115,14 @@
         }
 
         a {
+            font-weight: 400;
             color: #EB583C;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
+
         a[href^='mailto:'] {
             background: none;
             padding: 0;
@@ -128,6 +134,7 @@
         bottom: 0;
         right: 0;
         z-index: 0;
+        pointer-events: none;
 
         .banner__left & {
             left: 0;
