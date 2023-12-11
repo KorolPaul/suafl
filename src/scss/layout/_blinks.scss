@@ -25,20 +25,20 @@
         @include tablet {
             width: 400px;
             height: 400px;
-            filter: blur(140px);
+            filter: blur(125px);
         }
     }
 
     &_orange {
         animation: floating 10s linear infinite;
         // background-color: $cOrangeLight;
-        background-color: #FADBC4;
+        background-color: rgba(198, 239, 242, .6);
         left: 25%;
     } 
 
     &_teal {
         animation: floating 10s linear 1s infinite reverse;
-        background-color: #C6EFF2;
+        background-color: rgba(236, 177, 238, .6);
         // background-color: #8bd4da;
         left: 60%;
         top: 30%;
@@ -47,36 +47,36 @@
 
 @keyframes floating {
     0% {
-        transform: translateY(0) scale(1);
+        transform: translate(0, 0) scale(1);
     }
     10% {
-        transform: translateY(-12%) scale(1.2, 1.3);
+        transform: translate(-4%, -12%) scale(1.2, 1.3);
     }
     20% {
-        transform: translateY(-23%) scale(1, .8);
+        transform: translate(-6%, -23%) scale(1, .8);
     }
     30% {
-        transform: translateY(-7%) scale(1.1, 1.1);
+        transform: translate(-1%, -7%) scale(1.1, 1.1);
     }
     40% {
-        transform: translateY(1%) scale(1.3, 1.2);
+        transform: translate(0, 1%) scale(1.3, 1.2);
     }
     50% {
-        transform: translateY(6%) scale(1.5, 1.3);
+        transform: translateY(2%, 6%) scale(1.5, 1.3);
     }
     60% {
-        transform: translateY(13%) scale(1, 1);
+        transform: translate(5%, 13%) scale(1, 1);
     }
     70% {
-        transform: translateY(16%) scale(.8, 0.8);
+        transform: translate(8%, 16%) scale(.8, 0.8);
     }
     80% {
-        transform: translateY(9%) scale(1.5, 1.3);
+        transform: translate(3%, 9%) scale(1.5, 1.3);
     }
     90% {
-        transform: translateY(4%) scale(1.3, 1.1);
+        transform: translate(1%, 4%) scale(1.3, 1.1);
     }
     100% {
-        transform: translateY(0) scale(1);
+        transform: translate(0, 0) scale(1);
     }
 }

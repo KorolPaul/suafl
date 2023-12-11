@@ -17,6 +17,7 @@
 
     &_content {
         @include desktop {
+            min-height: 340px;
             width: calc(100% - 306px);
         }
     }
