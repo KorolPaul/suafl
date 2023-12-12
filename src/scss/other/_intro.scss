@@ -196,17 +196,41 @@
         &__with-bg::before {
             content: '';
             position: absolute;
-            top: 20px;
-            bottom: 20px;
-            right: 50%;
+            top: -80px;
+            bottom: -60px;
+            right: 20px;
             width: 5000px;
-            background: #EFF4EE url(#{$img}/bg-grid) repeat-x top 30px right 78px;
+            background: $cWhite;
             z-index: -1;
+            border-radius: 30px;
         }
 
         &__indent-left {
             @include desktop {
                 margin-left: -120px;
+            }
+        }
+
+        &__with-line::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            right: 50%;
+            width: 5000px;
+            background: $cBright;
+            z-index: -1;
+
+            .page-green & {
+                background-color: $cPageGreenLight;
+            }
+
+            .page-blue & {
+                background-color: $cPageBlueLight;
+            }
+
+            .page-orange & {
+                background-color: $cPageOrangeLight;
             }
         }
     }
