@@ -69,6 +69,12 @@
             margin-bottom: 20px;
         }
 
+        .advantage:nth-child(3) &,
+        .advantage:nth-child(5) & {
+            @include tablet {
+                width: 73%;
+            }
+        }   
         .advantage:nth-child(6) &,
         .advantage:nth-child(7) & {
             @include tablet {

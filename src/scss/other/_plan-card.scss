@@ -3,6 +3,7 @@
     padding: 32px $indent;
     background-color: $cWhite;
     backdrop-filter: blur(12px);
+    border: 1px solid #E4E8F0;
     @include desktop {
         padding: 60px 30px;
     }
@@ -92,9 +93,10 @@
                     .2s $easing opacity;
 
         .plan-card__highlight & {
+            background-color: transparent;
             border-color: #EB583C;
-            background-color: #EB583C;
-            color: $bg_color;
+            color: #EB583C;
+            
         }
 
         &:hover {
@@ -104,8 +106,8 @@
         }
 
         .plan-card__highlight &:hover {
-            background-color: transparent;
             border-color: #EB583C;
+            background-color: #EB583C;
             color: $bg_color;
         }
     

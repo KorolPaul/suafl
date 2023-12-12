@@ -2,7 +2,7 @@
     border-radius: 30px;
     background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%), #F7F9FC;
     text-align: center;
-    padding: 32px $indent;
+    padding: 32px 0;
     position: relative;
     @include desktop {
         padding: 60px;

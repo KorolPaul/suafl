@@ -111,10 +111,11 @@ solutionsSlider.forEach(sliderElement => {
         }
 
         const observerCallback = function (e) {
-            const { boundingClientRect, intersectionRatio } = e[0];
+            const { isIntersecting, intersectionRatio } = e[0];
+            console.log(e[0]);
             const ratio = isMobile ? 0.5 : 0.9;
 
-            if (intersectionRatio > 0.9) {
+            if (isIntersecting) {
                 document.addEventListener(wheelEvent, preventScroll, { passive: false })
             } else {
                 document.removeEventListener(wheelEvent, preventScroll, { passive: false })
@@ -122,9 +123,8 @@ solutionsSlider.forEach(sliderElement => {
         };
 
         const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '0px 0px 10% 0px',
-            threshold: thresholdSteps,
-            root: null
+            rootMargin: '200px 0px -20% 0px',
+            threshold: 0.5,
         });
         observer.observe(wrapper);
     }
@@ -157,7 +157,7 @@ casesSliders.forEach(casesSlider => {
     const slider = tns({
         container: casesSlider,
         items: 1,
-        gutter: 16,
+        gutter: 0,
         mouseDrag: true,
         autoplay: false,
         nav: false,
@@ -454,6 +454,8 @@ function openPopup(name) {
 function closePopup(name) {
     document.querySelector('.popup.opened, .video-popup.opened')?.classList.remove('opened');
     document.body.classList.remove('popup-opened');
+
+    document.querySelectorAll('iframe').forEach(el => el.src = el.src);
     // window.removeEventListener(wheelEvent, disableScroll, { passive: false });
 }
 
@@ -573,7 +575,7 @@ if (animatedElements.length) {
 
 /* prospects animation */
 
-/* appaerance animation */
+/* circle animation */
 const prospectsElement = document.querySelector('.prospects');
 const prospectsElements = document.querySelectorAll('.prospect');
 const prospectsNumbersElement = document.querySelector('.prospects_circle-numbers');
@@ -586,7 +588,7 @@ if (!isMobile && prospectsElement) {
         const heightWithOffset = height;
         const screenHeight = screen.availHeight;
 
-        const scrollPercent = ((((heightWithOffset - top) / heightWithOffset ) * 100) - 100) + 5;
+        const scrollPercent = ((((heightWithOffset - top) / heightWithOffset ) * 100) - 100) + 7;
 
         const onePercent = 90 * prospectsElements.length / 100;
         const angle = Math.round(scrollPercent * -onePercent) * 1.1;
@@ -598,51 +600,35 @@ if (!isMobile && prospectsElement) {
             prospectsNumberElements.forEach((el, i) => {
                 el.style.transform = `rotate(${-angle}deg)`;
             });
-
-            prospectsNumberElements.forEach(el => el.classList.remove('active'));
-            prospectsNumberElements.forEach(el => el.classList.remove('preactive'));
-            prospectsImageElements.forEach(el => el.classList.remove('active'));
-
-            switch(true) {
-                case angle > -90:
-                    prospectsElement.dataset.slide = 1;
-                    prospectsNumberElements[1].classList.add('preactive');
-                    prospectsNumberElements[0].classList.add('active');
-                    prospectsImageElements[0].classList.add('active');
-                    return;
-                case angle > -180:
-                    prospectsElement.dataset.slide = 2;
-                    prospectsNumberElements[2].classList.add('preactive');
-                    prospectsNumberElements[1].classList.add('active');
-                    prospectsImageElements[1].classList.add('active');
-                    return;
-                case angle > -270:
-                    prospectsElement.dataset.slide = 3;
-                    prospectsNumberElements[3].classList.add('preactive');
-                    prospectsNumberElements[2].classList.add('active');
-                    prospectsImageElements[2].classList.add('active');
-                    return;
-                case angle > -360:
-                    prospectsElement.dataset.slide = 4;
-                    prospectsNumberElements[4].classList.add('preactive');
-                    prospectsNumberElements[3].classList.add('active');
-                    prospectsImageElements[3].classList.add('active');
-                    return;
-                case angle > -450:
-                    prospectsElement.dataset.slide = 5;
-                    prospectsNumberElements[5].classList.add('preactive');
-                    prospectsNumberElements[4].classList.add('active');
-                    prospectsImageElements[4].classList.add('active');
-                    return;
-                case angle > -540:
-                    prospectsElement.dataset.slide = 6;
-                    prospectsNumberElements[5].classList.add('active');
-                    prospectsImageElements[5].classList.add('active');
-                    return;
-            }
         }
-
     });
+
+    prospectsElements.forEach(prospect => {
+        const observerCallback = function (e) {
+            const {isIntersecting, target} = e[0];
+
+            if (isIntersecting) {
+                const number = target.dataset.number;
+
+                prospectsNumberElements.forEach(el => el.classList.remove('active'));
+                prospectsNumberElements.forEach(el => el.classList.remove('preactive'));
+                prospectsImageElements.forEach(el => el.classList.remove('active'));
+
+                prospectsNumberElements[number]?.classList.add('preactive');
+                prospectsNumberElements[number - 1]?.classList.add('active');
+                prospectsImageElements[number - 1]?.classList.add('active');
+
+                prospectsElement.dataset.slide = number;
+            }
+        };
+    
+        const observer = new IntersectionObserver(observerCallback, {
+            rootMargin: '0px 0px -50% 0px',
+            threshold: 0.5,
+        });
+        observer.observe(prospect);
+    })
+    
 
 }
 
@@ -662,7 +648,7 @@ if (blinksElement) {
         setTimeout(() => {
             blinksElement.classList.remove('blinks__down');
             blinksElement.classList.remove('blinks__up');
-        }, 1000);
+        }, 1600);
     });
 }
 
