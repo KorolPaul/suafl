@@ -2,8 +2,11 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding: 5px;
+    padding: 3px 5px 2px;
     margin: 0 8px 0 0;
+    @include tablet {
+        padding: 5px;
+    }
 
     span {
         position: absolute;

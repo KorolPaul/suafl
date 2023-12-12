@@ -1,0 +1,47 @@
+.earth {
+    display: inline-block;
+    vertical-align: bottom;
+    border: 2px solid $color;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(#{$img}/locations.svg) no-repeat left 0px / auto 100%;
+        animation: earth 3s linear 0s infinite;
+        height: 100%;
+        width: 35px;
+    }
+
+    &::after {
+        animation-name: earth2;
+    }
+}
+
+@keyframes earth {
+    0% {
+        transform: translate(0)
+    }
+
+    to {
+        transform: translate(-100%)
+    }
+}
+
+@keyframes earth2 {
+    0% {
+        transform: translate(100%)
+    }
+
+    to {
+        transform: translate(0)
+    }
+}

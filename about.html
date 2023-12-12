@@ -182,7 +182,10 @@
                     <div class="intro_top">
                         <img src="src/img/intro-b2b.png" alt="" class="intro_image">
                         <div class="intro_content">
-                            <span class="intro_locations">San Francisco | Saint Petersburg | Warsaw | Tallinn</span>
+                            <span class="intro_locations">
+                                <div class="earth"></div>
+                                San Francisco | Saint Petersburg | Warsaw | Tallinn
+                            </span>
                             <h1 class="intro_title">About SUAFI</h1>
                             <p class="intro_text">
                                 It's all about people and their passions.
@@ -460,26 +463,20 @@
                     console.log(categoryButtons);
                     const categoryPersons = document.querySelectorAll('div[data-category]');
 
-                    const selectedCategories = [];
+                    let selectedCategory = categoryButtons[0].dataset.category;
+                    categoryButtons[0].classList.add('active');
+                    categoryPersons.forEach(person => person.style.display = selectedCategory === person.dataset.category ? 'block' : 'none');
+
                     
                     categoryButtons.forEach(button => button.addEventListener('click', (e) => {
                         e.preventDefault();
 
-                        if (e.target.classList.contains('active')) {
-                            e.target.classList.remove('active');
+                        categoryButtons.forEach(button => button.classList.remove('active'));
+                        categoryPersons.forEach(person => person.style.display = 'none');
 
-                            selectedCategories.splice(selectedCategories.findIndex(el => el === e.target.dataset.category));
-                        } else {
-                            e.target.classList.add('active');
-
-                            selectedCategories.push(e.target.dataset.category);
-                        }
-
-                        if (selectedCategories.length) {
-                            categoryPersons.forEach(person => person.style.display = selectedCategories.includes(person.dataset.category) ? 'block' : 'none')
-                        } else {
-                            categoryPersons.forEach(person => person.style.display = 'block')
-                        }
+                        selectedCategory = e.target.dataset.category;
+                        e.target.classList.add('active');
+                        categoryPersons.forEach(person => person.style.display = selectedCategory === person.dataset.category ? 'block' : 'none');
                     }))
                 </script>
             </section>

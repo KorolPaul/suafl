@@ -418,7 +418,7 @@ menuLinkElements.forEach(el => el.addEventListener('touchend', () => {
 }));
 
 /* Popup */
-const popupToggleElements = document.querySelectorAll('button[data-popup]');
+const popupToggleElements = document.querySelectorAll('button[data-popup], a[data-popup]');
 
 function disableScroll(e) {
     const { target } = e

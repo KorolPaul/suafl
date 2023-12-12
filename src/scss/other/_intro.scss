@@ -135,9 +135,10 @@
             font-size: 22px;
         }
 
-        .intro_bottom-content__reversed {
+        .intro_bottom-content__reversed & {
             @include desktop {
                 font-size: 32px;
+                max-width: 588px;
             }
         }
     }
@@ -155,6 +156,8 @@
             text-align: center;
             margin: -100px 0 -104px;
             opacity: .45;
+            pointer-events: none;
+            user-select: none;
         }
 
         &__small {
@@ -175,7 +178,7 @@
             color: $cBright;
         }
 
-        .intro_bottom-content__reversed {
+        .intro_bottom-content__reversed & {
             @include desktop {
                 font-size: 48px;
             }
@@ -218,12 +221,11 @@
     }
 
     &_locations {
-        background: url(#{$img}/locations.svg) no-repeat left 0px;
-        padding: 0 0 0 25px;
         font-weight: 600;
         display: block;
         margin: 0 0 $indent;
         line-height: 1.5;
+        position: relative;
         @include tablet {
             margin-bottom: 30px;
         }
