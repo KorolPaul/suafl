@@ -12,6 +12,9 @@
             position: absolute;
             top: 0;
             left: 0;
+            margin: 0;
+            width: 200px;
+            font-size: 48px;
         }
     }
 
@@ -32,13 +35,15 @@
             height: 600px;
             width: 100%;
             overflow: hidden;
+            mask: linear-gradient(to left, transparent 0%, black 7%, black 93%, transparent 100%),
+                    linear-gradient(to bottom, transparent 0%, transparent 1%, black 30%, black 40%, transparent 56%, transparent 100%);
             
         }
     }
 
     &_timeline-holder {
         position: absolute;
-        left: 0;
+        left: 136px;
         bottom: 0;
         transform-origin: left bottom;
         transform: rotate(-25deg);
@@ -47,19 +52,18 @@
 
     &_timeline {
         @include desktop {
-            background-color: rgba(78, 70, 220, .1);
             max-width: none;
+            margin-left: -250px;
         }
     }
 
     &_timeline-dates {
         display: flex;
-        gap: 220px;
-        left: 70px;
+        gap: 448px;
         bottom: 42px;
         position: absolute;
-        left: 0;
-        top: 30%;
+        left: 533px;
+        top: 20%;
     }
 
     &_timeline-date {
@@ -77,6 +81,11 @@
             height: 40px;
             border-radius: 50%;
             margin: 5px auto 0;
+            transition: .2s $easingSmooth background;
+        }
+
+        &.active::after {
+            background-color: #FFBF52;
         }
     }
 
@@ -92,13 +101,14 @@
     &_card {
         border-radius: 15px;
         padding: $indent;
-        background: linear-gradient(0deg, rgba(78, 70, 220, .1) 0%, rgba(78, 70, 220, .1) 100%), $cWhite;
+        background: linear-gradient(0deg, rgba(78, 70, 220, .1) 0%, rgba(78, 70, 220, .1) 100%), rgba($cWhite, .7);
         box-sizing: border-box;
         min-height: 376px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
+        backdrop-filter: blur(12px);
         @include desktop {
             max-width: 384px;
             box-sizing: border-box;

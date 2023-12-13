@@ -1,0 +1,70 @@
+.page-404 {
+    background: linear-gradient(234deg, #1F35F0 -120.59%, rgba(31, 53, 240, 0.00) 100%), #0A1339;
+    position: relative;
+    color: $bg_color;
+
+    &::before {
+        content: '';
+        background: url(#{$img}/stars.svg) repeat center center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        animation: stars 2s $easing infinite;
+    }
+
+    &_title {
+        font-size: 100px;
+        font-weight: 400;
+        margin: 0 0 $indent;
+        @include tablet {
+            margin-bottom: 20px;
+        }
+
+        span {
+            font-size: 80px;
+            vertical-align: 10px;
+        }
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: $indent;
+        @include tablet {
+            flex-direction: row;
+            gap: 126px;
+        }
+    }
+
+    &_image {
+        @include tablet {
+            width: 386px;
+            margin-top: 148px;
+        }
+        @include desktop {
+            width: 486px;
+        }
+    }
+
+    .header,
+    .footer {
+        @include desktop {
+            padding-left: 50vw;
+        }
+    }
+}
+
+@keyframes stars {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}

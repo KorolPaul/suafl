@@ -13,6 +13,10 @@
             padding-top: 30px;
             padding-bottom: 30px;
         }
+
+        .page-404 & {
+            border-top: none;
+        }
     }
 
     &_top {
@@ -106,6 +110,11 @@
         @include desktop {
             order: initial;
             font-size: vw(16);
+        }
+
+        .page-404 & {
+            color: rgba($bg_color, .3);
+            text-align: left;
         }
     }
 

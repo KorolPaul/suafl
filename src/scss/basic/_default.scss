@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
     font: 500 #{$font-size}/#{1.5} $font-family;
     padding: 0;
     scroll-behavior: smooth;
+    min-height: 100vh;
     @include tablet {
         font-size: $font-size;
     }

@@ -62,8 +62,37 @@
         }
     }
 
+    &_item-image-wrapper {
+        position: relative;
+        margin-bottom: 78px;
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &_item-image-shadow {
+        width: 207px;
+        height: 297px;
+        border-radius: 15px;
+        opacity: .2;
+        position: absolute;
+        bottom: -45px;
+        left: 30%;
+        z-index: 1;
+        background-color: $cPageBlue;
+        transition: .2s linear transform;
+        @include tablet {
+            bottom: -60px;
+            left: 70px;
+            width: 271px;
+            height: 390px;
+        }
+    }
+
     &_item-image {
         flex-shrink: 0;
+        position: relative;
+        z-index: 2;
     }
 
     &_item-content {

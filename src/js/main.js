@@ -356,23 +356,35 @@ roadmapSliders.forEach(roadmapSlider => {
     const prevButtons = roadmapSlider.querySelectorAll('.tns-controls button:first-child');
     const nextButtons = roadmapSlider.querySelectorAll('.tns-controls button:last-child');
     const timelineElement = document.querySelector('.roadmap_timeline-holder');
+    const timelineDatesElements = document.querySelectorAll('.roadmap_timeline-date');
+    timelineDatesElements[0].classList.add('active');
+
+    const gap = 448;
 
     function move(index) {
-        const translate = `translate(${-220 * index}px, ${220 * index}px) rotate(-25deg)`
+        const translate = `translate(${-gap * index}px, ${gap * 0.48 * index}px) rotate(-25deg)`
 
         timelineElement.style.transform = translate;
     }
 
     prevButtons.forEach(el => el.addEventListener('click', () => {
-        const {displayIndex} = slider.getInfo();
-        move(displayIndex);
-        slider.goTo('prev');
+        const {index} = slider.getInfo();
+        if (index - 1 >= 0) {
+            move(index - 1);
+            slider.goTo('prev');
+            timelineDatesElements.forEach(el => el.classList.remove('active'));
+            timelineDatesElements[index - 1]?.classList.add('active');
+        }
     }));
 
     nextButtons.forEach(el => el.addEventListener('click', () => {
-        const {displayIndex} = slider.getInfo();
-        move(displayIndex);
-        slider.goTo('next')
+        const {index, slideCount} = slider.getInfo();
+        if (index + 1 <= slideCount - 1) {
+            move(index + 1);
+            slider.goTo('next');
+            timelineDatesElements.forEach(el => el.classList.remove('active'));
+            timelineDatesElements[index + 1]?.classList.add('active');
+        }
     }));
 });
 
@@ -804,6 +816,7 @@ if (strategyElement && !isMobile) {
             const {target, intersectionRatio} = e[0];
             const color = target.style.backgroundColor;
 
+            el.querySelector('.strategy_item-image-shadow').style.transform = `translateY(-${intersectionRatio * 60}px)`;
             if (intersectionRatio > ratio) {
                 bgElement.style.backgroundColor = color;
             }
