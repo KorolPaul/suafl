@@ -704,10 +704,16 @@ if (clientsMapButtons.length) {
     });
 }
 
+const mapElements = document.querySelectorAll('.map');
 const mapMarkers = document.querySelectorAll('.map_place, .map_pin');
-mapMarkers.forEach(el => el.addEventListener('click', function(e) {
+
+mapElements.forEach(el => el.addEventListener('click', function(e) {
     mapMarkers.forEach(el => el.classList.remove('active'));
-    e.target.classList.add('active');
+
+    console.log(e.target.classList);
+    if (e.target.className.includes('map_place') || e.target.className.includes('map_pin')) {
+        e.target.classList.add('active');
+    }
 }))
 
 // alphabet cards
@@ -816,7 +822,7 @@ if (strategyElement && !isMobile) {
             const {target, intersectionRatio} = e[0];
             const color = target.style.backgroundColor;
 
-            el.querySelector('.strategy_item-image-shadow').style.transform = `translateY(-${intersectionRatio * 60}px)`;
+            el.querySelector('.strategy_item-image').style.transform = `translateY(-${intersectionRatio * 60}px)`;
             if (intersectionRatio > ratio) {
                 bgElement.style.backgroundColor = color;
             }

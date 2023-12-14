@@ -5,12 +5,15 @@
     backdrop-filter: blur(12px);
     border: 1px solid #E4E8F0;
     color: $color;
+    transform-origin: center;
+    transition: .2s $easingSmooth transform;
     @include desktop {
         padding: 60px 30px;
     }
 
     &:hover {
         color: $color;
+        transform: scale(1.04);
     }
 
     &__highlight {

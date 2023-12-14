@@ -73,36 +73,28 @@
         left: 60%;
         top: 150%;
         z-index: 1;
+        @include tablet {
+            height: 100px;
+            width: 100px;
+            left: 50%;
+        }
 
         img {
             width: 100%;
         }
 
-        &::before,
-        &::after {
+        &::before {
             content: '';
             position: absolute;
             border-radius: 50%;
             background-color: rgba($bg_color, .3);
             z-index: -1;
             transform-origin: center;
-            animation: pulsation 3.3s infinite linear;
-        }
-
-        &::before {
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             animation: pulsation 3.3s infinite linear;
-        }
-
-        &::after {
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            animation: pulsation 3.3s infinite .5s linear;
         }
     }
 
@@ -116,14 +108,12 @@
 
 @keyframes pulsation {
     0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
+        opacity: 1;
+        transform: scale(0);
     }
 
     100% {
-        transform: scale(1);
+        opacity: 0;
+        transform: scale(2.5);
     }
 }

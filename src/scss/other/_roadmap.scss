@@ -1,7 +1,6 @@
 .roadmap {
     @include tablet {
         position: relative;
-        background: url(#{$img}/roadmap-ball.png) no-repeat right bottom;
         padding: 0 0 93px;
     }
 
@@ -24,6 +23,8 @@
         @include tablet {
             display: flex;
             justify-content: center;
+            background: url(#{$img}/roadmap-ball.png) no-repeat right 30px bottom,
+                        url(#{$img}/roadmap-grid.svg) no-repeat right 30px bottom;
         }
     }
 

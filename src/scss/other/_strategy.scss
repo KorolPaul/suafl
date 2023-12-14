@@ -80,7 +80,6 @@
         left: 30%;
         z-index: 1;
         background-color: $cPageBlue;
-        transition: .2s linear transform;
         @include tablet {
             bottom: -60px;
             left: 70px;
@@ -93,6 +92,10 @@
         flex-shrink: 0;
         position: relative;
         z-index: 2;
+        transition: .2s linear transform;
+        @include tablet {
+            margin-bottom: -40px;
+        }
     }
 
     &_item-content {
