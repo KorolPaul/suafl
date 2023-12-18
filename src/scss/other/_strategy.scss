@@ -17,15 +17,13 @@
         padding: 64px 48px;
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: 100px;
         margin: 0 #{-$indent};
-        @include tablet {
-            flex-direction: row;
-            align-items: flex-start;
+        @include desktop {
             padding: 64px $indent;
             justify-content: space-between;
-        }
-        @include desktop {
+            flex-direction: row;
+            align-items: flex-start;
             padding: 100px 0;
             background-color: transparent !important;
         }
@@ -91,17 +89,33 @@
     &_item-image {
         flex-shrink: 0;
         position: relative;
+        will-change: transform;
         z-index: 2;
         transition: .2s linear transform;
         @include tablet {
-            margin-bottom: -40px;
+            min-width: 271px;
+        }
+    }
+
+    &_item-image-small {
+        width: 149px;
+        position: absolute;
+        left: 162px;
+        bottom: -20px;
+        z-index: 2;
+        will-change: transform;
+        transition: .2s linear transform;
+        @include tablet {
+            width: 195px;
+            left: 213px;
+            bottom: -30px;
         }
     }
 
     &_item-content {
         font-size: 18px;
         max-width: 690px;
-        @include desktop {
+        @include tablet {
             font-size: 22px;
         }
     }
@@ -112,14 +126,14 @@
         font-weight: 600;
         display: block;
         margin: 0 0 $indent;
-        @include desktop {
+        @include tablet {
             font-size: 32px;
         }
     }
 
     .button {
         margin-top: 16px;
-        @include desktop {
+        @include tablet {
             margin-top: 30px;
         }
     }

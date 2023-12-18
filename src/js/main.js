@@ -64,12 +64,14 @@ solutionsSlider.forEach(sliderElement => {
     });
 
     const wrapper = sliderElement.parentElement;
+    const solutionCardHeight = 461;
+
+    console.log(screen.height / 2 - solutionCardHeight / 2)
 
     if (wrapper) {
         let isAnimated = false;
 
         function handleCarouselScroll(isForward) {
-            console.log(isAnimated);
             if (isAnimated) {
                 return;
             }
@@ -83,7 +85,8 @@ solutionsSlider.forEach(sliderElement => {
 
             if (isForward) {
                 if (index >= slideCount - 1 ) {
-                    document.removeEventListener(wheelEvent, preventScroll, { passive: false });
+                    //document.removeEventListener(wheelEvent, preventScroll, { passive: false });
+                    document.body.classList.remove('stop-scrolling');
                     return;
                 }
 
@@ -93,7 +96,8 @@ solutionsSlider.forEach(sliderElement => {
                 wrapper.dataset.slide = index + 2;
             } else {
                 if (index === 0) {
-                    document.removeEventListener(wheelEvent, preventScroll, { passive: false });
+                    document.body.classList.remove('stop-scrolling');
+                    // document.removeEventListener(wheelEvent, preventScroll, { passive: false });
                     return;
                 }
 
@@ -105,26 +109,29 @@ solutionsSlider.forEach(sliderElement => {
         }
 
         function preventScroll(e) {
-            e.preventDefault()
+            // e.preventDefault()
 
             handleCarouselScroll(e.deltaY > 0)
         }
 
         const observerCallback = function (e) {
-            const { isIntersecting, intersectionRatio } = e[0];
-            console.log(e[0]);
-            const ratio = isMobile ? 0.5 : 0.9;
+            const { isIntersecting, intersectionRatio, boundingClientRect, rootBounds } = e[0];
+            const isInCenter = (boundingClientRect.top + boundingClientRect.height / 2) < rootBounds.height / 2;
 
+            console.log(intersectionRatio);
             if (isIntersecting) {
-                document.addEventListener(wheelEvent, preventScroll, { passive: false })
+
+                document.addEventListener(wheelEvent, preventScroll, { passive: false });
+                document.body.classList.add('stop-scrolling');
             } else {
-                document.removeEventListener(wheelEvent, preventScroll, { passive: false })
+                document.body.classList.remove('stop-scrolling');
+                // document.removeEventListener(wheelEvent, preventScroll, { passive: false })
             }
         };
 
         const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '200px 0px -20% 0px',
-            threshold: 0.5,
+            rootMargin: `-${screen.height / 2  - solutionCardHeight / 2}px 0% -${screen.height / 2 - solutionCardHeight / 2}px 0%`,
+            threshold: 0.6,
         });
         observer.observe(wrapper);
     }
@@ -819,17 +826,20 @@ if (strategyElement && !isMobile) {
         let ratio = .7;
 
         const observerCallback = function (e) {
-            const {target, intersectionRatio} = e[0];
+            const {target, intersectionRatio, isIntersecting, boundingClientRect} = e[0];
             const color = target.style.backgroundColor;
 
-            el.querySelector('.strategy_item-image').style.transform = `translateY(-${intersectionRatio * 60}px)`;
+            if (isIntersecting) {
+                el.querySelector('.strategy_item-image').style.transform = `translate3d(0, ${boundingClientRect.bottom / 25}px, 0)`;
+                el.querySelector('.strategy_item-image-small').style.transform = `translate3d(0, ${boundingClientRect.bottom / 40}px, 0)`;
+            }
             if (intersectionRatio > ratio) {
                 bgElement.style.backgroundColor = color;
             }
         };
 
         const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '0px 0px 0px 0px',
+            rootMargin: '0% 0px 0px 0px',
             threshold: thresholdSteps,
             //root: document.body
         });

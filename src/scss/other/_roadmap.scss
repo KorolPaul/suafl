@@ -140,6 +140,13 @@
         .tns-controls {
             gap: 10px;
         }
+
+        .tns-item:first-child & button[data-controls="prev"],
+        .tns-item:last-child & button[data-controls="next"] {
+            opacity: .6;
+            pointer-events: none;
+            filter: grayscale(1);
+        }
     }
 
     &_card-counter {
