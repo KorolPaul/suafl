@@ -52,15 +52,16 @@
             position: absolute;
             right: 130px;
             top: 100px;
+            font-size: 24px;
         }
 
         &::after {
             content: '';
             position: absolute;
             width: 45px;
-            height: 66px;
-            background: url(#{$img}/curved-arrow.svg) no-repeat center;
-            right: -42px;
+            height: 86px;
+            background: url(#{$img}/curved-arrow.svg) no-repeat center / 100% 100%;
+            right: -52px;
             top: 10px;
         }
     }
