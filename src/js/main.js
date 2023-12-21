@@ -850,16 +850,20 @@ if (strategyElement && !isMobile) {
 /* reviews change */
 const reviewElements = document.querySelectorAll('.review');
 if (reviewElements.length) {
+    document.querySelectorAll('.review:first-child').forEach(el => el.classList.add('active'));
+
     const reviewsCount = reviewElements.length;
     let activeIndex = 0;
+    const order = [0, 3, 6, 1, 4, 7, 2, 5, 8]
 
     setInterval(() => {
-        reviewElements[activeIndex]?.classList.toggle('active');
-        reviewElements[activeIndex]?.nextElementSibling?.classList.toggle('active');
-        reviewElements[activeIndex]?.previousElementSibling?.classList.toggle('active');
+        console.log(activeIndex);
 
-        if (activeIndex < reviewsCount - reviewsCount / 3) {
-            activeIndex += reviewsCount / 3;
+        reviewElements[order[activeIndex]]?.parentElement.querySelectorAll('.review').forEach(el => el.classList.remove('active'));
+        reviewElements[order[activeIndex]]?.classList.add('active');
+
+        if (activeIndex < reviewsCount) {
+            activeIndex++;
         } else {
             activeIndex = 0;
         }
