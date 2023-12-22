@@ -51,13 +51,13 @@
             position: absolute;
             left: 0;
             top: 0;
-            z-index: 1;
             transform-origin: center;
             transition: .2s $easing transform;
         }
 
         &:hover::after,
         &.active::after {
+            z-index: 1;
             transform: scale(2.4);
         }
     }

@@ -58,5 +58,8 @@
             width: 608px;
             flex-shrink: 0;
         }
+        .about__wideImage & {
+            flex-shrink: 0;
+        }
     }
 }

@@ -5,8 +5,13 @@
         margin-bottom: $indent;
         border-radius: 15px;
         width: 100%;
+        width: 253px;
+        height: 349px;
+        object-fit: cover;
         @include tablet {
             margin: 0;
+            width: 282px;
+            height: 390px;
         }
     }
 

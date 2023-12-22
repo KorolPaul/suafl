@@ -16,7 +16,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 147px;
+            bottom: 180px;
             border-bottom: 2px solid $bg_color;
             z-index: 0;
         }
@@ -69,6 +69,8 @@
             padding-top: 30px;
             border-top: 2px solid rgba(#1F35F0, .3);
             pointer-events: all;
+            min-height: 122px;
+            box-sizing: border-box;
             cursor: pointer;
             z-index: 1;
             transition: .2s $easingSmooth border;
@@ -107,14 +109,20 @@
             transform: translate(50%, 6%);
         }
 
-        [data-place="2"] &,
-        [data-place="3"] & {
-            transform: translate(0%, 6%);
+        [data-place="2"] & {
+            transform: translate(45%, 6%);
         }
 
-        [data-place="4"] &,
+        [data-place="3"] & {
+            transform: translate(40%, 6%);
+        }
+
+        [data-place="4"] & {
+            transform: translate(-5%, 6%);
+        }
+
         [data-place="5"] & {
-            transform: translate(-3%, 6%);
+            transform: translate(-8%, 6%);
         }
     }
 
@@ -128,44 +136,29 @@
         transition: .2s $easingSmooth opacity;
         
         &[data-place="1"] {
-            left: 330px;
-            top: 308px;
-
             .clients-map[data-place="1"] & {
                 opacity: 1;
             }
         }
 
         &[data-place="2"] {
-            left: 940px;
-            top: 185px;
-
             .clients-map[data-place="2"] & {
                 opacity: 1;
             }
         }
 
         &[data-place="3"] {
-            left: 953px;
-            top: 219px;
-
             .clients-map[data-place="3"] & {
                 opacity: 1;
             }
         }
 
         &[data-place="4"] {
-            left: 1004px;
-            top: 235px;
-
             .clients-map[data-place="4"] & {
                 opacity: 1;
             }
         }
         &[data-place="5"] {
-            left: 1052px;
-            top: 118px;
-
             .clients-map[data-place="5"] & {
                 opacity: 1;
             }
