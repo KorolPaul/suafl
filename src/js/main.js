@@ -66,8 +66,6 @@ solutionsSlider.forEach(sliderElement => {
     const wrapper = sliderElement.parentElement;
     const solutionCardHeight = 461;
 
-    console.log(screen.height / 2 - solutionCardHeight / 2)
-
     if (wrapper) {
         let isAnimated = false;
 
@@ -205,15 +203,70 @@ clientsMapSlider.forEach(el => {
         navPosition: 'bottom',
         controls: true,
         controlsPosition: 'top',
-        loop: true,
+        loop: false,
         mode: 'gallery',
         speed: 800,
         responsive: {
             1200: {
-                disable: true,
+                // disable: true,
+                // items: 1,
+                controls: false,
             }
         },
     });
+
+    const clientsMapButtons = document.querySelectorAll('.clients-map_item-button');
+    if (clientsMapButtons.length) {
+        let activePlace = 1;
+
+        const clientMapItems = document.querySelectorAll('.clients-map_slider .tns-item:not(.tns-slide-cloned)');
+        const clientMapMarkers = document.querySelectorAll('.clients-map_marker');
+        const clientMapMap = document.querySelector('.clients-map_map');
+
+        clientMapItems[activePlace - 1].classList.add('active');
+        clientMapMarkers[activePlace - 1].style.opacity = 1;
+
+        document.querySelector('.clients-map').dataset.place = activePlace;
+
+        function changeMap(number) {
+            clientsMapButtons.forEach(el => el.classList.remove('active'));
+            clientMapItems.forEach(el => el.classList.remove('active'));
+
+            activePlace = number < 1 ? clientMapItems.length : number;
+            if (number > clientMapItems.length) {
+                activePlace = 1;
+            }
+
+            document.querySelector('.clients-map').dataset.place = activePlace;
+            clientMapItems[activePlace - 1].classList.add('active');
+            clientMapItems[activePlace - 1].querySelector('.clients-map_item-button').classList.add('active');
+
+            clientMapMarkers.forEach((el) => el.style.opacity = 0);
+            clientMapMarkers[activePlace - 1].style.opacity = 1;
+
+            const markerLeft = clientMapMarkers[activePlace - 1].style.left;
+            console.log(`translate(calc(50% - ${markerLeft}), 6%)`);
+            clientMapMap.style.transform = `translate(calc(50% - ${markerLeft} / 2), 6%)`
+        }
+
+        clientsMapButtons.forEach(button => button.addEventListener('click', (e) => {
+            changeMap(Number(e.target.dataset.place));
+        }));
+
+        const clientMapPrevButton = document.querySelector('.clients-map_controls button:first-child');
+        const clientMapNextButton = document.querySelector('.clients-map_controls button:last-child');
+
+        clientMapPrevButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            changeMap(activePlace - 1);
+            slider.goTo('prev');
+        });
+        clientMapNextButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            changeMap(activePlace + 1);
+            slider.goTo('next');
+        });
+    }
 });
 
 const teamSlider = document.querySelectorAll('.team-slider_items');
@@ -671,45 +724,6 @@ if (blinksElement) {
     });
 }
 
-/* clients map */
-const clientsMapButtons = document.querySelectorAll('.clients-map_item-button');
-if (clientsMapButtons.length) {
-    let activePlace = 1;
-
-    const clientMapItems = document.querySelectorAll('.clients-map_slider .tns-item:not(.tns-slide-cloned)');
-    clientMapItems[activePlace - 1].classList.add('active');
-    document.querySelector('.clients-map').dataset.place = activePlace;
-
-    function changeMap(number) {
-        clientsMapButtons.forEach(el => el.classList.remove('active'));
-        clientMapItems.forEach(el => el.classList.remove('active'));
-
-        activePlace = number < 1 ? clientMapItems.length : number;
-        if (number > clientMapItems.length) {
-            activePlace = 1;
-        }
-
-        document.querySelector('.clients-map').dataset.place = activePlace;
-        clientMapItems[activePlace - 1].classList.add('active');
-        clientMapItems[activePlace - 1].querySelector('.clients-map_item-button').classList.add('active');
-    }
-
-    clientsMapButtons.forEach(button => button.addEventListener('click', (e) => {
-        changeMap(Number(e.target.dataset.place));
-    }));
-
-    const clientMapPrevButton = document.querySelector('.clients-map_controls button:first-child');
-    const clientMapNextButton = document.querySelector('.clients-map_controls button:last-child');
-
-    clientMapPrevButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        changeMap(activePlace - 1);
-    });
-    clientMapNextButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        changeMap(activePlace + 1);
-    });
-}
 
 const mapElements = document.querySelectorAll('.map');
 const mapMarkers = document.querySelectorAll('.map_place, .map_pin');
