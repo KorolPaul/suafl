@@ -13,6 +13,11 @@
         width: 12px;
         height: 12px;
 
+        &:hover,
+        &.active {
+            z-index: 3;
+        }
+
         &::after,
         &::before {
             content: '';

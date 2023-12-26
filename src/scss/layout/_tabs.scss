@@ -32,20 +32,21 @@
 
         &::after {
             content: '';
-            background-color: $cBright;
+            background: url(#{$img}/arrow-right.svg) no-repeat left center;
             position: absolute;
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 18px;
             left: 13px;
-            top: 9px;
+            top: 6px;
             opacity: 0;
             border-radius: 50%;
             transition: .2s $easing opacity;
             @include tablet {
-                width: 12px;
-                height: 12px;
                 left: 17px;
-                top: 12px;
+                top: 5px;
+            }
+            @include desktop {
+                top: 10px;
             }
         }
 

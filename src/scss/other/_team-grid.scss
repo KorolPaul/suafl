@@ -1,4 +1,6 @@
 .team-grid {
+    position: relative;
+
     &_buttons {
         display: none;
         @include tablet {
@@ -9,19 +11,25 @@
     }
 
     &_items {
-        @include tablet {
-            display: grid;
-            grid-template-rows: auto;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        @include desktop {
-            grid-template-columns: repeat(4, 1fr);
-        }
+        // @include tablet {
+        //     display: grid;
+        //     grid-template-rows: auto;
+        //     grid-template-columns: repeat(3, 1fr);
+        //     gap: 24px;
+        // }
+        // @include desktop {
+        //     grid-template-columns: repeat(4, 1fr);
+        // }
+    }
+
+    &_card-counter {
+        position: absolute;
+        left: 50%;
+        bottom: 7px;
+        transform: translateX(-50%);
     }
 
     .tns-controls {
-        justify-content: flex-start;
         gap: 10px;
     }
 }

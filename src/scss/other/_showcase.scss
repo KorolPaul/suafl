@@ -95,4 +95,22 @@
     .tns-nav {
         padding-top: 6px;
     }
+
+    .tns-item {
+        opacity: 1 !important;
+        visibility: hidden;
+
+        .intro_image {
+            opacity: 0;
+            transition: .3s $easingSmooth opacity;
+        }
+    }
+
+    .tns-slide-active {
+        visibility: visible;
+
+        .intro_image {
+            opacity: 1;
+        }
+    }
 }
