@@ -73,7 +73,6 @@
         margin: 0 0 4px;
         height: 80px;
         border-radius: 15px;
-        background: #4E46DC;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -85,7 +84,7 @@
         }
 
         img {
-            height: 28px;
+            height: 100%;
         }
 
         .page-orange & {
