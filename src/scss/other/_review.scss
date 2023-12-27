@@ -77,7 +77,7 @@
         border-radius: 90px 90px 90px 0;
         @include desktop {
             position: static;
-            min-width: 190px;
+            width: 190px;
             width: auto;
             margin-top: -15px;
         }

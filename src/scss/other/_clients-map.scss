@@ -127,7 +127,8 @@
             display: flex;
             margin: 0;
             position: absolute;
-            left: 120px;
+            left: 50%;
+            margin-left: -#{$max-width} / 2;
             bottom: 40px;
             z-index: 2;
             width: 130px;

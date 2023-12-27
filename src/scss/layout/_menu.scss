@@ -85,8 +85,8 @@
                 margin-top: calc(-1 * $indent / 2);
                 transform-origin: center;
                 filter: grayscale(1) brightness(0);
-                transition: .2s $easing transform,
-                            .2s $easing filter;
+                transition: .1s $easing transform,
+                            .1s $easing filter;
             }
 
             .menu-opened &::after {
@@ -96,6 +96,19 @@
 
             &:hover::after {
                 filter: grayscale(0) brightness(1);
+            }
+
+
+            .page-green &::after {
+                background-image: url(#{$img}/menu-arrow-green.svg);
+            }
+
+            .page-blue &::after {
+                background-image: url(#{$img}/menu-arrow-blue.svg);
+            }
+
+            .page-orange &::after {
+                background-image: url(#{$img}/menu-arrow-orange.svg);
             }
         }
 

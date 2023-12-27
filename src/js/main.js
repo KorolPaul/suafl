@@ -66,7 +66,7 @@ solutionsSlider.forEach(sliderElement => {
     const wrapper = sliderElement.parentElement;
     const solutionCardHeight = 461;
 
-    if (wrapper) {
+    if (wrapper && false) {
         let isAnimated = false;
 
         function handleCarouselScroll(isForward) {

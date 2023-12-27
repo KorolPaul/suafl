@@ -13,9 +13,11 @@
         width: 12px;
         height: 12px;
 
-        &:hover,
         &.active {
             z-index: 3;
+        }
+        &:hover {
+            z-index: 4;
         }
 
         &::after,
@@ -48,6 +50,13 @@
         width: 20px;
         height: 20px;
 
+        &.active {
+            z-index: 3;
+        }
+        &:hover {
+            z-index: 4;
+        }
+
         &::after {
             content: '';
             background: url(#{$img}/pin.svg);
@@ -62,7 +71,6 @@
 
         &:hover::after,
         &.active::after {
-            z-index: 1;
             transform: scale(2.4);
         }
     }
