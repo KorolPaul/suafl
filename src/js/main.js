@@ -304,7 +304,7 @@ teamSlider.forEach(el => {
 
 const teamGridSlider = document.querySelectorAll('.team-grid_items');
 teamGridSlider.forEach(el => {
-    const slider = tns({
+    tns({
         container: el,
         items: 1.6,
         gutter: 14,
@@ -316,22 +316,12 @@ teamGridSlider.forEach(el => {
         loop: false,
         responsive: {
             768: {
-                items: 2.6
-            },
-            1200: {
-                items: 4
-            },
-        },
-        onInit: function (slider) {
-            document.querySelector('.team-grid .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+                disable: true,
+            }
         }
     });
-
-    slider.events.on('transitionStart', function (info) {
-        const index = info.displayIndex;
-        document.querySelector('.team-grid .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
-    });
 });
+
 
 const partnersSlider = document.querySelectorAll('.partners_slider');
 partnersSlider.forEach(el => {
