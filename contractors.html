@@ -7,11 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="48x48px.ico">
-    <link rel="icon" type="image/x-icon" href="48x48px.ico">
-    <link rel="icon" type="image/png" href="16x16px.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="32x32px.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="48x48px.png" sizes="48x48">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
     <meta content="telephone=no" name="format-detection">
     <meta name="HandheldFriendly" content="true">
 </head>
@@ -219,165 +224,168 @@
                 <div class="contractors_map">
                     <div class="map">
                         <div class="map_bg-wrapper">
-                            <img src="src/img/map-contractors.svg" alt="" class="map_bg">
-                        </div>
-                        <div class="map_pin" style="left: 7%; top: 25%">
-                            <img src="src/img/flags/usa-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar1.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Kitty Donaldson</span>
-                                    <span>Sales Operations</span>
+                            <div class="map_places">
+
+                                <img src="src/img/map-contractors.svg" alt="" class="map_bg">
+                                <div class="map_pin" style="left: 7%; top: 25%">
+                                    <img src="src/img/flags/usa-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar1.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Kitty Donaldson</span>
+                                            <span>Sales Operations</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 21%; top: 25%">
-                            <img src="src/img/flags/usa-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar2.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Patricia Delacruz</span>
-                                    <span>Head of Marketing</span>
+                                <div class="map_pin" style="left: 21%; top: 25%">
+                                    <img src="src/img/flags/usa-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar2.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Patricia Delacruz</span>
+                                            <span>Head of Marketing</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 42%; top: 16%">
-                            <img src="src/img/flags/united kingdom-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar3.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Nancy Wells</span>
-                                    <span>Accountant</span>
+                                <div class="map_pin" style="left: 42%; top: 16%">
+                                    <img src="src/img/flags/united kingdom-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar3.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Nancy Wells</span>
+                                            <span>Accountant</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 44%; top: 19%">
-                            <img src="src/img/flags/france-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar4.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Raees Copeland</span>
-                                    <span>Partnerships Lead</span>
+                                <div class="map_pin" style="left: 44%; top: 19%">
+                                    <img src="src/img/flags/france-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar4.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Raees Copeland</span>
+                                            <span>Partnerships Lead</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 46%; top: 23%">
-                            <img src="src/img/flags/italy-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar5.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Daisy Valentine</span>
-                                    <span>HR Manager</span>
+                                <div class="map_pin" style="left: 46%; top: 23%">
+                                    <img src="src/img/flags/italy-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar5.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Daisy Valentine</span>
+                                            <span>HR Manager</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 50%; top: 11%">
-                            <img src="src/img/flags/russia-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar6.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Sasha Mikhailo</span>
-                                    <span>Head of Dev Team</span>
+                                <div class="map_pin" style="left: 50%; top: 11%">
+                                    <img src="src/img/flags/russia-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar6.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Sasha Mikhailo</span>
+                                            <span>Head of Dev Team</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 63%; top: 18%">
-                            <img src="src/img/flags/kazakhstan-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar7.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Aigerim Petra</span>
-                                    <span>Data Analyst</span>
+                                <div class="map_pin" style="left: 63%; top: 18%">
+                                    <img src="src/img/flags/kazakhstan-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar7.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Aigerim Petra</span>
+                                            <span>Data Analyst</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 51%; top: 25%">
-                            <img src="src/img/flags/turkey-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar8.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Alysha Trujillo</span>
-                                    <span>Sales</span>
+                                <div class="map_pin" style="left: 51%; top: 25%">
+                                    <img src="src/img/flags/turkey-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar8.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Alysha Trujillo</span>
+                                            <span>Sales</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 58%; top: 38%">
-                            <img src="src/img/flags/saudi arabia-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar9.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Shakira Moses</span>
-                                    <span>Administrative Assistant</span>
+                                <div class="map_pin" style="left: 58%; top: 38%">
+                                    <img src="src/img/flags/saudi arabia-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar9.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Shakira Moses</span>
+                                            <span>Administrative Assistant</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 50%; top: 53%">
-                            <img src="src/img/flags/democratic republic of congo-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar10.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Timothy Lee</span>
-                                    <span>Project Manager</span>
+                                <div class="map_pin" style="left: 50%; top: 53%">
+                                    <img src="src/img/flags/democratic republic of congo-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar10.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Timothy Lee</span>
+                                            <span>Project Manager</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 25%; top: 81%">
-                            <img src="src/img/flags/argentina-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar11.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Ollie Bradley</span>
-                                    <span>Product Manager</span>
+                                <div class="map_pin" style="left: 25%; top: 81%">
+                                    <img src="src/img/flags/argentina-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar11.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Ollie Bradley</span>
+                                            <span>Product Manager</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 29%; top: 71%">
-                            <img src="src/img/flags/brazil-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar12.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Arun Mendoza</span>
-                                    <span>Supervisor</span>
+                                <div class="map_pin" style="left: 29%; top: 71%">
+                                    <img src="src/img/flags/brazil-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar12.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Arun Mendoza</span>
+                                            <span>Supervisor</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 19%; top: 65%">
-                            <img src="src/img/flags/peru-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar13.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Dylan Cuevas</span>
-                                    <span>Customer Service</span>
+                                <div class="map_pin" style="left: 19%; top: 65%">
+                                    <img src="src/img/flags/peru-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar13.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Dylan Cuevas</span>
+                                            <span>Customer Service</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 66%; top: 35%">
-                            <img src="src/img/flags/india-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar14.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Ehsan Mata</span>
-                                    <span>Software Engineer</span>
+                                <div class="map_pin" style="left: 66%; top: 35%">
+                                    <img src="src/img/flags/india-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar14.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Ehsan Mata</span>
+                                            <span>Software Engineer</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 74%; top: 44%">
-                            <img src="src/img/flags/thailand-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar15.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Maisie Bonilla</span>
-                                    <span>Social Media Expert</span>
+                                <div class="map_pin" style="left: 74%; top: 44%">
+                                    <img src="src/img/flags/thailand-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar15.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Maisie Bonilla</span>
+                                            <span>Social Media Expert</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="map_pin" style="left: 77%; top: 25%">
-                            <img src="src/img/flags/china-circle.svg" alt="" class="map_pin-flag">
-                            <div class="map_tooltip map_tooltip__image">
-                                <img src="src/img/map-avatar16.png" alt="" class="map_tooltip-image">
-                                <div>
-                                    <span class="map_tooltip-title">Maxwell Chen</span>
-                                    <span>Account Manager</span>
+                                <div class="map_pin" style="left: 77%; top: 25%">
+                                    <img src="src/img/flags/china-circle.svg" alt="" class="map_pin-flag">
+                                    <div class="map_tooltip map_tooltip__image">
+                                        <img src="src/img/map-avatar16.png" alt="" class="map_tooltip-image">
+                                        <div>
+                                            <span class="map_tooltip-title">Maxwell Chen</span>
+                                            <span>Account Manager</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

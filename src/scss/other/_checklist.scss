@@ -19,7 +19,7 @@
         font-weight: 600;
         line-height: 130%;
         border-radius: 15px;
-        background: $cPageBlueLight url(#{$img}/checklist-bg.png) no-repeat left bottom /  auto 100%;
+        background: $cPageBlueLight url(#{$img}/checklist-bg.png) no-repeat left bottom /  auto 78px;
         margin: 0 0 $indent;
         @include tablet {
             padding: 40px 40px 40px 200px;

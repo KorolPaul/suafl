@@ -131,10 +131,13 @@
 
     &_image {
         position: absolute;
-        bottom: 0;
         right: 0;
         z-index: 0;
         pointer-events: none;
+        bottom: -9px;
+        @include desktop {
+            bottom: -12px;
+        }
 
         .banner__left & {
             left: 0;

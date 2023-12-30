@@ -5,6 +5,12 @@
 
     &_bg {
         min-width: 800px;
+        display: block;
+    }
+
+    &_places {
+        position: relative;
+        min-width: 800px;
     }
 
     &_place {

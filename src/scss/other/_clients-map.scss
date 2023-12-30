@@ -39,7 +39,7 @@
     &_slider {
         position: relative;
         @include desktop {
-            padding: 440px 0 0 150px;
+            padding: 440px 0 0 0;
             display: flex;
             gap: 24px;
         }
@@ -64,7 +64,7 @@
         @include desktop {
             z-index: 2;
             top: 440px;
-            left: 150px;
+            left: 0;
             right: auto;
             text-align: left;
             padding-top: 50px;
@@ -128,7 +128,7 @@
             margin: 0;
             position: absolute;
             left: 50%;
-            margin-left: -#{$max-width} / 2;
+            margin-left: -342px;
             bottom: 40px;
             z-index: 2;
             width: 130px;

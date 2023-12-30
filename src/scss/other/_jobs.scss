@@ -38,6 +38,7 @@
     overflow: hidden;
     background: rgba($cWhite, .7);
     backdrop-filter: blur(10px);
+    text-align: left;
     @include tablet {
         min-height: 160px;
         padding: 30px 30px 30px 200px;
@@ -48,9 +49,11 @@
         position: absolute;
         left: 20px;
         bottom: 16px;
+        width: 60px;
         @include tablet {
             left: 32px;
             top: 50%;
+            width: auto;
             transform: translateY(-50%);
         }        
     }

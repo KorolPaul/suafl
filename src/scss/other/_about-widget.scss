@@ -108,8 +108,11 @@
     &_image {
         position: absolute;
         right: 0;
-        bottom: 0;
         pointer-events: none;
+        bottom: -9px;
+        @include desktop {
+            bottom: -12px;
+        }
     }
 }
 

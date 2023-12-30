@@ -16,7 +16,8 @@
         pointer-events: none;
     }
 
-    .active & {
+    .active &,
+    .tns-slide-active & {
         @include desktop {
             opacity: 1;
             pointer-events: all;

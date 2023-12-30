@@ -31,6 +31,10 @@
         @include desktop {
             gap: 30px;
         }
+
+        .button {
+            display: none;
+        }
     }
 
     &_title {
