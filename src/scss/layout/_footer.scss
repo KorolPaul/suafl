@@ -229,6 +229,13 @@
             font-size: 14px;
             line-height: 1.7;
         }
+
+        &::before {
+            content: '- ';
+            @include tablet {
+                content: none;
+            }
+        }
     }
     
     &_bottom-links {

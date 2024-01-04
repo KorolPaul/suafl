@@ -206,6 +206,8 @@ clientsMapSlider.forEach(el => {
         loop: true,
         mode: 'gallery',
         speed: 800,
+        // animateIn: 'tns-goBackIn',
+        // animateOut: 'tns-goBackOut',
         responsive: {
             1200: {
                 // disable: true,
@@ -832,7 +834,7 @@ if ('NiceSelect' in window && selectElements.length) {
 
 /* changable background */
 const strategyElement = document.querySelector('.strategy');
-if (strategyElement && !isMobile) {
+if (strategyElement) {
     const bgElement = strategyElement.querySelector('.strategy_bg');
     const items = strategyElement.querySelectorAll('.strategy_item');
 
@@ -847,7 +849,7 @@ if (strategyElement && !isMobile) {
                 el.querySelector('.strategy_item-image').style.transform = `translate3d(0, ${boundingClientRect.bottom / 25}px, 0)`;
                 el.querySelector('.strategy_item-image-small').style.transform = `translate3d(0, ${boundingClientRect.bottom / 40}px, 0)`;
             }
-            if (intersectionRatio > ratio) {
+            if (intersectionRatio > ratio || isMobile) {
                 bgElement.style.backgroundColor = color;
             }
         };

@@ -19,13 +19,13 @@
         flex-direction: column;
         gap: 100px;
         margin: 0 #{-$indent};
+        background-color: transparent !important;
         @include desktop {
             padding: 64px $indent;
             justify-content: space-between;
             flex-direction: row;
             align-items: flex-start;
             padding: 100px 0;
-            background-color: transparent !important;
         }
 
         &:nth-child(even) {
@@ -63,13 +63,15 @@
     &_item-image-wrapper {
         position: relative;
         margin-bottom: 78px;
+        width: 60vw;
         @include tablet {
             margin-bottom: 0;
+            width: auto;
         }
     }
 
     &_item-image-shadow {
-        width: 207px;
+        width: 60vw;
         height: 297px;
         border-radius: 15px;
         opacity: .2;
@@ -98,9 +100,9 @@
     }
 
     &_item-image-small {
-        width: 149px;
+        width: 36vw;
         position: absolute;
-        left: 162px;
+        right: -50px;
         bottom: -20px;
         z-index: 2;
         will-change: transform;
@@ -108,6 +110,7 @@
         @include tablet {
             width: 195px;
             left: 213px;
+            right: auto;
             bottom: -30px;
         }
     }

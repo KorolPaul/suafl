@@ -55,6 +55,13 @@
                 bottom: 0;
             }
         }
+
+        .advantage:not(.advantage__with-indent):nth-child(3) & {
+            right: 0;
+            @include desktop {
+                right: -65px;
+            }
+        }
     }
 
     &_title {

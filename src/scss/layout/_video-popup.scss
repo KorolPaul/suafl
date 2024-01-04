@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 32px;
+    padding: 32px $indent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,8 +66,11 @@
     &_holder {
         padding-bottom: 50%;
         position: relative;
-        width: 80%;
+        width: 100%;
         z-index: 4;
+        @include tablet {
+            width: 80%;
+        }
 
         & > * {
             position: absolute;
