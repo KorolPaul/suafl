@@ -11,6 +11,7 @@
         width: 253px;
         height: 349px;
         object-fit: cover;
+        display: block;
         @include tablet {
             margin: 0;
             width: 282px;

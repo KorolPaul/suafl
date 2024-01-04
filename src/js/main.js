@@ -203,7 +203,7 @@ clientsMapSlider.forEach(el => {
         navPosition: 'bottom',
         controls: true,
         controlsPosition: 'top',
-        loop: false,
+        loop: true,
         mode: 'gallery',
         speed: 800,
         responsive: {
@@ -245,7 +245,6 @@ clientsMapSlider.forEach(el => {
             clientMapMarkers[activePlace - 1].style.opacity = 1;
 
             const markerLeft = clientMapMarkers[activePlace - 1].style.left;
-            console.log(`translate(calc(50% - ${markerLeft}), 6%)`);
             clientMapMap.style.transform = `translate(calc(50% - ${markerLeft} / 2), 6%)`
         }
 
