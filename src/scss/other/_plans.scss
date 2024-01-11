@@ -73,6 +73,10 @@
         @include tablet {
             margin-bottom: 32px;
         }
+
+        li::before {
+            content: none;
+        }
     }
 
     &_card-list-item {

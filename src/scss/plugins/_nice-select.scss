@@ -147,6 +147,10 @@
     text-align: left;
     transition: all .2s;
     margin: 0;
+
+    &::before {
+        content: none;
+    }
 }
 
 .nice-select .option:hover,

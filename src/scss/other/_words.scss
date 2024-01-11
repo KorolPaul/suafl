@@ -4,7 +4,9 @@
     overflow: hidden;
     padding: 3px 5px 2px;
     margin: 0 8px 0 0;
+    height: 39px;
     @include tablet {
+        height: 60px;
         padding: 5px;
     }
 

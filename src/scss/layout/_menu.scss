@@ -22,6 +22,10 @@
             gap: 0;
             backdrop-filter: blur(10px);
         }
+
+        li::before {
+            content: none;
+        }
     }
 
     &_item {
@@ -216,6 +220,10 @@
         @include desktop {
             grid-template-columns: repeat(4, 1fr);
         }
+
+        li::before {
+            content: none;
+        }
     }
 
     &_sublist-item {
@@ -280,6 +288,10 @@
         .active + &,
         .opened + & {
             display: flex;
+        }
+
+        li::before {
+            content: none;
         }
     }
 

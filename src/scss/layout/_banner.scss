@@ -167,6 +167,10 @@
         @include tablet {
             margin-bottom: 30px;
         }
+
+        li::before {
+            content: none;
+        }
     }
 
     li {

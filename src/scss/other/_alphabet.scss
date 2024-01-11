@@ -42,6 +42,10 @@
         @include desktop {
             grid-template-columns: repeat(4, 1fr);
         }
+
+        li::before {
+            content: none;
+        }
     }
 
     &_item {

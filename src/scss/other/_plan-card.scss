@@ -134,6 +134,10 @@
         margin: 0;
         position: relative;
         z-index: 2;
+
+        li::before {
+            content: none;
+        }
     }
 
     &_list-item {

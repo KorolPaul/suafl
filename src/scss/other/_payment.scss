@@ -19,4 +19,8 @@
         border: 1px solid #E4E8F0;
         box-shadow: 0 5px 5px rgba($color, .2);
     }
+
+    li::before {
+        content: none;
+    }
 }
