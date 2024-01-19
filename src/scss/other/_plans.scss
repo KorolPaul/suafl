@@ -73,10 +73,6 @@
         @include tablet {
             margin-bottom: 32px;
         }
-
-        li::before {
-            content: none;
-        }
     }
 
     &_card-list-item {
@@ -95,14 +91,12 @@
             height: 12px;
             position: absolute;
             left: 0;
-            top: 12px;
+            top: 16px;
             @include tablet {
                 left: 28px;
             }
         }
     }
-
-    
 
     button {
         width: 100%;
