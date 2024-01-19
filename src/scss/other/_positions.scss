@@ -48,6 +48,10 @@
             flex-direction: column;
             gap: 10px;
         }
+
+        li::before {
+            content: none;
+        }
     }
 
     &_item {

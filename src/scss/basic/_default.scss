@@ -80,6 +80,26 @@ ul {
     }
 }
 
+ul {
+    list-style: none;
+
+    li {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background: url(#{$img}/arrow-right.svg) no-repeat left center / 100%;
+            filter: brightness(0);
+            width: 7px;
+            height: 12px;
+            left: -20px;
+            top: 45%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
 a[name] {
     position: relative;
     top: -30px;

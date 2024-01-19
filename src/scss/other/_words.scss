@@ -8,6 +8,7 @@
     display: inline-block;
     vertical-align: bottom;
     @include tablet {
+        height: 60px;
         padding: 5px;
         height: 50px;
     }

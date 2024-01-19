@@ -150,6 +150,7 @@
     }
 
     &_card-counter {
+        display: none;
         position: absolute;
         right: $indent;
         bottom: 7px;
