@@ -4,8 +4,12 @@
     overflow: hidden;
     padding: 3px 5px 2px;
     margin: 0 8px 0 0;
+    height: 34px;
+    display: inline-block;
+    vertical-align: bottom;
     @include tablet {
         padding: 5px;
+        height: 50px;
     }
 
     span {
